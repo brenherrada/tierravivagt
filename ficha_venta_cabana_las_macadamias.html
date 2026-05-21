@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cabaña en venta · Las Macadamias | Tierra Viva Propiedades</title>
+  <meta name="description" content="Cabaña de lujo en venta en San Miguel Dueñas, Las Macadamias, Antigua Guatemala. 3 dormitorios, mezanine, pérgola con jacuzzi, parqueos, lavandería, dormitorio de servicio y bodegas." />
+  <link rel="stylesheet" href="css/tierra-viva.css">
+</head>
+
+<body class="property-page">
+  <header class="site-header">
+    <a href="index.html" class="brand-link" aria-label="Volver al inicio de Tierra Viva">
+      <img src="https://drive.google.com/thumbnail?id=1C4Ace_jIe699cX3PA90HdTJ1jbivd-mq&sz=w800" alt="Tierra Viva Propiedades" />
+    </a>
+  </header>
+
+  <main class="page">
+    <section class="layout">
+      <div class="gallery-column">
+        <div class="gallery-card">
+          <div class="main-photo">
+            <img id="mainImage" src="https://drive.google.com/thumbnail?id=12SDMjS7T66CqOo2rdw3PxSIj6scZFTf1&sz=w1600" alt="Foto real de la cabaña Las Macadamias 1" />
+            <button class="navbtn prev" onclick="prevImage()" aria-label="Foto anterior">‹</button>
+            <button class="navbtn next" onclick="nextImage()" aria-label="Foto siguiente">›</button>
+            <button class="fullscreen-btn" onclick="openLightbox()" aria-label="Ver foto en pantalla completa">Ver pantalla completa</button>
+          </div>
+
+          <div class="thumbs" id="thumbs"></div>
+        </div>
+      </div>
+
+      <aside class="info-card">
+        <a class="property-kicker" href="#ubicacion" aria-label="Ir a la ubicación">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 21s7-5.2 7-12a7 7 0 1 0-14 0c0 6.8 7 12 7 12Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M12 12.2a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          <span>San Miguel Dueñas, Las Macadamias</span>
+        </a>
+
+        <h1>Cabaña en venta</h1>
+        <div class="price">USD 395,000</div>
+
+        <p class="description">
+          Cabaña de lujo ubicada en San Miguel Dueñas, Las Macadamias, con 550.30 m² de terreno y 210 m² de construcción. Disponible para venta sin muebles, con pago contado, sin hipoteca y precio no negociable.
+        </p>
+
+        <div class="actions">
+          <a class="cta" id="whatsappButton" href="#" target="_blank" rel="noopener">Solicitar cita por WhatsApp</a>
+          <a class="secondary-cta" id="shareWhatsappButton" href="#" target="_blank" rel="noopener">Compartir por WhatsApp</a>
+        </div>
+
+        <div class="accordion open" id="featuresAccordion">
+          <button class="accordion-toggle" type="button" onclick="toggleAccordion('featuresAccordion')" aria-expanded="true">
+            <h2>Características</h2>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="feature-grid">
+              <div class="feature-item">550.30 m² de terreno</div>
+              <div class="feature-item">210 m² de construcción</div>
+              <div class="feature-item">3 dormitorios en primer nivel</div>
+              <div class="feature-item">3 baños completos</div>
+              <div class="feature-item">Sala familiar</div>
+              <div class="feature-item">Mezanine con baño completo</div>
+              <div class="feature-item">Pérgola con jacuzzi</div>
+              <div class="feature-item">Baño completo exterior</div>
+              <div class="feature-item">2 parqueos privados</div>
+              <div class="feature-item">Área de lavandería</div>
+              <div class="feature-item">Dormitorio de servicio</div>
+              <div class="feature-item">3 bodeguitas</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion" id="conditionsAccordion">
+          <button class="accordion-toggle" type="button" onclick="toggleAccordion('conditionsAccordion')" aria-expanded="false">
+            <h2>Condiciones</h2>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="feature-grid">
+              <div class='feature-item'>Venta sin muebles</div><div class='feature-item'>Pago contado</div><div class='feature-item'>No aplica hipoteca</div><div class='feature-item'>Precio no negociable</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="map-panel" id="ubicacion">
+      <h2>Ubicación</h2>
+      <p class="description">San Miguel Dueñas, Las Macadamias, Antigua Guatemala.</p>
+
+      <div class="map-card">
+        <iframe
+          title="Mapa Las Macadamias"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=San%20Miguel%20Due%C3%B1as%20Las%20Macadamias%20Antigua%20Guatemala&output=embed">
+        </iframe>
+        <div class="map-actions">
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=San%20Miguel%20Due%C3%B1as%2C%20Las%20Macadamias%2C%20Antigua%20Guatemala" target="_blank" rel="noopener">
+            Abrir ubicación en Google Maps
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightboxOnBackdrop(event)">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Cerrar pantalla completa">×</button>
+    <button class="lightbox-prev" onclick="prevLightboxImage()" aria-label="Foto anterior">‹</button>
+    <img id="lightboxImage" src="" alt="" />
+    <button class="lightbox-next" onclick="nextLightboxImage()" aria-label="Foto siguiente">›</button>
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+
+  <script>
+    const operationTitle = "cabaña en venta";
+
+    const photos = [
+      {
+        src: "https://drive.google.com/thumbnail?id=12SDMjS7T66CqOo2rdw3PxSIj6scZFTf1&sz=w1600",
+        alt: "Foto real de la cabaña Las Macadamias 1"
+      },
+      {
+        src: "https://drive.google.com/thumbnail?id=1WwCj2CaYuK0MkUJHVMRrWAu4dgg2mgU-&sz=w1600",
+        alt: "Foto real de la cabaña Las Macadamias 2"
+      },
+      {
+        src: "https://drive.google.com/thumbnail?id=1jrM0Yo7U-IejTGkv32QLXCllB8MzU911&sz=w1600",
+        alt: "Foto real de la cabaña Las Macadamias 3"
+      },
+      {
+        src: "https://drive.google.com/thumbnail?id=1Rx8WXpbQButx0HZVBQJrmje65jCaw87_&sz=w1600",
+        alt: "Foto real de la cabaña Las Macadamias 4"
+      },
+      {
+        src: "https://drive.google.com/thumbnail?id=1vYf0DXbZ121me6apVjDo0VIHjoiO7Yf8&sz=w1600",
+        alt: "Foto real de la cabaña Las Macadamias 5"
+      },
+      {
+        src: "https://drive.google.com/thumbnail?id=1uGdk5OeBbJPCr03qV1n_hobgbRNyMMr5&sz=w1600",
+        alt: "Foto real de la cabaña Las Macadamias 6"
+      }
+    ];
+
+
+  
+    let current = 0;
+    const mainImage = document.getElementById("mainImage");
+    const thumbs = document.getElementById("thumbs");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxCaption = document.getElementById("lightboxCaption");
+
+    function renderThumbs() {
+      thumbs.innerHTML = "";
+      photos.forEach((photo, index) => {
+        const button = document.createElement("button");
+        button.className = "thumb" + (index === current ? " active" : "");
+        button.setAttribute("aria-label", "Ver foto " + (index + 1));
+        button.type = "button";
+        button.onclick = () => setImage(index);
+
+        const img = document.createElement("img");
+        img.src = photo.src;
+        img.alt = photo.alt;
+        img.loading = "lazy";
+
+        button.appendChild(img);
+        thumbs.appendChild(button);
+      });
+    }
+
+    function setImage(index) {
+      current = index;
+      mainImage.style.opacity = 0;
+      setTimeout(() => {
+        mainImage.src = photos[current].src;
+        mainImage.alt = photos[current].alt;
+        mainImage.style.opacity = 1;
+        renderThumbs();
+      }, 160);
+    }
+
+    function prevImage() {
+      setImage((current - 1 + photos.length) % photos.length);
+    }
+
+    function nextImage() {
+      setImage((current + 1) % photos.length);
+    }
+
+    function updateLightboxImage() {
+      lightboxImage.src = photos[current].src;
+      lightboxImage.alt = photos[current].alt;
+      lightboxCaption.textContent = (current + 1) + " / " + photos.length;
+    }
+
+    function openLightbox() {
+      updateLightboxImage();
+      lightbox.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      document.body.style.overflow = "";
+    }
+
+    function closeLightboxOnBackdrop(event) {
+      if (event.target === lightbox) closeLightbox();
+    }
+
+    function prevLightboxImage() {
+      current = (current - 1 + photos.length) % photos.length;
+      mainImage.src = photos[current].src;
+      mainImage.alt = photos[current].alt;
+      renderThumbs();
+      updateLightboxImage();
+    }
+
+    function nextLightboxImage() {
+      current = (current + 1) % photos.length;
+      mainImage.src = photos[current].src;
+      mainImage.alt = photos[current].alt;
+      renderThumbs();
+      updateLightboxImage();
+    }
+
+    function toggleAccordion(id) {
+      const accordion = document.getElementById(id);
+      const button = accordion.querySelector(".accordion-toggle");
+      const isOpen = accordion.classList.toggle("open");
+      button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    }
+
+    function updateWhatsAppLinks() {
+      const fichaUrl = window.location.href;
+      const phone = "50232465215";
+      const contactMessage = `Hola Brenda, quiero solicitar información para conocer la ${operationTitle} en Las Macadamias. Vi la ficha aquí: ${fichaUrl}`;
+      const shareMessage = `Mirá esta propiedad de Tierra Viva: ${fichaUrl}`;
+
+      document.getElementById("whatsappButton").href = `https://wa.me/${phone}?text=${encodeURIComponent(contactMessage)}`;
+      document.getElementById("shareWhatsappButton").href = `https://wa.me/?text=${encodeURIComponent(shareMessage)}`;
+    }
+
+    document.addEventListener("keydown", (event) => {
+      if (!lightbox.classList.contains("open")) return;
+      if (event.key === "Escape") closeLightbox();
+      if (event.key === "ArrowLeft") prevLightboxImage();
+      if (event.key === "ArrowRight") nextLightboxImage();
+    });
+
+    renderThumbs();
+    updateWhatsAppLinks();
+  
+
+  </script>
+</body>
+</html>

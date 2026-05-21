@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Casa en venta | Casco de Antigua Guatemala</title>
+  <meta name="description" content="Casa en venta en el casco de Antigua Guatemala, a 100 metros de la Iglesia de San Francisco El Grande. Precio Q3,700,000." />
+  <link rel="stylesheet" href="css/tierra-viva.css">
+
+</head>
+
+<body class="property-page">
+  <header class="site-header">
+    <a href="index.html" class="brand-link" aria-label="Ir al inicio de Tierra Viva">
+      <img src="https://drive.google.com/thumbnail?id=1C4Ace_jIe699cX3PA90HdTJ1jbivd-mq&sz=w800" alt="Tierra Viva Propiedades">
+    </a>
+  </header>
+
+  <main class="page">
+    <section class="layout">
+      <div class="gallery-column">
+        <div class="gallery-card">
+          <div class="main-photo">
+            <img id="mainImage" src="https://drive.google.com/thumbnail?id=12y2unavM4KN9XZ6lQeJhJQ_5kPfqbeLM&sz=w1600" alt="Foto real de la casa en venta en Antigua Guatemala 1" />
+            <button class="navbtn prev" onclick="prevImage()" aria-label="Foto anterior">‹</button>
+            <button class="navbtn next" onclick="nextImage()" aria-label="Foto siguiente">›</button>
+            <button class="fullscreen-btn" onclick="openLightbox()" aria-label="Ver foto en pantalla completa">Ver pantalla completa</button>
+          </div>
+
+          <div class="thumbs" id="thumbs"></div>
+        </div>
+      </div>
+
+      <aside class="info-card">
+        <a class="property-kicker" href="#ubicacion" aria-label="Ir a la ubicación">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 21s7-5.2 7-12a7 7 0 1 0-14 0c0 6.8 7 12 7 12Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M12 12.2a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          <span>Casco de Antigua Guatemala</span>
+        </a>
+
+        <h1>Casa en venta</h1>
+        <div class="price-row">
+          <div class="price">Q3,700,000</div>
+          <div class="property-badges" aria-label="Datos destacados">
+            <span class="property-badge">Último precio</span>
+            <span class="property-badge">Uso comercial</span>
+          </div>
+        </div>
+
+        <p class="description">
+          Casa en venta ubicada en el casco de Antigua Guatemala, a solo 100 metros de la Iglesia de San Francisco El Grande. La propiedad cuenta con patio central con fuente, techos de doble altura y habitaciones distribuidas en dos niveles. Ideal para uso comercial.
+        </p>
+
+        <div class="actions">
+          <a class="cta" id="whatsappButton" href="#" target="_blank" rel="noopener">Solicitar cita por WhatsApp</a>
+          <a class="secondary-cta" id="shareWhatsappButton" href="#" target="_blank" rel="noopener">Compartir por WhatsApp</a>
+        </div>
+
+        <div class="accordion open" id="featuresAccordion">
+          <button class="accordion-toggle" type="button" onclick="toggleAccordion('featuresAccordion')" aria-expanded="true">
+            <h2>Características</h2>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="feature-grid">
+              <div class="feature-item">4 habitaciones en total</div>
+              <div class="feature-item">2 baños completos</div>
+              <div class="feature-item">Sala con techos de doble altura</div>
+              <div class="feature-item">Comedor</div>
+              <div class="feature-item">Cocina con gabinetes</div>
+              <div class="feature-item">Patio central con fuente</div>
+              <div class="feature-item">Área de lavandería</div>
+              <div class="feature-item">Sala familiar</div>
+              <div class="feature-item">Techos de madera en segundo nivel</div>
+              <div class="feature-item">Ubicación a orilla de calle</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion" id="distributionAccordion">
+          <button class="accordion-toggle" type="button" onclick="toggleAccordion('distributionAccordion')" aria-expanded="false">
+            <h2>Distribución</h2>
+            <span class="accordion-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="level-group">
+              <h3 class="level-title">Primer nivel</h3>
+              <div class="feature-grid">
+                <div class="feature-item">Sala con techos de doble altura</div>
+                <div class="feature-item">Comedor</div>
+                <div class="feature-item">Cocina con gabinetes</div>
+                <div class="feature-item">Patio central con fuente</div>
+                <div class="feature-item">2 habitaciones</div>
+                <div class="feature-item">1 baño completo</div>
+              </div>
+            </div>
+
+            <div class="level-group">
+              <h3 class="level-title">Segundo nivel</h3>
+              <div class="feature-grid">
+                <div class="feature-item">Área de lavandería</div>
+                <div class="feature-item">2 habitaciones con techos de madera</div>
+                <div class="feature-item">Sala familiar</div>
+                <div class="feature-item">1 baño completo</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="map-panel" id="ubicacion">
+      <h2>Ubicación</h2>
+      <p class="description">
+        Casco de Antigua Guatemala, a 100 metros de la Iglesia de San Francisco El Grande.
+      </p>
+      <div class="map-card">
+        <iframe
+          title="Mapa Casco de Antigua Guatemala"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Iglesia%20San%20Francisco%20El%20Grande%20Antigua%20Guatemala&output=embed">
+        </iframe>
+        <div class="map-actions">
+          <a class="map-link" href="https://maps.app.goo.gl/UVTzARB1b6sM8DP86" target="_blank" rel="noopener">
+            Abrir ubicación en Google Maps
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightboxOnBackdrop(event)">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Cerrar pantalla completa">×</button>
+    <button class="lightbox-prev" onclick="prevLightboxImage()" aria-label="Foto anterior">‹</button>
+    <img id="lightboxImage" src="" alt="" />
+    <button class="lightbox-next" onclick="nextLightboxImage()" aria-label="Foto siguiente">›</button>
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+
+  <script>
+    const photos = [
+      {
+        src: "https://drive.google.com/thumbnail?id=12y2unavM4KN9XZ6lQeJhJQ_5kPfqbeLM&sz=w1600",
+        alt: "Foto real de la casa en venta en Antigua Guatemala 1"
+      },
+      {
+        src: "https://drive.google.com/thumbnail?id=1EbaVyHivkZOzpx-1-h5f3lk1JJHKi6Lp&sz=w1600",
+        alt: "Foto real de la casa en venta en Antigua Guatemala 2"
+      },
+      {
+        src: "https://drive.google.com/thumbnail?id=1FNqltJQEvMMvmHcepUWalcDEM7umWdfD&sz=w1600",
+        alt: "Foto real de la casa en venta en Antigua Guatemala 3"
+      },
+      {
+        src: "https://drive.google.com/thumbnail?id=1pGYtlhomorMVGiQ0xrdI2O9StmRQ4F3f&sz=w1600",
+        alt: "Foto real de la casa en venta en Antigua Guatemala 4"
+      },
+      {
+        src: "https://drive.google.com/thumbnail?id=1nCmsTA0zz-pNGVMbJZRe3tOb29klVFDX&sz=w1600",
+        alt: "Foto real de la casa en venta en Antigua Guatemala 5"
+      },
+      {
+        src: "https://drive.google.com/thumbnail?id=1BlSGbaPVyXQn16IzWuWcVdSOXZqUGm7P&sz=w1600",
+        alt: "Foto real de la casa en venta en Antigua Guatemala 6"
+      },
+      {
+        src: "https://drive.google.com/thumbnail?id=155r3xb341fE9kzoJsH-MBTzZnNAYiTcb&sz=w1600",
+        alt: "Foto real de la casa en venta en Antigua Guatemala 7"
+      },
+      {
+        src: "https://drive.google.com/thumbnail?id=1RMBZY4guxAnz5C6FkLhuCCGB1MLo9WLT&sz=w1600",
+        alt: "Foto real de la casa en venta en Antigua Guatemala 8"
+      },
+      {
+        src: "https://drive.google.com/thumbnail?id=1hC5WBTlvtx8pByYOsbE0ToxhF4pJACQQ&sz=w1600",
+        alt: "Foto real de la casa en venta en Antigua Guatemala 9"
+      },
+      {
+        src: "https://drive.google.com/thumbnail?id=15o0ItnvCq1wTFH6_i8TyZzfZIYNJ2PWN&sz=w1600",
+        alt: "Foto real de la casa en venta en Antigua Guatemala 10"
+      },
+      {
+        src: "https://drive.google.com/thumbnail?id=15vVvhV8b59obY38bru-rKENiesmrjCvy&sz=w1600",
+        alt: "Foto real de la casa en venta en Antigua Guatemala 11"
+      },
+      {
+        src: "https://drive.google.com/thumbnail?id=1wmTHvjAPNDwK5Ab0K0PWg2nbkjPOGFJA&sz=w1600",
+        alt: "Foto real de la casa en venta en Antigua Guatemala 12"
+      },
+      {
+        src: "https://drive.google.com/thumbnail?id=1nAY0TKWYSEngVpRiIr6QHX4M3R9ly_7w&sz=w1600",
+        alt: "Foto real de la casa en venta en Antigua Guatemala 13"
+      },
+      {
+        src: "https://drive.google.com/thumbnail?id=1zpNygSJz6x6S-C7a7FPu7-EChYorKfvl&sz=w1600",
+        alt: "Foto real de la casa en venta en Antigua Guatemala 14"
+      },
+      {
+        src: "https://drive.google.com/thumbnail?id=1SkrIkxUkxH0NGaCGga2CKwo0puiZQCMN&sz=w1600",
+        alt: "Foto real de la casa en venta en Antigua Guatemala 15"
+      },
+      {
+        src: "https://drive.google.com/thumbnail?id=1P5AFArCZIn0GfXHkVR6pxX94wvNOHwtE&sz=w1600",
+        alt: "Foto real de la casa en venta en Antigua Guatemala 16"
+      },
+      {
+        src: "https://drive.google.com/thumbnail?id=1zpBYHeIIGofs2nGQHLhvv4ePdNOSutBo&sz=w1600",
+        alt: "Foto real de la casa en venta en Antigua Guatemala 17"
+      },
+      {
+        src: "https://drive.google.com/thumbnail?id=1kLYOLoc1g--gjkQtmcoMifv3c-d32dFs&sz=w1600",
+        alt: "Foto real de la casa en venta en Antigua Guatemala 18"
+      },
+      {
+        src: "https://drive.google.com/thumbnail?id=1FBr9hhlnUmuL8zcOMUNXO1hDnD42i0Z7&sz=w1600",
+        alt: "Foto real de la casa en venta en Antigua Guatemala 19"
+      }
+    ];
+
+    let current = 0;
+    const mainImage = document.getElementById("mainImage");
+    const thumbs = document.getElementById("thumbs");
+
+    function renderThumbs() {
+      thumbs.innerHTML = "";
+      photos.forEach((photo, index) => {
+        const btn = document.createElement("button");
+        btn.className = "thumb" + (index === current ? " active" : "");
+        btn.setAttribute("aria-label", "Ver foto " + (index + 1));
+        btn.onclick = () => setImage(index);
+
+        const img = document.createElement("img");
+        img.src = photo.src;
+        img.alt = photo.alt;
+
+        btn.appendChild(img);
+        thumbs.appendChild(btn);
+      });
+    }
+
+    function setImage(index) {
+      current = index;
+      mainImage.style.opacity = 0;
+      setTimeout(() => {
+        mainImage.src = photos[current].src;
+        mainImage.alt = photos[current].alt;
+        mainImage.style.opacity = 1;
+        renderThumbs();
+      }, 160);
+    }
+
+    function prevImage() {
+      setImage((current - 1 + photos.length) % photos.length);
+    }
+
+    function nextImage() {
+      setImage((current + 1) % photos.length);
+    }
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxCaption = document.getElementById("lightboxCaption");
+
+    function updateLightboxImage() {
+      lightboxImage.src = photos[current].src;
+      lightboxImage.alt = photos[current].alt;
+      lightboxCaption.textContent = (current + 1) + " / " + photos.length;
+    }
+
+    function openLightbox() {
+      updateLightboxImage();
+      lightbox.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      document.body.style.overflow = "";
+    }
+
+    function closeLightboxOnBackdrop(event) {
+      if (event.target === lightbox) closeLightbox();
+    }
+
+    function prevLightboxImage() {
+      current = (current - 1 + photos.length) % photos.length;
+      mainImage.src = photos[current].src;
+      mainImage.alt = photos[current].alt;
+      renderThumbs();
+      updateLightboxImage();
+    }
+
+    function nextLightboxImage() {
+      current = (current + 1) % photos.length;
+      mainImage.src = photos[current].src;
+      mainImage.alt = photos[current].alt;
+      renderThumbs();
+      updateLightboxImage();
+    }
+
+    document.addEventListener("keydown", (event) => {
+      if (!lightbox.classList.contains("open")) return;
+      if (event.key === "Escape") closeLightbox();
+      if (event.key === "ArrowLeft") prevLightboxImage();
+      if (event.key === "ArrowRight") nextLightboxImage();
+    });
+
+    function toggleAccordion(id) {
+      const accordion = document.getElementById(id);
+      const button = accordion.querySelector(".accordion-toggle");
+      const isOpen = accordion.classList.toggle("open");
+      button.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    }
+
+    function updateWhatsAppLinks() {
+      const phone = "50232465215";
+      const fichaUrl = window.location.href;
+      const appointmentMessage = `Hola Brenda, quiero solicitar una cita para conocer la casa en venta en el casco de Antigua Guatemala, cerca de San Francisco El Grande. Vi la ficha aquí: ${fichaUrl}`;
+      const shareText = `Mirá esta propiedad de Tierra Viva: ${fichaUrl}`;
+
+      document.getElementById("whatsappButton").href = `https://wa.me/${phone}?text=${encodeURIComponent(appointmentMessage)}`;
+      document.getElementById("shareWhatsappButton").href = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
+    }
+
+    renderThumbs();
+    updateWhatsAppLinks();
+  </script>
+</body>
+</html>
