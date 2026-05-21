@@ -107,10 +107,7 @@ a {
 }
 
 .navbtn,
-.fullscreen-btn,
-.lightbox-close,
-.lightbox-prev,
-.lightbox-next {
+.fullscreen-btn {
   border: 0;
   cursor: pointer;
   color: #fff;
@@ -469,75 +466,6 @@ h1 {
 .map-link:hover {
   background: var(--olive-light);
   border-color: var(--olive-light);
-}
-
-.lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(15, 13, 11, 0.92);
-  z-index: 1000;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-}
-
-.lightbox.open {
-  display: flex;
-}
-
-.lightbox img {
-  max-width: min(1100px, 100vw);
-  max-height: 100vh;
-  object-fit: contain;
-  border-radius: 0px;
-  box-shadow: none;
-}
-
-.lightbox-close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 44px;
-  height: 44px;
-  border-radius: 999px;
-  font-size: 32px;
-  font-family: sans-serif;
-  line-height: 1;
-  background: none;
-  color: #fff;
-}
-
-.lightbox-prev,
-.lightbox-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 48px;
-  height: 48px;
-  border-radius: 0;
-  font-size: 36px;
-  line-height: 1;
-}
-
-.lightbox-prev {
-  left: 0;
-}
-
-.lightbox-next {
-  right: 0;
-}
-
-.lightbox-caption {
-  position: absolute;
-  left: 50%;
-  bottom: 18px;
-  transform: translateX(-50%);
-  color: #fff;
-  font-size: 14px;
-  line-height: 1;
-  padding: 8px 10px;
-  background: rgba(15, 13, 11, 0.55);
 }
 
 @media (max-width: 920px) {

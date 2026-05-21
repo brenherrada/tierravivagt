@@ -6,6 +6,9 @@
   <title>Cabaña en renta · Las Macadamias | Tierra Viva Propiedades</title>
   <meta name="description" content="Cabaña de lujo en renta en San Miguel Dueñas, Las Macadamias, Antigua Guatemala. 3 dormitorios, mezanine, pérgola con jacuzzi, parqueos, lavandería, dormitorio de servicio y bodegas." />
   <link rel="stylesheet" href="css/tierra-viva.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/gallery.css">
 </head>
 
 <body class="property-page">
@@ -19,14 +22,9 @@
     <section class="layout">
       <div class="gallery-column">
         <div class="gallery-card">
-          <div class="main-photo">
-            <img id="mainImage" src="https://drive.google.com/thumbnail?id=12SDMjS7T66CqOo2rdw3PxSIj6scZFTf1&sz=w1600" alt="Foto real de la cabaña Las Macadamias 1" />
-            <button class="navbtn prev" onclick="prevImage()" aria-label="Foto anterior">‹</button>
-            <button class="navbtn next" onclick="nextImage()" aria-label="Foto siguiente">›</button>
-            <button class="fullscreen-btn" onclick="openLightbox()" aria-label="Ver foto en pantalla completa">Ver pantalla completa</button>
-          </div>
-
-          <div class="thumbs" id="thumbs"></div>
+          <div class="property-carousel owl-carousel" id="propertyCarousel" aria-label="Galería de fotos de la propiedad"></div>
+          <div class="gallery-count" id="galleryCount" aria-live="polite"></div>
+          <button class="fullscreen-btn" type="button" onclick="openGalleryFullscreen()" aria-label="Ver galería en pantalla completa">Ver pantalla completa</button>
         </div>
       </div>
 
@@ -108,14 +106,13 @@
     </section>
   </main>
 
-  <div class="lightbox" id="lightbox" onclick="closeLightboxOnBackdrop(event)">
-    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Cerrar pantalla completa">×</button>
-    <button class="lightbox-prev" onclick="prevLightboxImage()" aria-label="Foto anterior">‹</button>
-    <img id="lightboxImage" src="" alt="" />
-    <button class="lightbox-next" onclick="nextLightboxImage()" aria-label="Foto siguiente">›</button>
-    <div class="lightbox-caption" id="lightboxCaption"></div>
+  <div class="fullscreen-gallery" id="fullscreenGallery" onclick="closeFullscreenOnBackdrop(event)" aria-hidden="true">
+    <button class="fullscreen-close" type="button" onclick="closeGalleryFullscreen()" aria-label="Cerrar pantalla completa">×</button>
+    <div class="fullscreen-carousel owl-carousel" id="fullscreenCarousel" aria-label="Galería en pantalla completa"></div>
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script>
     const operationTitle = "cabaña en renta";
 
@@ -149,94 +146,109 @@
 
   
     let current = 0;
-    const mainImage = document.getElementById("mainImage");
-    const thumbs = document.getElementById("thumbs");
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImage = document.getElementById("lightboxImage");
-    const lightboxCaption = document.getElementById("lightboxCaption");
+    const hasMultiplePhotos = () => photos.length > 1;
 
-    function renderThumbs() {
-      thumbs.innerHTML = "";
+    function buildGallerySlides(container) {
+      container.innerHTML = "";
       photos.forEach((photo, index) => {
-        const button = document.createElement("button");
-        button.className = "thumb" + (index === current ? " active" : "");
-        button.setAttribute("aria-label", "Ver foto " + (index + 1));
-        button.type = "button";
-        button.onclick = () => setImage(index);
+        const slide = document.createElement("button");
+        slide.className = "gallery-slide";
+        slide.type = "button";
+        slide.setAttribute("aria-label", "Ver foto " + (index + 1) + " en pantalla completa");
+        slide.onclick = () => openGalleryFullscreen(index);
 
         const img = document.createElement("img");
         img.src = photo.src;
         img.alt = photo.alt;
-        img.loading = "lazy";
+        img.loading = index === 0 ? "eager" : "lazy";
 
-        button.appendChild(img);
-        thumbs.appendChild(button);
+        slide.appendChild(img);
+        container.appendChild(slide);
       });
     }
 
-    function setImage(index) {
+    function galleryOptions(isFullscreen = false) {
+      const multiple = hasMultiplePhotos();
+      return {
+        items: 1,
+        loop: multiple,
+        nav: multiple,
+        dots: multiple,
+        margin: 0,
+        smartSpeed: 420,
+        navSpeed: 420,
+        dotsSpeed: 420,
+        autoHeight: false,
+        mouseDrag: multiple,
+        touchDrag: multiple,
+        pullDrag: multiple,
+        navText: ["‹", "›"],
+        responsive: {
+          0: { items: 1, nav: multiple && isFullscreen, dots: multiple },
+          541: { items: 1, nav: multiple, dots: multiple }
+        }
+      };
+    }
+
+    function updateGalleryCounter(index = current) {
+      const counter = document.getElementById("galleryCount");
+      if (!counter) return;
+      counter.textContent = photos.length ? (index + 1) + " / " + photos.length + " " + (photos.length === 1 ? "foto" : "fotos") : "";
+    }
+
+    function refreshCarousel(selector, startIndex = 0, isFullscreen = false) {
+      const carousel = $(selector);
+      if (carousel.hasClass("owl-loaded")) {
+        carousel.trigger("destroy.owl.carousel");
+        carousel.removeClass("owl-loaded owl-hidden");
+        carousel.find(".owl-stage-outer").children().unwrap();
+      }
+      buildGallerySlides(carousel[0]);
+      carousel.owlCarousel(galleryOptions(isFullscreen));
+      carousel.trigger("to.owl.carousel", [startIndex, 0, true]);
+      carousel.off("changed.owl.carousel.gallery").on("changed.owl.carousel.gallery", function(event) {
+        current = event.relatedTarget.relative(event.item.index);
+        if (!isFullscreen) updateGalleryCounter(current);
+      });
+      if (!isFullscreen) updateGalleryCounter(startIndex);
+    }
+
+    function initPropertyGallery() {
+      refreshCarousel("#propertyCarousel", current, false);
+      document.querySelector(".gallery-card").classList.toggle("single-photo", !hasMultiplePhotos());
+    }
+
+    function openGalleryFullscreen(index = current) {
       current = index;
-      mainImage.style.opacity = 0;
-      setTimeout(() => {
-        mainImage.src = photos[current].src;
-        mainImage.alt = photos[current].alt;
-        mainImage.style.opacity = 1;
-        renderThumbs();
-      }, 160);
-    }
-
-    function prevImage() {
-      setImage((current - 1 + photos.length) % photos.length);
-    }
-
-    function nextImage() {
-      setImage((current + 1) % photos.length);
-    }
-
-    function updateLightboxImage() {
-      lightboxImage.src = photos[current].src;
-      lightboxImage.alt = photos[current].alt;
-      lightboxCaption.textContent = (current + 1) + " / " + photos.length;
-    }
-
-    function openLightbox() {
-      updateLightboxImage();
-      lightbox.classList.add("open");
+      const overlay = document.getElementById("fullscreenGallery");
+      overlay.classList.add("open");
+      overlay.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
+      refreshCarousel("#fullscreenCarousel", current, true);
     }
 
-    function closeLightbox() {
-      lightbox.classList.remove("open");
+    function closeGalleryFullscreen() {
+      const overlay = document.getElementById("fullscreenGallery");
+      overlay.classList.remove("open");
+      overlay.setAttribute("aria-hidden", "true");
       document.body.style.overflow = "";
+      $("#fullscreenCarousel").trigger("destroy.owl.carousel").removeClass("owl-loaded owl-hidden").empty();
     }
 
-    function closeLightboxOnBackdrop(event) {
-      if (event.target === lightbox) closeLightbox();
+    function closeFullscreenOnBackdrop(event) {
+      if (event.target.id === "fullscreenGallery") closeGalleryFullscreen();
     }
 
-    function prevLightboxImage() {
-      current = (current - 1 + photos.length) % photos.length;
-      mainImage.src = photos[current].src;
-      mainImage.alt = photos[current].alt;
-      renderThumbs();
-      updateLightboxImage();
-    }
+    document.addEventListener("keydown", (event) => {
+      const overlay = document.getElementById("fullscreenGallery");
+      if (!overlay.classList.contains("open")) return;
+      if (event.key === "Escape") closeGalleryFullscreen();
+    });
 
-    function nextLightboxImage() {
-      current = (current + 1) % photos.length;
-      mainImage.src = photos[current].src;
-      mainImage.alt = photos[current].alt;
-      renderThumbs();
-      updateLightboxImage();
-    }
     window.applyPropertyPhotos = function(nextPhotos) {
       photos = nextPhotos;
       current = 0;
-      if (photos.length) {
-        mainImage.src = photos[0].src;
-        mainImage.alt = photos[0].alt;
-      }
-      renderThumbs();
+      initPropertyGallery();
     };
 
     function toggleAccordion(id) {
@@ -256,14 +268,8 @@
       document.getElementById("shareWhatsappButton").href = `https://wa.me/?text=${encodeURIComponent(shareMessage)}`;
     }
 
-    document.addEventListener("keydown", (event) => {
-      if (!lightbox.classList.contains("open")) return;
-      if (event.key === "Escape") closeLightbox();
-      if (event.key === "ArrowLeft") prevLightboxImage();
-      if (event.key === "ArrowRight") nextLightboxImage();
-    });
 
-    renderThumbs();
+    initPropertyGallery();
     updateWhatsAppLinks();
   
 
