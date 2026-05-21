@@ -119,7 +119,7 @@
   <script>
     const operationTitle = "cabaña en venta";
 
-    const photos = [
+    let photos = [
       {
         src: "https://drive.google.com/thumbnail?id=12SDMjS7T66CqOo2rdw3PxSIj6scZFTf1&sz=w1600",
         alt: "Foto real de la cabaña Las Macadamias 1"
@@ -229,6 +229,15 @@
       renderThumbs();
       updateLightboxImage();
     }
+    window.applyPropertyPhotos = function(nextPhotos) {
+      photos = nextPhotos;
+      current = 0;
+      if (photos.length) {
+        mainImage.src = photos[0].src;
+        mainImage.alt = photos[0].alt;
+      }
+      renderThumbs();
+    };
 
     function toggleAccordion(id) {
       const accordion = document.getElementById(id);
@@ -259,5 +268,6 @@
   
 
   </script>
+  <script src="js/propiedades.js" defer></script>
 </body>
 </html>

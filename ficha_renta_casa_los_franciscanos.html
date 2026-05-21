@@ -121,7 +121,7 @@
   </div>
 
   <script>
-    const photos = [
+    let photos = [
       {
         src: "https://drive.google.com/thumbnail?id=11pbGbM57FiI2Oz3zlyMx9HKaHlm0-CoZ&sz=w1600",
         alt: "Foto real de la casa en Los Franciscanos 1"
@@ -250,6 +250,15 @@
       renderThumbs();
       updateLightboxImage();
     }
+    window.applyPropertyPhotos = function(nextPhotos) {
+      photos = nextPhotos;
+      current = 0;
+      if (photos.length) {
+        mainImage.src = photos[0].src;
+        mainImage.alt = photos[0].alt;
+      }
+      renderThumbs();
+    };
 
     function toggleAccordion(id) {
       const accordion = document.getElementById(id);
@@ -279,5 +288,6 @@
     renderThumbs();
     updateWhatsAppLinks();
   </script>
+  <script src="js/propiedades.js" defer></script>
 </body>
 </html>
