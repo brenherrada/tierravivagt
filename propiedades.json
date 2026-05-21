@@ -1,0 +1,345 @@
+{
+  "site": {
+    "name": "Tierra Viva Propiedades",
+    "location": "Antigua Guatemala y alrededores",
+    "contact": {
+      "whatsapp": "50232465215"
+    },
+    "logo": {
+      "url": "https://drive.google.com/thumbnail?id=1C4Ace_jIe699cX3PA90HdTJ1jbivd-mq&sz=w800",
+      "alt": "Tierra Viva Propiedades"
+    }
+  },
+  "source": {
+    "extracted_from": [
+      "index.html",
+      "ficha_renta_casa_hacienda_del_comendador.html",
+      "ficha_renta_casa_los_franciscanos.html",
+      "ficha_renta_cabana_las_macadamias.html",
+      "ficha_venta_cabana_las_macadamias.html",
+      "ficha_venta_casa_antigua_guatemala_sanfrancisco.html",
+      "netlify/database/migrations/0001_create_properties.sql"
+    ],
+    "notes": "Datos extraidos de contenido visible, metadatos, galerias, mapas y datos semilla existentes en el proyecto."
+  },
+  "properties": [
+    {
+      "slug": "renta-casa-hacienda-del-comendador",
+      "operation": "renta",
+      "property_type": "Casa",
+      "title": "Casa en renta",
+      "location": "Hacienda del Comendador, Antigua Guatemala",
+      "display_location": "Condominio Hacienda del Comendador",
+      "href": "ficha_renta_casa_hacienda_del_comendador.html",
+      "sort_order": 10,
+      "price": "US$1,450 / mes",
+      "summary": "Casa amueblada de dos niveles dentro de condominio residencial con amenidades.",
+      "description": "Casa amueblada de dos niveles, ubicada en un condominio privado con amenidades, seguridad y espacios recreativos. Ideal para familias o personas que buscan una opcion comoda y funcional cerca del centro de Antigua Guatemala.",
+      "meta_description": "Casa amueblada en renta en Condominio Hacienda del Comendador, Antigua Guatemala. 4 habitaciones, terraza, parqueo privado y amenidades del condominio.",
+      "features": [
+        "4 habitaciones",
+        "Sala",
+        "Comedor",
+        "Cocina equipada",
+        "Terraza con vista a las montanas",
+        "Area de lavanderia",
+        "Parqueo privado",
+        "Completamente amueblada"
+      ],
+      "amenities": [
+        "Casa club",
+        "Piscina",
+        "Cancha de tenis",
+        "Areas verdes y jardines",
+        "Area de juegos infantiles",
+        "Churrasqueras",
+        "Capilla ecumenica",
+        "Garita de seguridad"
+      ],
+      "conditions": [],
+      "badges": [],
+      "map": {
+        "label": "Condominio Hacienda del Comendador, Antigua Guatemala.",
+        "iframe_title": "Mapa Condominio Hacienda del Comendador",
+        "embed_url": "https://www.google.com/maps?q=Hacienda%20del%20Comendador%20Antigua%20Guatemala&output=embed",
+        "link_url": "https://maps.app.goo.gl/HNgrmxtre9Dbn9ca6"
+      },
+      "image": {
+        "url": "https://drive.google.com/thumbnail?id=1BjZQJqH1BuZ0klgmNuCTKSybDMMoQ1eJ&sz=w1600",
+        "alt": "Casa en renta en Hacienda del Comendador"
+      },
+      "photos": [
+        { "url": "https://drive.google.com/thumbnail?id=1BjZQJqH1BuZ0klgmNuCTKSybDMMoQ1eJ&sz=w1600", "alt": "Foto real de la casa en renta 1" },
+        { "url": "https://drive.google.com/thumbnail?id=1uZ7CiqrHfpmr8Z1G8_ENxo1XRJuQhbIj&sz=w1600", "alt": "Foto real de la casa en renta 2" },
+        { "url": "https://drive.google.com/thumbnail?id=1EsKT-vurLkdE3jCCopgcSLaLoMutaslh&sz=w1600", "alt": "Foto real de la casa en renta 3" },
+        { "url": "https://drive.google.com/thumbnail?id=1MQAxg0cilHjG31sJ_zfACgG_axWHF2TC&sz=w1600", "alt": "Foto real de la casa en renta 4" },
+        { "url": "https://drive.google.com/thumbnail?id=1fYiqgeKwpqEmj9_OBsK-MwlfgeGaVVsJ&sz=w1600", "alt": "Foto real de la casa en renta 5" },
+        { "url": "https://drive.google.com/thumbnail?id=1C4TR_A2yzdFyF5ItSOP9P0UyxAbUS3GL&sz=w1600", "alt": "Foto real de la casa en renta 6" },
+        { "url": "https://drive.google.com/thumbnail?id=1RZ_QbuGqZF94ut2DFw9LlZlPzaziDsqf&sz=w1600", "alt": "Foto real de la casa en renta 7" },
+        { "url": "https://drive.google.com/thumbnail?id=1gY0I6Le8OtuU9kCTLpWswpTb5ujy-QLA&sz=w1600", "alt": "Foto real de la casa en renta 8" },
+        { "url": "https://drive.google.com/thumbnail?id=1_yZz3eQb65toybI2AXvlvZMx4o5uW9iZ&sz=w1600", "alt": "Foto real de la casa en renta 9" },
+        { "url": "https://drive.google.com/thumbnail?id=1wTG9mWFVA3dj7fzzg20opuds8CRHFVYU&sz=w1600", "alt": "Foto real de la casa en renta 10" },
+        { "url": "https://drive.google.com/thumbnail?id=15C2JMsTvn_89OgyntepQAL8O7wgtLUUZ&sz=w1600", "alt": "Foto real de la casa en renta 11" },
+        { "url": "https://drive.google.com/thumbnail?id=1aQOlyPIZofz2mBdYijhR5MBuqy98HzDl&sz=w1600", "alt": "Foto real de la casa en renta 12" },
+        { "url": "https://drive.google.com/thumbnail?id=1W6S78pALyDHZnIZ4I2VruF3sYwHT5C3x&sz=w1600", "alt": "Foto real de la casa en renta 13" },
+        { "url": "https://drive.google.com/thumbnail?id=1VPpIsh-2MTINt3ivT8QBt0c9ytqZu2ya&sz=w1600", "alt": "Foto real de la casa en renta 14" },
+        { "url": "https://drive.google.com/thumbnail?id=1BA0zJPRSrrAVT5YDvpjsguEcLAnWYAzu&sz=w1600", "alt": "Foto real de la casa en renta 15" },
+        { "url": "https://drive.google.com/thumbnail?id=1xuaHxOgybd2VpefEcQAPaMO9PQhHdi-3&sz=w1600", "alt": "Foto real de la casa en renta 16" }
+      ]
+    },
+    {
+      "slug": "renta-casa-los-franciscanos",
+      "operation": "renta",
+      "property_type": "Casa",
+      "title": "Casa en renta",
+      "location": "Los Franciscanos Club Residencial",
+      "display_location": "Los Franciscanos Club Residencial",
+      "href": "ficha_renta_casa_los_franciscanos.html",
+      "sort_order": 20,
+      "price": "USD 1,700 / mes",
+      "summary": "Casa en residencial con seguridad, areas verdes y amenidades familiares.",
+      "description": "Ubicada a pocos minutos de Antigua Guatemala, dentro de un residencial con seguridad 24/7, amenidades familiares y espacios sociales. Incluye mantenimiento y linea blanca.",
+      "meta_description": "Casa en renta en Los Franciscanos Club Residencial, Antigua Guatemala. 3 habitaciones, jardin, chimenea, linea blanca incluida y amenidades del residencial.",
+      "features": [
+        "Sala y comedor",
+        "Cocina con cupula",
+        "3 habitaciones",
+        "Master con walk-in closet y bano",
+        "2 habitaciones secundarias con bano privado",
+        "Bano de visitas",
+        "Jardin",
+        "Chimenea",
+        "Linea blanca incluida",
+        "1 parqueo"
+      ],
+      "amenities": [
+        "Casa club",
+        "Piscina",
+        "Gimnasio",
+        "Canchas deportivas",
+        "Areas verdes",
+        "Kids club",
+        "Parque para perros"
+      ],
+      "conditions": [
+        "Incluye mantenimiento",
+        "Linea blanca incluida"
+      ],
+      "badges": [],
+      "map": {
+        "label": "Los Franciscanos Club Residencial, Antigua Guatemala.",
+        "iframe_title": "Mapa Los Franciscanos Club Residencial",
+        "embed_url": "https://www.google.com/maps?q=Los%20Franciscanos%20Club%20Residencial%20Antigua%20Guatemala&output=embed",
+        "link_url": "https://maps.app.goo.gl/yAECiNHYX8dgq9Ua7"
+      },
+      "image": {
+        "url": "https://drive.google.com/thumbnail?id=11pbGbM57FiI2Oz3zlyMx9HKaHlm0-CoZ&sz=w1600",
+        "alt": "Casa en renta en Los Franciscanos Club Residencial"
+      },
+      "photos": [
+        { "url": "https://drive.google.com/thumbnail?id=11pbGbM57FiI2Oz3zlyMx9HKaHlm0-CoZ&sz=w1600", "alt": "Foto real de la casa en Los Franciscanos 1" },
+        { "url": "https://drive.google.com/thumbnail?id=1kARnhCEmu0YP0OzctTED4MbZ_RXU0GqX&sz=w1600", "alt": "Foto real de la casa en Los Franciscanos 2" },
+        { "url": "https://drive.google.com/thumbnail?id=1KNWWqA4SvYbqS-K9Z0Ds9VIs8wumImKo&sz=w1600", "alt": "Foto real de la casa en Los Franciscanos 3" },
+        { "url": "https://drive.google.com/thumbnail?id=1PRkmLWGvEuWwtEqMg3vm18aqg6H0g_vh&sz=w1600", "alt": "Foto real de la casa en Los Franciscanos 4" },
+        { "url": "https://drive.google.com/thumbnail?id=1BbtrDgsyLwAixNSczXY9YcIPpQ4DN51g&sz=w1600", "alt": "Foto real de la casa en Los Franciscanos 5" },
+        { "url": "https://drive.google.com/thumbnail?id=14WgHmb7xD6T1u0VaQOgMejFPcoF1grLz&sz=w1600", "alt": "Foto real de la casa en Los Franciscanos 6" },
+        { "url": "https://drive.google.com/thumbnail?id=1fugGaI2WQvp0MA1462IMJ1BHToy9DwMj&sz=w1600", "alt": "Foto real de la casa en Los Franciscanos 7" },
+        { "url": "https://drive.google.com/thumbnail?id=1uhNZNBjP7iiWqvOHclcCbysKyAAcHwcu&sz=w1600", "alt": "Foto real de la casa en Los Franciscanos 8" },
+        { "url": "https://drive.google.com/thumbnail?id=1m1HJQuszf7jDXlgpa8uvbLbZDp6R9psc&sz=w1600", "alt": "Foto real de la casa en Los Franciscanos 9" },
+        { "url": "https://drive.google.com/thumbnail?id=12SU2InjEGdf7-pDK9JNoKre53wdNTi99&sz=w1600", "alt": "Foto real de la casa en Los Franciscanos 10" },
+        { "url": "https://drive.google.com/thumbnail?id=1E0KQc-dsuYOtHdBDQXrOWpSKFxxZ5yfp&sz=w1600", "alt": "Foto real de la casa en Los Franciscanos 11" }
+      ]
+    },
+    {
+      "slug": "renta-cabana-las-macadamias",
+      "operation": "renta",
+      "property_type": "Cabana",
+      "title": "Cabana en renta",
+      "location": "San Miguel Duenas, Las Macadamias",
+      "display_location": "San Miguel Duenas, Las Macadamias",
+      "href": "ficha_renta_cabana_las_macadamias.html",
+      "sort_order": 30,
+      "price": "USD 1,700 / mes",
+      "summary": "Cabana de lujo en entorno natural, con pergola, jacuzzi y espacios funcionales.",
+      "description": "Cabana de lujo ubicada en San Miguel Duenas, Las Macadamias, con 550.30 m2 de terreno y 210 m2 de construccion. Ofrece espacios comodos, areas exteriores funcionales y una distribucion practica para disfrutar naturaleza y comodidad cerca de Antigua Guatemala.",
+      "meta_description": "Cabana de lujo en renta en San Miguel Duenas, Las Macadamias, Antigua Guatemala. 3 dormitorios, mezanine, pergola con jacuzzi, parqueos, lavanderia, dormitorio de servicio y bodegas.",
+      "features": [
+        "550.30 m2 de terreno",
+        "210 m2 de construccion",
+        "3 dormitorios en primer nivel",
+        "3 banos completos",
+        "Sala familiar",
+        "Mezanine con bano completo",
+        "Pergola con jacuzzi",
+        "Bano completo exterior",
+        "2 parqueos privados",
+        "Area de lavanderia",
+        "Dormitorio de servicio",
+        "3 bodeguitas"
+      ],
+      "amenities": [],
+      "conditions": [
+        "Renta mensual",
+        "Consultar disponibilidad"
+      ],
+      "badges": [],
+      "map": {
+        "label": "San Miguel Duenas, Las Macadamias, Antigua Guatemala.",
+        "iframe_title": "Mapa Las Macadamias",
+        "embed_url": "https://www.google.com/maps?q=San%20Miguel%20Due%C3%B1as%20Las%20Macadamias%20Antigua%20Guatemala&output=embed",
+        "link_url": "https://www.google.com/maps/search/?api=1&query=San%20Miguel%20Due%C3%B1as%2C%20Las%20Macadamias%2C%20Antigua%20Guatemala"
+      },
+      "image": {
+        "url": "https://drive.google.com/thumbnail?id=12SDMjS7T66CqOo2rdw3PxSIj6scZFTf1&sz=w1600",
+        "alt": "Cabana en renta en Las Macadamias"
+      },
+      "photos": [
+        { "url": "https://drive.google.com/thumbnail?id=12SDMjS7T66CqOo2rdw3PxSIj6scZFTf1&sz=w1600", "alt": "Foto real de la cabana Las Macadamias 1" },
+        { "url": "https://drive.google.com/thumbnail?id=1WwCj2CaYuK0MkUJHVMRrWAu4dgg2mgU-&sz=w1600", "alt": "Foto real de la cabana Las Macadamias 2" },
+        { "url": "https://drive.google.com/thumbnail?id=1jrM0Yo7U-IejTGkv32QLXCllB8MzU911&sz=w1600", "alt": "Foto real de la cabana Las Macadamias 3" },
+        { "url": "https://drive.google.com/thumbnail?id=1Rx8WXpbQButx0HZVBQJrmje65jCaw87_&sz=w1600", "alt": "Foto real de la cabana Las Macadamias 4" },
+        { "url": "https://drive.google.com/thumbnail?id=1vYf0DXbZ121me6apVjDo0VIHjoiO7Yf8&sz=w1600", "alt": "Foto real de la cabana Las Macadamias 5" },
+        { "url": "https://drive.google.com/thumbnail?id=1uGdk5OeBbJPCr03qV1n_hobgbRNyMMr5&sz=w1600", "alt": "Foto real de la cabana Las Macadamias 6" }
+      ]
+    },
+    {
+      "slug": "venta-cabana-las-macadamias",
+      "operation": "venta",
+      "property_type": "Cabana",
+      "title": "Cabana en venta",
+      "location": "San Miguel Duenas, Las Macadamias",
+      "display_location": "San Miguel Duenas, Las Macadamias",
+      "href": "ficha_venta_cabana_las_macadamias.html",
+      "sort_order": 40,
+      "price": "USD 395,000",
+      "summary": "Cabana de lujo con 550.30 m2 de terreno y 210 m2 de construccion.",
+      "description": "Cabana de lujo ubicada en San Miguel Duenas, Las Macadamias, con 550.30 m2 de terreno y 210 m2 de construccion. Disponible para venta sin muebles, con pago contado, sin hipoteca y precio no negociable.",
+      "meta_description": "Cabana de lujo en venta en San Miguel Duenas, Las Macadamias, Antigua Guatemala. 3 dormitorios, mezanine, pergola con jacuzzi, parqueos, lavanderia, dormitorio de servicio y bodegas.",
+      "features": [
+        "550.30 m2 de terreno",
+        "210 m2 de construccion",
+        "3 dormitorios en primer nivel",
+        "3 banos completos",
+        "Sala familiar",
+        "Mezanine con bano completo",
+        "Pergola con jacuzzi",
+        "Bano completo exterior",
+        "2 parqueos privados",
+        "Area de lavanderia",
+        "Dormitorio de servicio",
+        "3 bodeguitas"
+      ],
+      "amenities": [],
+      "conditions": [
+        "Venta sin muebles",
+        "Pago contado",
+        "No aplica hipoteca",
+        "Precio no negociable"
+      ],
+      "badges": [],
+      "map": {
+        "label": "San Miguel Duenas, Las Macadamias, Antigua Guatemala.",
+        "iframe_title": "Mapa Las Macadamias",
+        "embed_url": "https://www.google.com/maps?q=San%20Miguel%20Due%C3%B1as%20Las%20Macadamias%20Antigua%20Guatemala&output=embed",
+        "link_url": "https://www.google.com/maps/search/?api=1&query=San%20Miguel%20Due%C3%B1as%2C%20Las%20Macadamias%2C%20Antigua%20Guatemala"
+      },
+      "image": {
+        "url": "https://drive.google.com/thumbnail?id=12SDMjS7T66CqOo2rdw3PxSIj6scZFTf1&sz=w1600",
+        "alt": "Cabana en venta en Las Macadamias"
+      },
+      "photos": [
+        { "url": "https://drive.google.com/thumbnail?id=12SDMjS7T66CqOo2rdw3PxSIj6scZFTf1&sz=w1600", "alt": "Foto real de la cabana Las Macadamias 1" },
+        { "url": "https://drive.google.com/thumbnail?id=1WwCj2CaYuK0MkUJHVMRrWAu4dgg2mgU-&sz=w1600", "alt": "Foto real de la cabana Las Macadamias 2" },
+        { "url": "https://drive.google.com/thumbnail?id=1jrM0Yo7U-IejTGkv32QLXCllB8MzU911&sz=w1600", "alt": "Foto real de la cabana Las Macadamias 3" },
+        { "url": "https://drive.google.com/thumbnail?id=1Rx8WXpbQButx0HZVBQJrmje65jCaw87_&sz=w1600", "alt": "Foto real de la cabana Las Macadamias 4" },
+        { "url": "https://drive.google.com/thumbnail?id=1vYf0DXbZ121me6apVjDo0VIHjoiO7Yf8&sz=w1600", "alt": "Foto real de la cabana Las Macadamias 5" },
+        { "url": "https://drive.google.com/thumbnail?id=1uGdk5OeBbJPCr03qV1n_hobgbRNyMMr5&sz=w1600", "alt": "Foto real de la cabana Las Macadamias 6" }
+      ]
+    },
+    {
+      "slug": "venta-casa-antigua-guatemala-sanfrancisco",
+      "operation": "venta",
+      "property_type": "Casa",
+      "title": "Casa en venta",
+      "location": "Casco de Antigua Guatemala",
+      "display_location": "Casco de Antigua Guatemala",
+      "href": "ficha_venta_casa_antigua_guatemala_sanfrancisco.html",
+      "sort_order": 50,
+      "price": "Q3,700,000",
+      "summary": "Casa ubicada en el casco de Antigua Guatemala, cerca de San Francisco El Grande.",
+      "description": "Casa en venta ubicada en el casco de Antigua Guatemala, a solo 100 metros de la Iglesia de San Francisco El Grande. La propiedad cuenta con patio central con fuente, techos de doble altura y habitaciones distribuidas en dos niveles. Ideal para uso comercial.",
+      "meta_description": "Casa en venta en el casco de Antigua Guatemala, a 100 metros de la Iglesia de San Francisco El Grande. Precio Q3,700,000.",
+      "features": [
+        "4 habitaciones en total",
+        "2 banos completos",
+        "Sala con techos de doble altura",
+        "Comedor",
+        "Cocina con gabinetes",
+        "Patio central con fuente",
+        "Area de lavanderia",
+        "Sala familiar",
+        "Techos de madera en segundo nivel",
+        "Ubicacion a orilla de calle"
+      ],
+      "distribution": [
+        {
+          "level": "Primer nivel",
+          "items": [
+            "Sala con techos de doble altura",
+            "Comedor",
+            "Cocina con gabinetes",
+            "Patio central con fuente",
+            "2 habitaciones",
+            "1 bano completo"
+          ]
+        },
+        {
+          "level": "Segundo nivel",
+          "items": [
+            "Area de lavanderia",
+            "2 habitaciones con techos de madera",
+            "Sala familiar",
+            "1 bano completo"
+          ]
+        }
+      ],
+      "amenities": [],
+      "conditions": [],
+      "badges": [
+        "Ultimo precio",
+        "Uso comercial"
+      ],
+      "map": {
+        "label": "Casco de Antigua Guatemala, a 100 metros de la Iglesia de San Francisco El Grande.",
+        "iframe_title": "Mapa Casco de Antigua Guatemala",
+        "embed_url": "https://www.google.com/maps?q=Iglesia%20San%20Francisco%20El%20Grande%20Antigua%20Guatemala&output=embed",
+        "link_url": "https://maps.app.goo.gl/UVTzARB1b6sM8DP86"
+      },
+      "image": {
+        "url": "https://drive.google.com/thumbnail?id=12y2unavM4KN9XZ6lQeJhJQ_5kPfqbeLM&sz=w1600",
+        "alt": "Casa en venta en La Antigua Guatemala"
+      },
+      "photos": [
+        { "url": "https://drive.google.com/thumbnail?id=12y2unavM4KN9XZ6lQeJhJQ_5kPfqbeLM&sz=w1600", "alt": "Foto real de la casa en venta en Antigua Guatemala 1" },
+        { "url": "https://drive.google.com/thumbnail?id=1EbaVyHivkZOzpx-1-h5f3lk1JJHKi6Lp&sz=w1600", "alt": "Foto real de la casa en venta en Antigua Guatemala 2" },
+        { "url": "https://drive.google.com/thumbnail?id=1FNqltJQEvMMvmHcepUWalcDEM7umWdfD&sz=w1600", "alt": "Foto real de la casa en venta en Antigua Guatemala 3" },
+        { "url": "https://drive.google.com/thumbnail?id=1pGYtlhomorMVGiQ0xrdI2O9StmRQ4F3f&sz=w1600", "alt": "Foto real de la casa en venta en Antigua Guatemala 4" },
+        { "url": "https://drive.google.com/thumbnail?id=1nCmsTA0zz-pNGVMbJZRe3tOb29klVFDX&sz=w1600", "alt": "Foto real de la casa en venta en Antigua Guatemala 5" },
+        { "url": "https://drive.google.com/thumbnail?id=1BlSGbaPVyXQn16IzWuWcVdSOXZqUGm7P&sz=w1600", "alt": "Foto real de la casa en venta en Antigua Guatemala 6" },
+        { "url": "https://drive.google.com/thumbnail?id=155r3xb341fE9kzoJsH-MBTzZnNAYiTcb&sz=w1600", "alt": "Foto real de la casa en venta en Antigua Guatemala 7" },
+        { "url": "https://drive.google.com/thumbnail?id=1RMBZY4guxAnz5C6FkLhuCCGB1MLo9WLT&sz=w1600", "alt": "Foto real de la casa en venta en Antigua Guatemala 8" },
+        { "url": "https://drive.google.com/thumbnail?id=1hC5WBTlvtx8pByYOsbE0ToxhF4pJACQQ&sz=w1600", "alt": "Foto real de la casa en venta en Antigua Guatemala 9" },
+        { "url": "https://drive.google.com/thumbnail?id=15o0ItnvCq1wTFH6_i8TyZzfZIYNJ2PWN&sz=w1600", "alt": "Foto real de la casa en venta en Antigua Guatemala 10" },
+        { "url": "https://drive.google.com/thumbnail?id=15vVvhV8b59obY38bru-rKENiesmrjCvy&sz=w1600", "alt": "Foto real de la casa en venta en Antigua Guatemala 11" },
+        { "url": "https://drive.google.com/thumbnail?id=1wmTHvjAPNDwK5Ab0K0PWg2nbkjPOGFJA&sz=w1600", "alt": "Foto real de la casa en venta en Antigua Guatemala 12" },
+        { "url": "https://drive.google.com/thumbnail?id=1nAY0TKWYSEngVpRiIr6QHX4M3R9ly_7w&sz=w1600", "alt": "Foto real de la casa en venta en Antigua Guatemala 13" },
+        { "url": "https://drive.google.com/thumbnail?id=1zpNygSJz6x6S-C7a7FPu7-EChYorKfvl&sz=w1600", "alt": "Foto real de la casa en venta en Antigua Guatemala 14" },
+        { "url": "https://drive.google.com/thumbnail?id=1SkrIkxUkxH0NGaCGga2CKwo0puiZQCMN&sz=w1600", "alt": "Foto real de la casa en venta en Antigua Guatemala 15" },
+        { "url": "https://drive.google.com/thumbnail?id=1P5AFArCZIn0GfXHkVR6pxX94wvNOHwtE&sz=w1600", "alt": "Foto real de la casa en venta en Antigua Guatemala 16" },
+        { "url": "https://drive.google.com/thumbnail?id=1zpBYHeIIGofs2nGQHLhvv4ePdNOSutBo&sz=w1600", "alt": "Foto real de la casa en venta en Antigua Guatemala 17" },
+        { "url": "https://drive.google.com/thumbnail?id=1kLYOLoc1g--gjkQtmcoMifv3c-d32dFs&sz=w1600", "alt": "Foto real de la casa en venta en Antigua Guatemala 18" },
+        { "url": "https://drive.google.com/thumbnail?id=1FBr9hhlnUmuL8zcOMUNXO1hDnD42i0Z7&sz=w1600", "alt": "Foto real de la casa en venta en Antigua Guatemala 19" }
+      ]
+    }
+  ]
+}
