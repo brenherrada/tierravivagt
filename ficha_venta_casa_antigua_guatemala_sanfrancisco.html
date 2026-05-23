@@ -13,9 +13,17 @@
 </head>
 
 <body class="property-page">
+  <div id="global-notice"></div>
+  <script>
+    fetch('./components/global-notice.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('global-notice').innerHTML = html;
+      });
+  </script>
   <header class="site-header">
     <a href="index.html" class="brand-link" aria-label="Ir al inicio de Tierra Viva">
-      <img src="https://drive.google.com/thumbnail?id=1C4Ace_jIe699cX3PA90HdTJ1jbivd-mq&sz=w800" alt="Tierra Viva Propiedades">
+      <img src="images/logo.png" alt="Tierra Viva Propiedades">
     </a>
   </header>
 
@@ -56,8 +64,8 @@
           <a class="secondary-cta" id="shareWhatsappButton" href="#" target="_blank" rel="noopener">Compartir por WhatsApp</a>
         </div>
 
-        <div class="accordion open" id="featuresAccordion">
-          <button class="accordion-toggle" type="button" onclick="toggleAccordion('featuresAccordion')" aria-expanded="true">
+        <div class="accordion" id="featuresAccordion">
+          <button class="accordion-toggle" type="button" onclick="toggleAccordion('featuresAccordion')" aria-expanded="false">
             <h2>Características</h2>
             <span class="accordion-icon">+</span>
           </button>
@@ -122,7 +130,7 @@
           src="https://www.google.com/maps?q=Iglesia%20San%20Francisco%20El%20Grande%20Antigua%20Guatemala&output=embed">
         </iframe>
         <div class="map-actions">
-          <a class="map-link" href="https://maps.app.goo.gl/UVTzARB1b6sM8DP86" target="_blank" rel="noopener">
+          <a class="map-link secondary-cta" href="https://maps.app.goo.gl/UVTzARB1b6sM8DP86" target="_blank" rel="noopener">
             Abrir ubicación en Google Maps
           </a>
         </div>
@@ -130,9 +138,14 @@
     </section>
   </main>
 
-  <footer class="property-footer">
-    <p class="construction-note">Sitio web en construcción. La información puede variar de un día al otro.</p>
-  </footer>
+  <footer class="page-footer" id="footer"></footer>
+  <script>
+    fetch('./components/footer.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('footer').innerHTML = html;
+      });
+  </script>
 
   <div class="fullscreen-gallery" id="fullscreenGallery" onclick="closeFullscreenOnBackdrop(event)" aria-hidden="true">
     <button class="fullscreen-close" type="button" onclick="closeGalleryFullscreen()" aria-label="Cerrar pantalla completa">×</button>
@@ -142,84 +155,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script>
-    let photos = [
-      {
-        src: "https://drive.google.com/thumbnail?id=12y2unavM4KN9XZ6lQeJhJQ_5kPfqbeLM&sz=w1600",
-        alt: "Foto real de la casa en venta en Antigua Guatemala 1"
-      },
-      {
-        src: "https://drive.google.com/thumbnail?id=1EbaVyHivkZOzpx-1-h5f3lk1JJHKi6Lp&sz=w1600",
-        alt: "Foto real de la casa en venta en Antigua Guatemala 2"
-      },
-      {
-        src: "https://drive.google.com/thumbnail?id=1FNqltJQEvMMvmHcepUWalcDEM7umWdfD&sz=w1600",
-        alt: "Foto real de la casa en venta en Antigua Guatemala 3"
-      },
-      {
-        src: "https://drive.google.com/thumbnail?id=1pGYtlhomorMVGiQ0xrdI2O9StmRQ4F3f&sz=w1600",
-        alt: "Foto real de la casa en venta en Antigua Guatemala 4"
-      },
-      {
-        src: "https://drive.google.com/thumbnail?id=1nCmsTA0zz-pNGVMbJZRe3tOb29klVFDX&sz=w1600",
-        alt: "Foto real de la casa en venta en Antigua Guatemala 5"
-      },
-      {
-        src: "https://drive.google.com/thumbnail?id=1BlSGbaPVyXQn16IzWuWcVdSOXZqUGm7P&sz=w1600",
-        alt: "Foto real de la casa en venta en Antigua Guatemala 6"
-      },
-      {
-        src: "https://drive.google.com/thumbnail?id=155r3xb341fE9kzoJsH-MBTzZnNAYiTcb&sz=w1600",
-        alt: "Foto real de la casa en venta en Antigua Guatemala 7"
-      },
-      {
-        src: "https://drive.google.com/thumbnail?id=1RMBZY4guxAnz5C6FkLhuCCGB1MLo9WLT&sz=w1600",
-        alt: "Foto real de la casa en venta en Antigua Guatemala 8"
-      },
-      {
-        src: "https://drive.google.com/thumbnail?id=1hC5WBTlvtx8pByYOsbE0ToxhF4pJACQQ&sz=w1600",
-        alt: "Foto real de la casa en venta en Antigua Guatemala 9"
-      },
-      {
-        src: "https://drive.google.com/thumbnail?id=15o0ItnvCq1wTFH6_i8TyZzfZIYNJ2PWN&sz=w1600",
-        alt: "Foto real de la casa en venta en Antigua Guatemala 10"
-      },
-      {
-        src: "https://drive.google.com/thumbnail?id=15vVvhV8b59obY38bru-rKENiesmrjCvy&sz=w1600",
-        alt: "Foto real de la casa en venta en Antigua Guatemala 11"
-      },
-      {
-        src: "https://drive.google.com/thumbnail?id=1wmTHvjAPNDwK5Ab0K0PWg2nbkjPOGFJA&sz=w1600",
-        alt: "Foto real de la casa en venta en Antigua Guatemala 12"
-      },
-      {
-        src: "https://drive.google.com/thumbnail?id=1nAY0TKWYSEngVpRiIr6QHX4M3R9ly_7w&sz=w1600",
-        alt: "Foto real de la casa en venta en Antigua Guatemala 13"
-      },
-      {
-        src: "https://drive.google.com/thumbnail?id=1zpNygSJz6x6S-C7a7FPu7-EChYorKfvl&sz=w1600",
-        alt: "Foto real de la casa en venta en Antigua Guatemala 14"
-      },
-      {
-        src: "https://drive.google.com/thumbnail?id=1SkrIkxUkxH0NGaCGga2CKwo0puiZQCMN&sz=w1600",
-        alt: "Foto real de la casa en venta en Antigua Guatemala 15"
-      },
-      {
-        src: "https://drive.google.com/thumbnail?id=1P5AFArCZIn0GfXHkVR6pxX94wvNOHwtE&sz=w1600",
-        alt: "Foto real de la casa en venta en Antigua Guatemala 16"
-      },
-      {
-        src: "https://drive.google.com/thumbnail?id=1zpBYHeIIGofs2nGQHLhvv4ePdNOSutBo&sz=w1600",
-        alt: "Foto real de la casa en venta en Antigua Guatemala 17"
-      },
-      {
-        src: "https://drive.google.com/thumbnail?id=1kLYOLoc1g--gjkQtmcoMifv3c-d32dFs&sz=w1600",
-        alt: "Foto real de la casa en venta en Antigua Guatemala 18"
-      },
-      {
-        src: "https://drive.google.com/thumbnail?id=1FBr9hhlnUmuL8zcOMUNXO1hDnD42i0Z7&sz=w1600",
-        alt: "Foto real de la casa en venta en Antigua Guatemala 19"
-      }
-    ];
+    let photos = [];
 
     let current = 0;
     const hasMultiplePhotos = () => photos.length > 1;
@@ -258,7 +194,7 @@
         mouseDrag: multiple,
         touchDrag: multiple,
         pullDrag: multiple,
-        navText: ["‹", "›"],
+        navText: ["←", "→"],
         responsive: {
           0: { items: 1, nav: multiple && isFullscreen, dots: multiple },
           541: { items: 1, nav: multiple, dots: multiple }

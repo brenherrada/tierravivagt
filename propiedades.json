@@ -6,7 +6,7 @@
       "whatsapp": "50232465215"
     },
     "logo": {
-      "url": "https://drive.google.com/thumbnail?id=1C4Ace_jIe699cX3PA90HdTJ1jbivd-mq&sz=w800",
+      "url": "images/logo.png",
       "alt": "Tierra Viva Propiedades"
     }
   },
@@ -17,8 +17,7 @@
       "ficha_renta_casa_los_franciscanos.html",
       "ficha_renta_cabana_las_macadamias.html",
       "ficha_venta_cabana_las_macadamias.html",
-      "ficha_venta_casa_antigua_guatemala_sanfrancisco.html",
-      "netlify/database/migrations/0001_create_properties.sql"
+      "ficha_venta_casa_antigua_guatemala_sanfrancisco.html"
     ],
     "notes": "Datos extraidos de contenido visible, metadatos, galerias, mapas y datos semilla existentes en el proyecto."
   },
@@ -96,7 +95,7 @@
       "display_location": "Los Franciscanos Club Residencial",
       "href": "ficha_renta_casa_los_franciscanos.html",
       "sort_order": 20,
-      "price": "USD 1,700 / mes",
+      "price": "USD 2,100 / mes",
       "summary": "Casa en residencial con seguridad, areas verdes y amenidades familiares.",
       "description": "Ubicada a pocos minutos de Antigua Guatemala, dentro de un residencial con seguridad 24/7, amenidades familiares y espacios sociales. Incluye mantenimiento y linea blanca.",
       "meta_description": "Casa en renta en Los Franciscanos Club Residencial, Antigua Guatemala. 3 habitaciones, jardin, chimenea, linea blanca incluida y amenidades del residencial.",

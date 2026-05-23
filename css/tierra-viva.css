@@ -1,15 +1,17 @@
 /* Tierra Viva Propiedades - estilos globales */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400..700&family=Manrope:wght@300..800&display=swap');
 :root {
   --bg: #f4f2ed;
   --card: #ffffff;
   --text: #241b14;
   --muted: #756b61;
-  --line: #e8ded1;
+  --line: #e6dfd1;
   --terracotta: #b85f43;
   --terracotta-dark: #9d4c37;
-  --olive: #66704b;
-  --olive-light: #818b62;
+  --olive: #6A8278;
+  --olive-light: #7d948a;
   --shadow: rgba(36, 27, 20, 0.08);
+  --global-notice-bg: #928C7C;
 }
 
 * {
@@ -22,7 +24,7 @@ html {
 
 body {
   margin: 0;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: 'Manrope', sans-serif;
   color: var(--text);
   background: var(--bg);
   line-height: 1.5;
@@ -217,8 +219,8 @@ a {
 
 h1 {
   margin: 0 0 10px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(32px, 4vw, 48px);
+  font-family: 'Lora', Georgia, serif;
+  font-size: clamp(28px, 4vw, 40px);
   line-height: 1.02;
   letter-spacing: -0.03em;
   font-weight: 500;
@@ -230,13 +232,15 @@ h1 {
   align-items: center;
   width: fit-content;
   margin: 4px 0 16px;
-  padding: 5px 14px;
+  padding: 10px 14px;
   border-radius: 999px;
   background: rgba(184, 95, 67, 0.11);
   color: var(--terracotta-dark);
   font-weight: 700;
   font-size: 15px;
   letter-spacing: .01em;
+  font-family: "Manrope", sans-serif;
+  line-height: 1;
 }
 
 .price-row {
@@ -258,6 +262,10 @@ h1 {
   gap: 8px;
 }
 
+.property-badges:has(.property-badge){
+  margin-top: 10px;  
+}
+
 .property-badge {
   display: inline-flex;
   align-items: center;
@@ -269,7 +277,7 @@ h1 {
   background: rgba(102, 112, 75, .08);
   font-size: 12px;
   font-weight: normal;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: 'Lora', Georgia, serif;
   line-height: 1;
 }
 
@@ -297,7 +305,7 @@ h1 {
   padding: 0 18px;
   border-radius: 999px;
   text-decoration: none;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: 'Lora', Georgia, serif;
   font-weight: 700;
   font-size: 14px;
   transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
@@ -356,7 +364,7 @@ h1 {
 
 .accordion-toggle h2 {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: 18px;
   line-height: 1;
   font-weight: 500;
@@ -428,7 +436,7 @@ h1 {
 
 .map-panel h2 {
   margin: 0 0 6px;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: 'Lora', Georgia, serif;
   font-size: 27px;
   line-height: 1.1;
   font-weight: 500;
@@ -454,18 +462,6 @@ h1 {
   padding: 14px;
   display: flex;
   justify-content: flex-start;
-}
-
-.map-link {
-  min-height: 42px;
-  color: #fff;
-  background: var(--olive);
-  border: 1px solid var(--olive);
-}
-
-.map-link:hover {
-  background: var(--olive-light);
-  border-color: var(--olive-light);
 }
 
 @media (max-width: 920px) {
@@ -570,28 +566,24 @@ scroll-behavior: smooth;
 
 body.index-page {
 margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: 'Lora', Georgia, serif;
   background: var(--bg);
   color: var(--text);
   min-height: 100vh;
   line-height: normal;
 }
 
-body.index-page a {
-color: inherit;
-}
-
 body.index-page .page {
-max-width: 1440px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 28px 18px 48px;
 }
 
 body.index-page .topbar {
-display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 26px;
+  padding: 15px 0;
   width: 100%;
 }
 
@@ -602,19 +594,10 @@ display: inline-flex;
   text-decoration: none;
 }
 
-body.index-page .brand-logo {
-display: block;
-  width: 92px;
-  max-width: 92px;
-  height: auto;
-  object-fit: contain;
-}
-
 body.index-page .hero {
 position: relative;
-  width: 100vw;
+  width: 100%;
   min-height: clamp(210px, 25vw, 340px);
-  margin: 0 calc(50% - 50vw) 28px;
   padding: clamp(32px, 5vw, 58px) 18px;
   display: flex;
   align-items: center;
@@ -634,7 +617,7 @@ width: min(1120px, calc(100% - 36px));
 
 body.index-page .eyebrow {
 margin: 0 0 10px;
-  font-family: Arial, sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: .18em;
@@ -657,8 +640,8 @@ display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 14px;
-  margin: 26px 0 18px;
-  font-family: Arial, sans-serif;
+  margin: 0 0 18px;
+  font-family: "Manrope", sans-serif;
   color: var(--muted);
 }
 
@@ -750,16 +733,15 @@ display: flex;
   align-items: baseline;
   gap: 3px;
   margin: 0 0 9px;
-  font-family: Arial, sans-serif;
+  font-family: "Manrope", sans-serif;
   color: var(--muted);
-  font-size: 13px;
-  line-height: 1.35;
+  font-size: 12px;
+  line-height: 1.2;
 }
 
 body.index-page .location svg {
 width: 15px;
   height: 15px;
-  color: var(--terracotta);
   flex: 0 0 auto;
 }
 
@@ -774,23 +756,18 @@ margin: 0;
 
 body.index-page .summary {
 margin: 10px 0 0;
-  font-family: Arial, sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 14px;
   color: var(--muted);
-  line-height: 1.5;
+  line-height: 1.2;
 }
 
 body.index-page .price {
 display: inline-flex;
   align-self: flex-start;
   margin: 16px 0 0;
-  background: var(--terracotta);
-  color: white;
   border-radius: 999px;
   padding: 10px 14px;
-  font-family: Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 800;
 }
 
 body.index-page .card-badges {
@@ -798,7 +775,7 @@ display: flex;
   flex-wrap: wrap;
   gap: 5px;
   margin-top: 10px;
-  font-family: Arial, sans-serif;
+  font-family: "Manrope", sans-serif;
 }
 
 body.index-page .property-badge {
@@ -818,7 +795,7 @@ display: inline-flex;
 body.index-page .open-link {
 margin-top: auto;
   padding-top: 18px;
-  font-family: Arial, sans-serif;
+  font-family: "Manrope", sans-serif;
   color: var(--olive);
   font-size: 14px;
   font-weight: 800;
@@ -833,14 +810,14 @@ body.index-page .property-card:hover .open-link span {
 transform: translateX(4px);
 }
 
-body.index-page .footer {
+.page-footer {
 margin-top: 34px;
-  padding: 22px 0 0;
+  padding: 22px;
   border-top: 1px solid rgba(117,107,97,.16);
   display: flex;
   justify-content: space-between;
   gap: 14px;
-  font-family: Arial, sans-serif;
+  font-family: "Manrope", sans-serif;
   color: var(--muted);
   font-size: 13px;
   line-height: 1.5;
@@ -848,27 +825,22 @@ margin-top: 34px;
 
 .construction-note {
   margin: 0;
-  color: var(--muted);
-}
-
-body.property-page .property-footer {
-  width: min(1440px, calc(100% - 32px));
-  margin: 0 auto;
-  padding: 0 0 34px;
-  font-family: Arial, sans-serif;
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.5;
+  color: #fff;
+  background: var(--global-notice-bg);
   text-align: center;
+  font-size: 13px;
+  padding: 13px;
+  line-height: 1;
+  font-family: 'Manrope', sans-serif;
 }
 
-body.index-page .footer a {
+.page-footer a {
 color: var(--olive);
   font-weight: 700;
   text-decoration: none;
 }
 
-body.index-page .footer a:hover {
+.page-footer a:hover {
 text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -886,12 +858,11 @@ text-decoration: underline;
 }
 
 @media (max-width: 680px) {
-  body.index-page .page {
-  padding: 18px 10px 34px;
+  body.index-page .topbar {
+    background: #fff;
   }
-  
-  body.index-page .brand-logo {
-  width: 82px; max-width: 82px;
+  body.index-page .page {
+  padding: 0 10px 34px;
   }
   
   body.index-page .hero {
@@ -907,6 +878,7 @@ text-decoration: underline;
   padding: 15px;
   position: sticky;
   top: 0;
+  box-shadow: 0 16px 42px rgba(117, 107, 97, .08);
   }
   
   body.index-page .filters {
@@ -929,7 +901,7 @@ text-decoration: underline;
   height: 250px;
   }
   
-  body.index-page .footer {
+  .page-footer {
   flex-direction: column;
   }
 }

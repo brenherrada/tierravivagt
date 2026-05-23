@@ -1,0 +1,294 @@
+{
+  "source_file": "investment/tierra-viva-investments.html",
+  "meta": {
+    "title": "Inversiones inmobiliarias en Guatemala | Tierra Viva Propiedades",
+    "description": "Propiedades seleccionadas para inversión inmobiliaria en Guatemala: hoteles boutique, terrenos, activos con renta potencial, fincas y oportunidades con identidad.",
+    "charset": "UTF-8",
+    "viewport": "width=device-width, initial-scale=1.0"
+  },
+  "stylesheets": [
+    "css/landing.css"
+  ],
+  "header": {
+    "brand_link": "../index.html",
+    "brand_aria_label": "Ir al inicio de Tierra Viva",
+    "logo": {
+      "src": "../images/logow.png",
+      "alt": "Tierra Viva Propiedades"
+    }
+  },
+  "hero": {
+    "eyebrow": "Inversión privada · Guatemala",
+    "title": "Un espacio reservado para evaluar activos inmobiliarios.",
+    "paragraph": "Una selección curada de oportunidades en Guatemala para quienes buscan invertir con visión patrimonial: hoteles boutique, terrenos, fincas, activos con potencial de renta y propiedades con valor estratégico.",
+    "actions": [
+      {
+        "text": "Conocer oportunidades",
+        "href": "#oportunidades",
+        "class": "btn btn-primary"
+      },
+      {
+        "text": "Solicitar información privada",
+        "href": "https://wa.me/50232465215?text=Hola%20Brenda%2C%20deseo%20recibir%20informaci%C3%B3n%20sobre%20activos%20de%20inversi%C3%B3n%20en%20Guatemala%20con%20Tierra%20Viva.",
+        "class": "btn btn-secondary",
+        "target": "_blank",
+        "rel": "noopener"
+      }
+    ],
+    "floating_card": {
+      "strong": "Selección privada de inversión.",
+      "span": "Activos evaluados por ubicación, potencial, uso ideal, condiciones comerciales y aspectos clave a validar antes de avanzar."
+    }
+  },
+  "criteria": [
+    {
+      "number": "01",
+      "title": "Ubicación",
+      "text": "Ubicación estratégica, accesos, entorno urbano o natural, demanda turística, residencial, agrícola o comercial y contexto inmediato."
+    },
+    {
+      "number": "02",
+      "title": "Uso ideal",
+      "text": "Renta de corto plazo, renta mensual de alto perfil, operación hotelera, desarrollo, residencia privada o activo patrimonial."
+    },
+    {
+      "number": "03",
+      "title": "Potencial",
+      "text": "Capacidad de generar ingresos, preservar valor, ampliar operación o reposicionarse comercialmente."
+    },
+    {
+      "number": "04",
+      "title": "Debida revisión",
+      "text": "Documentación, permisos, mantenimiento, operación, costos y condiciones reales antes de tomar una decisión."
+    }
+  ],
+  "image_break": {
+    "role": "img",
+    "aria_label": "Interior de alto impacto para inversión inmobiliaria"
+  },
+  "investment_types": [
+    {
+      "title": "Negocios llave en mano",
+      "description": "Hoteles boutique, alojamientos o propiedades que ya funcionan como operación comercial y pueden evaluarse como negocio en marcha.",
+      "link": "#destacada"
+    },
+    {
+      "title": "Propiedades con renta potencial",
+      "description": "Casas, cabañas o villas que pueden orientarse a renta mensual, estadías temporales o uso mixto, según ubicación y características.",
+      "link": "../index.html"
+    },
+    {
+      "title": "Tierra y desarrollo",
+      "description": "Terrenos, fincas o lotes con potencial de proyecto, expansión, resguardo de capital o desarrollo inmobiliario.",
+      "link": "https://wa.me/50232465215?text=Hola%20Brenda%2C%20deseo%20consultar%20por%20terrenos%20o%20desarrollos%20de%20inversi%C3%B3n.",
+      "target": "_blank",
+      "rel": "noopener"
+    },
+    {
+      "title": "Activos con valor patrimonial",
+      "description": "Propiedades con arquitectura, historia, ubicación o carácter especial, donde el valor trasciende los metros cuadrados.",
+      "link": "https://wa.me/50232465215?text=Hola%20Brenda%2C%20deseo%20conocer%20activos%20patrimoniales%20o%20propiedades%20especiales.",
+      "target": "_blank",
+      "rel": "noopener"
+    }
+  ],
+  "featured": {
+    "image": {
+      "role": "img",
+      "aria_label": "Activo hotelero o propiedad de inversión en Guatemala"
+    },
+    "eyebrow": "Activo destacado",
+    "title": "Activo hotelero en operación con ubicación estratégica.",
+    "paragraph": "Una oportunidad de inversión se analiza por lo que ya sostiene, por su capacidad de producir, por el tipo de operación posible y por el perfil de comprador para el que realmente resulta adecuada.",
+    "data_list": [
+      {
+        "label": "Tipo de activo",
+        "value": "Hotel / alojamiento"
+      },
+      {
+        "label": "Estado",
+        "value": "Operación activa"
+      },
+      {
+        "label": "Ubicación",
+        "value": "Ubicación estratégica"
+      },
+      {
+        "label": "Ideal para",
+        "value": "Operador o inversionista patrimonial"
+      }
+    ],
+    "actions": [
+      {
+        "text": "Solicitar dossier privado",
+        "href": "https://wa.me/50232465215?text=Hola%20Brenda%2C%20deseo%20informaci%C3%B3n%20sobre%20activos%20hoteleros%20o%20propiedades%20de%20inversi%C3%B3n%20en%20Guatemala.",
+        "target": "_blank",
+        "rel": "noopener"
+      },
+      {
+        "text": "Volver a propiedades",
+        "href": "../index.html"
+      }
+    ]
+  },
+  "process": [
+    {
+      "step": "Paso 01",
+      "title": "Definir perfil de inversión",
+      "text": "Renta, operación, desarrollo, resguardo de capital, uso personal o una combinación de objetivos."
+    },
+    {
+      "step": "Paso 02",
+      "title": "Seleccionar activos compatibles",
+      "text": "Se revisan propiedades que respondan a ese perfil, no únicamente aquellas que resultan atractivas visualmente."
+    },
+    {
+      "step": "Paso 03",
+      "title": "Validar información clave",
+      "text": "Documentación, estado, ubicación, operación, permisos, costos y aspectos sensibles antes de avanzar."
+    },
+    {
+      "step": "Paso 04",
+      "title": "Coordinar visita o reunión",
+      "text": "Cuando la oportunidad es compatible con el perfil del inversionista, se coordina una revisión más concreta y personalizada."
+    }
+  ],
+  "cta": {
+    "title": "¿Desea conocer oportunidades fuera del catálogo tradicional?",
+    "paragraph": "Escríbanos para recibir activos seleccionados según su perfil de inversión, ticket estimado, zona de interés y objetivo patrimonial dentro de Guatemala.",
+    "action": {
+      "text": "Solicitar oportunidades privadas",
+      "href": "https://wa.me/50232465215?text=Hola%20Brenda%2C%20deseo%20recibir%20opciones%20de%20inversi%C3%B3n%20inmobiliaria%20en%20Guatemala.",
+      "target": "_blank",
+      "rel": "noopener"
+    }
+  },
+  "footer": {
+    "text": "Tierra Viva Investments · Activos inmobiliarios en Guatemala",
+    "construction_note": "Sitio web en construcción. La información puede variar de un día al otro."
+  },
+  "hotel_ficha": {
+    "page_title": "Hotel Boutique — Aldea Santa Ana | Tierra Viva Investment",
+    "stylesheets": ["css/ficha.css"],
+    "hero": {
+      "brand": "Tierra Viva Investment",
+      "private_label": "Private hospitality asset",
+      "eyebrow": "Área exclusiva de inversiones",
+      "title": "Hotel Boutique",
+      "location": "Aldea Santa Ana, Antigua Guatemala",
+      "thesis": "Turnkey hospitality investment.",
+      "actions": [
+        {
+          "text": "Solicitar dossier privado",
+          "href": "https://wa.me/50232465215?text=Hola%20Brenda%2C%20quiero%20solicitar%20el%20dossier%20privado%20del%20hotel%20boutique%20en%20Aldea%20Santa%20Ana.",
+          "target": "_blank"
+        },
+        {
+          "text": "Ver tesis de inversión",
+          "href": "#investment"
+        }
+      ]
+    },
+    "asset_strip": [
+      {"label": "Asset class", "value": "Hospitality"},
+      {"label": "Offering", "value": "Turnkey"},
+      {"label": "Location", "value": "Antigua"},
+      {"label": "Asking price", "value": "US$3.1M"}
+    ],
+    "investment_thesis": {
+      "kicker": "Investment thesis",
+      "heading": "Un activo hotelero operativo, con múltiples líneas de ingreso.",
+      "lead": "Oportunidad de inversión en Aldea Santa Ana, a minutos del centro de Antigua Guatemala: hotel boutique, hostal, apartamentos y área de eventos dentro de una misma propiedad, vendido amueblado y llave en mano.",
+      "muted": "La propuesta combina arquitectura con carácter, operación existente, ubicación turística y potencial de expansión fuera del área de conservación histórica.",
+      "snapshot": [
+        {"label": "Terreno", "value": "5,965 m²"},
+        {"label": "Construcción", "value": "2,525 m²"},
+        {"label": "Frente", "value": "115 m"},
+        {"label": "Precio", "value": "US$3.1M"}
+      ]
+    },
+    "operating_model": {
+      "kicker": "Operating model",
+      "heading": "Cuatro unidades de negocio dentro del mismo activo.",
+      "cards": [
+        {
+          "title": "Boutique hotel",
+          "description": "16 habitaciones entre suites, dobles y familiares; salas de estar, comedores con chimenea, cocinas equipadas, patio central, terrazas y jardines interiores.",
+          "image": "/images/investments/invest-068.jpg"
+        },
+        {
+          "title": "Hostal",
+          "description": "8 habitaciones, 14 camas y capacidad para 18 huéspedes, con áreas verdes, zona común y servicios separados.",
+          "image": "/images/investments/invest-021.jpg"
+        },
+        {
+          "title": "Apartments",
+          "description": "6 apartamentos distribuidos en módulos independientes, con cocina, comedor, sala y parqueo privado por unidad.",
+          "image": "/images/investments/invest-065.jpg"
+        },
+        {
+          "title": "Events area",
+          "description": "Más de 900 m² de jardines para eventos, capacidad de hasta 400 personas, parqueo para más de 40 vehículos, sanitarios y bodega de implementos.",
+          "image": "/images/investments/invest-062.jpg"
+        }
+      ]
+    },
+    "current_operation": {
+      "kicker": "Current operation",
+      "heading": "Datos operativos disponibles para evaluación inicial.",
+      "items": [
+        {"label": "Hotel", "value": "Tarifa promedio Q550 / noche"},
+        {"label": "Hostal", "value": "Q250 / persona"},
+        {"label": "Apartamentos", "value": "Renta mensual promedio Q5,000 cada uno"},
+        {"label": "Eventos", "value": "Q5,000 por 5 horas"},
+        {"label": "Ocupación Oct–Mar", "value": "75% promedio / fines de semana 100%"},
+        {"label": "Ocupación Abr–Sep", "value": "50% promedio"},
+        {"label": "Costos operativos", "value": "Q15,000 mensuales estimados"}
+      ]
+    },
+    "legal_fiscal": {
+      "kicker": "Legal & fiscal",
+      "heading": "Estatus documental preparado para análisis del comprador.",
+      "items": [
+        {"label": "Propiedad", "value": "3 escrituras bajo persona individual"},
+        {"label": "Operación", "value": "Empresa individual operativa al día"},
+        {"label": "Turismo", "value": "Licencia INGUAT vigente"},
+        {"label": "Municipal", "value": "Licencia municipal de construcción vigente"},
+        {"label": "Fiscal", "value": "IUSI y SAT al día"},
+        {"label": "Gravámenes", "value": "Sin hipotecas ni gravámenes"},
+        {"label": "Avalúo", "value": "Abril 2025 disponible"}
+      ]
+    },
+    "gallery_preview": {
+      "kicker": "Gallery preview",
+      "heading": "Hospitality, arquitectura y paisaje.",
+      "lead": "Las imágenes son placeholders editoriales para esta versión preview. En la versión final se reemplazan por las fotos reales elegidas desde el Drive de la propiedad.",
+      "note": "La galería está preparada como placeholder editorial."
+    },
+    "location_advantage": {
+      "kicker": "Location advantage",
+      "heading": "Aldea Santa Ana, corredor turístico de Antigua Guatemala.",
+      "lead": "Ubicada a 2 km del Parque Central de Antigua Guatemala, aproximadamente 15 minutos en vehículo o 25 minutos a pie. La zona combina cercanía al centro histórico con un entorno más abierto, en expansión turística y fuera del área de conservación histórica, lo que implica menor restricción constructiva.",
+      "snapshot": [
+        {"label": "Centro de Antigua", "value": "2 km"},
+        {"label": "En vehículo", "value": "15 min"},
+        {"label": "A pie", "value": "25 min"},
+        {"label": "Normativa", "value": "Fuera del casco histórico"}
+      ]
+    },
+    "cta_section": {
+      "kicker": "Private access",
+      "heading": "Solicitá el dossier privado para revisar información ampliada.",
+      "text": "Información financiera, documentación disponible y coordinación de recorrido bajo solicitud.",
+      "action": {
+        "text": "Solicitar dossier privado",
+        "href": "https://wa.me/50232465215?text=Hola%20Brenda%2C%20quiero%20solicitar%20el%20dossier%20privado%20del%20hotel%20boutique%20en%20Aldea%20Santa%20Ana.",
+        "target": "_blank"
+      }
+    },
+    "footer": {
+      "brand": "Tierra Viva Investment",
+      "subtitle": "Hotel Boutique — Aldea Santa Ana"
+    }
+  }
+}

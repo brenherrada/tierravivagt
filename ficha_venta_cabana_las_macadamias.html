@@ -12,9 +12,17 @@
 </head>
 
 <body class="property-page">
+  <div id="global-notice"></div>
+  <script>
+    fetch('./components/global-notice.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('global-notice').innerHTML = html;
+      });
+  </script>
   <header class="site-header">
     <a href="index.html" class="brand-link" aria-label="Volver al inicio de Tierra Viva">
-      <img src="https://drive.google.com/thumbnail?id=1C4Ace_jIe699cX3PA90HdTJ1jbivd-mq&sz=w800" alt="Tierra Viva Propiedades" />
+      <img src="images/logo.png" alt="Tierra Viva Propiedades" />
     </a>
   </header>
 
@@ -49,8 +57,8 @@
           <a class="secondary-cta" id="shareWhatsappButton" href="#" target="_blank" rel="noopener">Compartir por WhatsApp</a>
         </div>
 
-        <div class="accordion open" id="featuresAccordion">
-          <button class="accordion-toggle" type="button" onclick="toggleAccordion('featuresAccordion')" aria-expanded="true">
+        <div class="accordion" id="featuresAccordion">
+          <button class="accordion-toggle" type="button" onclick="toggleAccordion('featuresAccordion')" aria-expanded="false">
             <h2>Características</h2>
             <span class="accordion-icon">+</span>
           </button>
@@ -98,7 +106,7 @@
           src="https://www.google.com/maps?q=San%20Miguel%20Due%C3%B1as%20Las%20Macadamias%20Antigua%20Guatemala&output=embed">
         </iframe>
         <div class="map-actions">
-          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=San%20Miguel%20Due%C3%B1as%2C%20Las%20Macadamias%2C%20Antigua%20Guatemala" target="_blank" rel="noopener">
+          <a class="map-link secondary-cta" href="https://www.google.com/maps/search/?api=1&query=San%20Miguel%20Due%C3%B1as%2C%20Las%20Macadamias%2C%20Antigua%20Guatemala" target="_blank" rel="noopener">
             Abrir ubicación en Google Maps
           </a>
         </div>
@@ -106,9 +114,14 @@
     </section>
   </main>
 
-  <footer class="property-footer">
-    <p class="construction-note">Sitio web en construcción. La información puede variar de un día al otro.</p>
-  </footer>
+  <footer class="page-footer" id="footer"></footer>
+  <script>
+    fetch('./components/footer.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('footer').innerHTML = html;
+      });
+  </script>
 
   <div class="fullscreen-gallery" id="fullscreenGallery" onclick="closeFullscreenOnBackdrop(event)" aria-hidden="true">
     <button class="fullscreen-close" type="button" onclick="closeGalleryFullscreen()" aria-label="Cerrar pantalla completa">×</button>
@@ -120,35 +133,8 @@
   <script>
     const operationTitle = "cabaña en venta";
 
-    let photos = [
-      {
-        src: "https://drive.google.com/thumbnail?id=12SDMjS7T66CqOo2rdw3PxSIj6scZFTf1&sz=w1600",
-        alt: "Foto real de la cabaña Las Macadamias 1"
-      },
-      {
-        src: "https://drive.google.com/thumbnail?id=1WwCj2CaYuK0MkUJHVMRrWAu4dgg2mgU-&sz=w1600",
-        alt: "Foto real de la cabaña Las Macadamias 2"
-      },
-      {
-        src: "https://drive.google.com/thumbnail?id=1jrM0Yo7U-IejTGkv32QLXCllB8MzU911&sz=w1600",
-        alt: "Foto real de la cabaña Las Macadamias 3"
-      },
-      {
-        src: "https://drive.google.com/thumbnail?id=1Rx8WXpbQButx0HZVBQJrmje65jCaw87_&sz=w1600",
-        alt: "Foto real de la cabaña Las Macadamias 4"
-      },
-      {
-        src: "https://drive.google.com/thumbnail?id=1vYf0DXbZ121me6apVjDo0VIHjoiO7Yf8&sz=w1600",
-        alt: "Foto real de la cabaña Las Macadamias 5"
-      },
-      {
-        src: "https://drive.google.com/thumbnail?id=1uGdk5OeBbJPCr03qV1n_hobgbRNyMMr5&sz=w1600",
-        alt: "Foto real de la cabaña Las Macadamias 6"
-      }
-    ];
+    let photos = [];
 
-
-  
     let current = 0;
     const hasMultiplePhotos = () => photos.length > 1;
 
@@ -186,7 +172,7 @@
         mouseDrag: multiple,
         touchDrag: multiple,
         pullDrag: multiple,
-        navText: ["‹", "›"],
+        navText: ["←", "→"],
         responsive: {
           0: { items: 1, nav: multiple && isFullscreen, dots: multiple },
           541: { items: 1, nav: multiple, dots: multiple }
