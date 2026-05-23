@@ -57,6 +57,7 @@
         <h2>${formatCardTitle(property)}</h2>
         <p class="summary">${property.summary}</p>
         <span class="price">${property.price}</span>
+        <div class="property-badges">${(property.badges || []).map((badge) => `<span class="property-badge">${badge}</span>`).join("")}</div>
         <div class="open-link">Ver ficha <span>→</span></div>
       </div>
     `;
@@ -112,11 +113,16 @@
     const accordion = document.getElementById(id);
     if (!accordion) return;
 
+    if (!Array.isArray(items) || !items.length) {
+      accordion.style.display = "none";
+      return;
+    }
+
     const heading = accordion.querySelector("h2");
     const grid = accordion.querySelector(".feature-grid");
     if (heading && title) heading.textContent = title;
     if (grid) renderFeatureGrid(grid, items);
-    accordion.style.display = items.length ? "" : "none";
+    accordion.style.display = "";
   }
 
   function initPropertyPage(data) {
@@ -145,11 +151,16 @@
     const title = document.querySelector(".info-card h1");
     if (title) title.textContent = property.title;
 
-    const price = document.querySelector(".info-card > .price");
+    const price = document.querySelector(".info-card .price");
     if (price) price.textContent = property.price;
 
-    const description = document.querySelector(".info-card > .description");
+    const description = document.querySelector(".info-card .description");
     if (description) description.textContent = property.description;
+
+    const badgesContainer = document.querySelector(".property-badges");
+    if (badgesContainer) {
+      badgesContainer.innerHTML = (property.badges || []).map((badge) => `<span class="property-badge">${badge}</span>`).join("");
+    }
 
     const mainImage = document.getElementById("mainImage");
     if (mainImage && photos.length) {
@@ -200,7 +211,7 @@
     const phone = data.site.contact.whatsapp;
     const place = property.display_location || property.location;
     const appointmentMessage = `Hola Brenda, quiero solicitar información para conocer la ${property.title.toLowerCase()} en ${place}. Vi la ficha aquí: ${fichaUrl}`;
-    const shareMessage = `Mirá esta propiedad de Tierra Viva: ${fichaUrl}`;
+    const shareMessage = `Mira esta propiedad de Tierra Viva: ${fichaUrl}`;
     const whatsappButton = document.getElementById("whatsappButton");
     const shareWhatsappButton = document.getElementById("shareWhatsappButton");
     if (whatsappButton) whatsappButton.href = `https://wa.me/${phone}?text=${encodeURIComponent(appointmentMessage)}`;

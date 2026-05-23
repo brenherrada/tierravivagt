@@ -9,23 +9,31 @@
 </head>
 
 <body class="index-page">
+  <div id="global-notice"></div>
+  <script>
+    fetch('./components/global-notice.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('global-notice').innerHTML = html;
+      });
+  </script>
+
+  <header class="topbar">
+    <a href="index.html" class="brand-link" aria-label="Ir al inicio de Tierra Viva Propiedades">
+      <img
+        class="brand-logo"
+        src="images/logo.png"
+        alt="Tierra Viva Propiedades"
+      />
+    </a>
+  </header>
+
+  <section class="hero" aria-labelledby="main-title">
+    <div class="hero-inner">
+      <h1 id="main-title">Propiedades Disponibles</h1>
+    </div>
+  </section>
   <main class="page">
-    <header class="topbar">
-      <a href="index.html" class="brand-link" aria-label="Ir al inicio de Tierra Viva Propiedades">
-        <img
-          class="brand-logo"
-          src="https://drive.google.com/thumbnail?id=1C4Ace_jIe699cX3PA90HdTJ1jbivd-mq&sz=w800"
-          alt="Tierra Viva Propiedades"
-        />
-      </a>
-    </header>
-
-    <section class="hero" aria-labelledby="main-title">
-      <div class="hero-inner">
-        <h1 id="main-title">Propiedades Disponibles</h1>
-      </div>
-    </section>
-
     <section class="toolbar" aria-label="Filtros de propiedades">
       <div id="countText"><strong>3</strong> propiedades en renta</div>
       <div class="filters">
@@ -34,173 +42,18 @@
       </div>
     </section>
 
-    <section class="grid" id="propertyGrid" aria-label="Grilla de propiedades disponibles">
-      <a class="property-card" data-operation="renta" href="ficha_renta_casa_hacienda_del_comendador.html" aria-label="Ver ficha de Casa en renta en Hacienda del Comendador">
-        <div class="media">
-          <img
-            src="https://drive.google.com/thumbnail?id=1BjZQJqH1BuZ0klgmNuCTKSybDMMoQ1eJ&sz=w1600"
-            alt="Casa en renta en Hacienda del Comendador"
-            loading="lazy"
-          />
-        </div>
-        <div class="card-body">
-          <p class="location">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M12 21s7-5.2 7-12a7 7 0 1 0-14 0c0 6.8 7 12 7 12Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              <path d="M12 12.2a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-width="2"/>
-            </svg>
-            Hacienda del Comendador, Antigua Guatemala
-          </p>
-          <h2>Casa en renta</h2>
-          <p class="summary">Casa amueblada de dos niveles dentro de condominio residencial con amenidades.</p>
-          <span class="price">US$1,450 / mes</span>
-          <div class="open-link">Ver ficha <span>→</span></div>
-        </div>
-      </a>
-
-      <a class="property-card" data-operation="renta" href="ficha_renta_casa_los_franciscanos.html" aria-label="Ver ficha de Casa en renta en Los Franciscanos">
-        <div class="media">
-          <img
-            src="https://drive.google.com/thumbnail?id=11pbGbM57FiI2Oz3zlyMx9HKaHlm0-CoZ&sz=w1600"
-            alt="Casa en renta en Los Franciscanos Club Residencial"
-            loading="lazy"
-          />
-        </div>
-        <div class="card-body">
-          <p class="location">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M12 21s7-5.2 7-12a7 7 0 1 0-14 0c0 6.8 7 12 7 12Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              <path d="M12 12.2a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-width="2"/>
-            </svg>
-            Los Franciscanos Club Residencial
-          </p>
-          <h2>Casa en renta</h2>
-          <p class="summary">Casa en residencial con seguridad, áreas verdes y amenidades familiares.</p>
-          <span class="price">USD 1,700 / mes</span>
-          <div class="open-link">Ver ficha <span>→</span></div>
-        </div>
-      </a>
-
-      <a class="property-card" data-operation="renta" href="ficha_renta_cabana_las_macadamias.html" aria-label="Ver ficha de Cabaña en renta en Las Macadamias">
-        <div class="media">
-          <img
-            src="https://drive.google.com/thumbnail?id=12SDMjS7T66CqOo2rdw3PxSIj6scZFTf1&sz=w1600"
-            alt="Cabaña en renta en Las Macadamias"
-            loading="lazy"
-          />
-        </div>
-        <div class="card-body">
-          <p class="location">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M12 21s7-5.2 7-12a7 7 0 1 0-14 0c0 6.8 7 12 7 12Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              <path d="M12 12.2a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-width="2"/>
-            </svg>
-            San Miguel Dueñas, Las Macadamias
-          </p>
-          <h2>Cabaña en renta</h2>
-          <p class="summary">Cabaña de lujo en entorno natural, con pérgola, jacuzzi y espacios funcionales.</p>
-          <span class="price">USD 1,700 / mes</span>
-          <div class="open-link">Ver ficha <span>→</span></div>
-        </div>
-      </a>
-
-      <a class="property-card" data-operation="venta" href="ficha_venta_cabana_las_macadamias.html" aria-label="Ver ficha de Cabaña en venta en Las Macadamias">
-        <div class="media">
-          <img
-            src="https://drive.google.com/thumbnail?id=12SDMjS7T66CqOo2rdw3PxSIj6scZFTf1&sz=w1600"
-            alt="Cabaña en venta en Las Macadamias"
-            loading="lazy"
-          />
-        </div>
-        <div class="card-body">
-          <p class="location">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M12 21s7-5.2 7-12a7 7 0 1 0-14 0c0 6.8 7 12 7 12Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              <path d="M12 12.2a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-width="2"/>
-            </svg>
-            San Miguel Dueñas, Las Macadamias
-          </p>
-          <h2>Cabaña en venta</h2>
-          <p class="summary">Cabaña de lujo con 550.30 m² de terreno y 210 m² de construcción.</p>
-          <span class="price">USD 395,000</span>
-          <div class="open-link">Ver ficha <span>→</span></div>
-        </div>
-      </a>
-
-      <a class="property-card" data-operation="venta" href="ficha_venta_casa_antigua_guatemala_sanfrancisco.html" aria-label="Ver ficha de Casa en venta en La Antigua Guatemala">
-        <div class="media">
-          <img
-            src="https://drive.google.com/thumbnail?id=12y2unavM4KN9XZ6lQeJhJQ_5kPfqbeLM&sz=w1600"
-            alt="Casa en venta en La Antigua Guatemala"
-            loading="lazy"
-          />
-        </div>
-        <div class="card-body">
-          <p class="location">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M12 21s7-5.2 7-12a7 7 0 1 0-14 0c0 6.8 7 12 7 12Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-              <path d="M12 12.2a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" stroke="currentColor" stroke-width="2"/>
-            </svg>
-            Casco de Antigua Guatemala
-          </p>
-          <h2>Casa en venta</h2>
-          <p class="summary">Casa ubicada en el casco de Antigua Guatemala, cerca de San Francisco El Grande.</p>
-          <span class="price">Q3,700,000</span>
-          <div class="card-badges" aria-label="Datos destacados">
-            <span class="property-badge">Último precio</span>
-            <span class="property-badge">Uso comercial</span>
-          </div>
-          <div class="open-link">Ver ficha <span>→</span></div>
-        </div>
-      </a>
-    </section>
-
-    <footer class="footer">
-      <div>
-        <div>Tierra Viva Propiedades · Antigua Guatemala y alrededores</div>
-        <p class="construction-note">Sitio web en construcción. La información puede variar de un día al otro.</p>
-      </div>
-      <div>
-        <a href="tierra-viva-investments.html">Tierra Viva Investments</a>
-        ·
-        <a href="https://wa.me/50232465215" target="_blank" rel="noopener">Contactar por WhatsApp</a>
-      </div>
-    </footer>
+    <section class="grid" id="propertyGrid" aria-label="Grilla de propiedades disponibles"></section>
   </main>
-
+  
+  <footer class="page-footer" id="footer"></footer>
   <script>
-    const filterButtons = document.querySelectorAll(".filter-btn");
-    const cards = document.querySelectorAll(".property-card");
-    const countText = document.getElementById("countText");
-
-    function labelForFilter(filter, count) {
-      const suffix = filter === "venta" ? "en venta" : "en renta";
-      return `${count} ${count === 1 ? "propiedad" : "propiedades"} ${suffix}`;
-    }
-
-    function applyFilter(filter) {
-      let visibleCount = 0;
-
-      cards.forEach((card) => {
-        const shouldShow = card.dataset.operation === filter;
-        card.style.display = shouldShow ? "flex" : "none";
-        if (shouldShow) visibleCount += 1;
+    fetch('./components/footer.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('footer').innerHTML = html;
       });
-
-      const label = labelForFilter(filter, visibleCount);
-      countText.innerHTML = `<strong>${visibleCount}</strong> ${label.replace(String(visibleCount) + " ", "")}`;
-    }
-
-    filterButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        filterButtons.forEach((btn) => btn.classList.remove("active"));
-        button.classList.add("active");
-        applyFilter(button.dataset.filter);
-      });
-    });
-
-    applyFilter("renta");
   </script>
+
   <script src="js/propiedades.js" defer></script>
 </body>
 </html>
