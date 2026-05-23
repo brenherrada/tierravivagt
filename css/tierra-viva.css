@@ -846,6 +846,22 @@ margin-top: 34px;
   line-height: 1.5;
 }
 
+.construction-note {
+  margin: 0;
+  color: var(--muted);
+}
+
+body.property-page .property-footer {
+  width: min(1440px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 0 0 34px;
+  font-family: Arial, sans-serif;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+}
+
 body.index-page .footer a {
 color: var(--olive);
   font-weight: 700;
