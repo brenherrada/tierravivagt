@@ -1,9 +1,122 @@
+function setElementVisibility(selector, visible) {
+  const element = document.querySelector(selector);
+  if (element) {
+    element.style.display = visible ? '' : 'none';
+  }
+}
+
+function renderCards(selector, items) {
+  const cards = Array.from(document.querySelectorAll(selector));
+  cards.forEach((card, index) => {
+    const item = items[index];
+    if (!item) return;
+
+    setText('h3', item.title, card);
+    setText('p', item.description, card);
+    const link = card.querySelector('.type-link');
+    if (link && item.link) {
+      link.href = item.link;
+      if (item.target) link.target = item.target;
+      if (item.rel) link.rel = item.rel;
+    }
+  });
+}
+
+function renderDataList(selector, items) {
+  const list = document.querySelector(selector);
+  if (!list || !Array.isArray(items)) return;
+  const rows = Array.from(list.querySelectorAll('.data-item'));
+  rows.forEach((row, index) => {
+    const data = items[index];
+    if (!data) return;
+    setText('strong', data.value, row);
+    setText('small', data.label, row);
+  });
+}
+
+function renderProcess(items) {
+  const steps = Array.from(document.querySelectorAll('.process-step'));
+  steps.forEach((step, index) => {
+    const data = items[index];
+    if (!data) return;
+    setText('span', data.step, step);
+    setText('h3', data.title, step);
+    setText('p', data.text, step);
+  });
+}
+
+function renderCriteria(items) {
+  const criteria = Array.from(document.querySelectorAll('.criteria-grid .criterion'));
+  criteria.forEach((criterion, index) => {
+    const data = items[index];
+    if (!data) return;
+    setText('.criterion-number', data.number, criterion);
+    setText('h3', data.title, criterion);
+    setText('p', data.text, criterion);
+  });
+}
+
+function renderFeaturedActions(actions) {
+  const buttons = Array.from(document.querySelectorAll('#destacada .hero-actions a'));
+  buttons.forEach((button, index) => {
+    const action = actions[index];
+    if (!action) return;
+    button.textContent = action.text;
+    button.href = action.href;
+    if (action.target) button.target = action.target;
+    if (action.rel) button.rel = action.rel;
+  });
+}
+
+function renderHeroActions(actions) {
+  const actionAnchors = Array.from(document.querySelectorAll('.hero-actions a'));
+  actionAnchors.forEach((button, index) => {
+    const action = actions[index];
+    if (!action) return;
+    button.textContent = action.text;
+    button.href = action.href;
+    if (action.target) button.target = action.target;
+    if (action.rel) button.rel = action.rel;
+  });
+}
+
+function renderInvestmentTypes(items) {
+  const cards = Array.from(document.querySelectorAll('.investment-types .type-card'));
+  cards.forEach((card, index) => {
+    const data = items[index];
+    if (!data) return;
+    setText('h3', data.title, card);
+    setText('p', data.description, card);
+    const link = card.querySelector('.type-link');
+    if (link && data.link) {
+      link.href = data.link;
+      if (data.target) link.target = data.target;
+      if (data.rel) link.rel = data.rel;
+    }
+  });
+}
+
+function renderFeaturedImage(image) {
+  const featuredImage = document.querySelector('.featured-image');
+  if (!featuredImage || !image) return;
+  if (image.role) featuredImage.setAttribute('role', image.role);
+  if (image.aria_label) featuredImage.setAttribute('aria-label', image.aria_label);
+}
+
+function renderAnnouncement(data) {
+  if (!data) return;
+  if (data.hero) {
+    renderHeroActions(data.hero.actions || []);
+    setElementVisibility('.hero-actions', Boolean(data.hero.actions?.length));
+    setElementVisibility('.floating-card', Boolean(data.hero.floating_card));
+  }
+  if (data.featured?.actions?.length) {
+    setElementVisibility('#destacada .hero-actions', true);
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   fetchInvestmentData()
-    .then((res) => {
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      return res.json();
-    })
     .then((data) => {
       if (data.meta?.title) document.title = data.meta.title;
       const metaDesc = document.querySelector('meta[name="description"]');
@@ -25,37 +138,29 @@ document.addEventListener('DOMContentLoaded', () => {
         setText('.hero .eyebrow', data.hero.eyebrow);
         setText('.hero h1', data.hero.title);
         setText('.hero p', data.hero.paragraph);
-        const heroActions = document.querySelectorAll('.hero-actions a');
-        if (data.hero.actions) {
-          heroActions.forEach((a, i) => {
-            const action = data.hero.actions[i];
-            if (action) {
-              a.textContent = action.text;
-              a.href = action.href;
-              if (action.target) a.target = action.target;
-              if (action.rel) a.rel = action.rel;
-            }
-          });
-        }
         setText('.floating-card strong', data.hero.floating_card?.strong);
         setText('.floating-card span', data.hero.floating_card?.span);
       }
 
+      if (Array.isArray(data.criteria)) {
+        renderCriteria(data.criteria);
+      }
+
+      if (Array.isArray(data.investment_types)) {
+        renderInvestmentTypes(data.investment_types);
+      }
+
       if (data.featured) {
+        renderFeaturedImage(data.featured.image);
+        setText('#destacada .eyebrow', data.featured.eyebrow);
         setText('#destacada h2', data.featured.title);
         setText('#destacada .featured-content p', data.featured.paragraph);
-        const featuredActions = document.querySelectorAll('#destacada .hero-actions a');
-        if (data.featured.actions) {
-          featuredActions.forEach((a, i) => {
-            const action = data.featured.actions[i];
-            if (action) {
-              a.textContent = action.text;
-              a.href = action.href;
-              if (action.target) a.target = action.target;
-              if (action.rel) a.rel = action.rel;
-            }
-          });
-        }
+        renderDataList('#destacada .data-list', data.featured.data_list || []);
+        renderFeaturedActions(data.featured.actions || []);
+      }
+
+      if (Array.isArray(data.process)) {
+        renderProcess(data.process);
       }
 
       if (data.cta) {
@@ -74,6 +179,8 @@ document.addEventListener('DOMContentLoaded', () => {
         setText('.site-footer div', data.footer.text);
         setText('.construction-note', data.footer.construction_note);
       }
+
+      renderAnnouncement(data);
     })
     .catch((err) => console.error('Error cargando JSON de inversiones:', err));
 

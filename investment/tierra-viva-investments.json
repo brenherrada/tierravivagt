@@ -171,23 +171,13 @@
     "page_title": "Hotel Boutique — Aldea Santa Ana | Tierra Viva Investment",
     "stylesheets": ["css/ficha.css"],
     "hero": {
-      "brand": "Tierra Viva Investment",
-      "private_label": "Private hospitality asset",
+      "brand": "Tierra Viva Investments",
+      "private_label": [],
       "eyebrow": "Área exclusiva de inversiones",
       "title": "Hotel Boutique",
       "location": "Aldea Santa Ana, Antigua Guatemala",
-      "thesis": "Turnkey hospitality investment.",
-      "actions": [
-        {
-          "text": "Solicitar dossier privado",
-          "href": "https://wa.me/50232465215?text=Hola%20Brenda%2C%20quiero%20solicitar%20el%20dossier%20privado%20del%20hotel%20boutique%20en%20Aldea%20Santa%20Ana.",
-          "target": "_blank"
-        },
-        {
-          "text": "Ver tesis de inversión",
-          "href": "#investment"
-        }
-      ]
+      "thesis": null,
+      "actions": []
     },
     "asset_strip": [
       {"label": "Asset class", "value": "Hospitality"},
@@ -196,7 +186,7 @@
       {"label": "Asking price", "value": "US$3.1M"}
     ],
     "investment_thesis": {
-      "kicker": "Investment thesis",
+      "kicker": "Enfoque de inversión",
       "heading": "Un activo hotelero operativo, con múltiples líneas de ingreso.",
       "lead": "Oportunidad de inversión en Aldea Santa Ana, a minutos del centro de Antigua Guatemala: hotel boutique, hostal, apartamentos y área de eventos dentro de una misma propiedad, vendido amueblado y llave en mano.",
       "muted": "La propuesta combina arquitectura con carácter, operación existente, ubicación turística y potencial de expansión fuera del área de conservación histórica.",
@@ -208,33 +198,33 @@
       ]
     },
     "operating_model": {
-      "kicker": "Operating model",
+      "kicker": "Modelo operativo",
       "heading": "Cuatro unidades de negocio dentro del mismo activo.",
       "cards": [
         {
           "title": "Boutique hotel",
           "description": "16 habitaciones entre suites, dobles y familiares; salas de estar, comedores con chimenea, cocinas equipadas, patio central, terrazas y jardines interiores.",
-          "image": "/images/investments/invest-068.jpg"
+          "image": "images/investments/invest-068.jpg"
         },
         {
           "title": "Hostal",
           "description": "8 habitaciones, 14 camas y capacidad para 18 huéspedes, con áreas verdes, zona común y servicios separados.",
-          "image": "/images/investments/invest-021.jpg"
+          "image": "images/investments/invest-021.jpg"
         },
         {
-          "title": "Apartments",
+          "title": "Apartamentos",
           "description": "6 apartamentos distribuidos en módulos independientes, con cocina, comedor, sala y parqueo privado por unidad.",
-          "image": "/images/investments/invest-065.jpg"
+          "image": "images/investments/invest-065.jpg"
         },
         {
-          "title": "Events area",
+          "title": "Área de eventos",
           "description": "Más de 900 m² de jardines para eventos, capacidad de hasta 400 personas, parqueo para más de 40 vehículos, sanitarios y bodega de implementos.",
-          "image": "/images/investments/invest-062.jpg"
+          "image": "images/investments/invest-062.jpg"
         }
       ]
     },
     "current_operation": {
-      "kicker": "Current operation",
+      "kicker": "Operación actual",
       "heading": "Datos operativos disponibles para evaluación inicial.",
       "items": [
         {"label": "Hotel", "value": "Tarifa promedio Q550 / noche"},
@@ -260,13 +250,13 @@
       ]
     },
     "gallery_preview": {
-      "kicker": "Gallery preview",
-      "heading": "Hospitality, arquitectura y paisaje.",
+      "kicker": "Galería",
+      "heading": "Arquitectura y paisaje.",
       "lead": "Las imágenes son placeholders editoriales para esta versión preview. En la versión final se reemplazan por las fotos reales elegidas desde el Drive de la propiedad.",
       "note": "La galería está preparada como placeholder editorial."
     },
     "location_advantage": {
-      "kicker": "Location advantage",
+      "kicker": "Ubicación estratégica",
       "heading": "Aldea Santa Ana, corredor turístico de Antigua Guatemala.",
       "lead": "Ubicada a 2 km del Parque Central de Antigua Guatemala, aproximadamente 15 minutos en vehículo o 25 minutos a pie. La zona combina cercanía al centro histórico con un entorno más abierto, en expansión turística y fuera del área de conservación histórica, lo que implica menor restricción constructiva.",
       "snapshot": [
@@ -278,16 +268,16 @@
     },
     "cta_section": {
       "kicker": "Private access",
-      "heading": "Solicitá el dossier privado para revisar información ampliada.",
+      "heading": "Solicite el dossier para mayor información.",
       "text": "Información financiera, documentación disponible y coordinación de recorrido bajo solicitud.",
       "action": {
-        "text": "Solicitar dossier privado",
+        "text": "Solicitar más información",
         "href": "https://wa.me/50232465215?text=Hola%20Brenda%2C%20quiero%20solicitar%20el%20dossier%20privado%20del%20hotel%20boutique%20en%20Aldea%20Santa%20Ana.",
         "target": "_blank"
       }
     },
     "footer": {
-      "brand": "Tierra Viva Investment",
+      "brand": "Tierra Viva Investments",
       "subtitle": "Hotel Boutique — Aldea Santa Ana"
     }
   }
