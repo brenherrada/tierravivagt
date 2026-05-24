@@ -111,34 +111,6 @@
       }
     }
 
-    @media (max-width: 767px) {
-      .hero-bg,
-      .hero-content > * {
-        animation: none;
-      }
-
-      .hero-content > *,
-      .reveal {
-        --reveal-y: 0px;
-        --parallax-y: 0px;
-        opacity: 1;
-        transform: none;
-      }
-
-      .brand-link img,
-      .btn,
-      .metric,
-      .investment-card,
-      .thesis-card,
-      .gallery-single img,
-      .image-panel img,
-      .detail-item,
-      .lightbox,
-      .lightbox img {
-        transition: none;
-      }
-    }
-
     .page {
       overflow: hidden;
       background:
@@ -153,10 +125,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(9, 10, 9, 0.6);
+      background: rgba(24, 20, 15, 0.8);
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 2000;
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--line);
     }
@@ -198,7 +170,7 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(90deg, rgba(16, 14, 11, 0.88) 0%, rgba(16, 14, 11, 0.58) 42%, rgba(16, 14, 11, 0.12) 100%),
+        linear-gradient(90deg, rgba(16, 14, 11, 0.48) 0%, rgba(16, 14, 11, 0.28) 42%, rgba(16, 14, 11, 0.12) 100%),
         linear-gradient(0deg, rgba(16, 14, 11, 0.72) 0%, rgba(16, 14, 11, 0.1) 48%);
       z-index: -1;
     }
@@ -252,16 +224,17 @@
 
     h1 {
       max-width: 900px;
-      font-size: clamp(36px, 5vw, 50px);
+      font-size: clamp(30px, 5vw, 50px);
       letter-spacing: -0.055em;
     }
 
     .hero-subtitle {
       max-width: 690px;
-      font-size: clamp(17px, 2vw, 20px);
+      font-size: clamp(15px, 2vw, 18px);
       color: rgba(255,255,255,0.82);
       font-weight: 300;
       margin: 0;
+      display: none;
     }
 
     .hero-actions {
@@ -314,7 +287,7 @@
       margin-top: 28px;
       background: rgba(255,255,255,0.24);
       border: 1px solid rgba(255,255,255,0.22);
-      backdrop-filter: blur(18px);
+      backdrop-filter: blur(5px);
     }
 
     .metric {
@@ -347,7 +320,11 @@
     }
 
     .section {
-      padding: clamp(72px, 9vw, 128px) clamp(22px, 6vw, 86px);
+      padding: clamp(45px, 9vw, 90px) clamp(22px, 6vw, 86px);
+    }
+
+    .section#detalles {
+      padding-top: 0;
     }
 
     .section-narrow {
@@ -401,8 +378,7 @@
     }
 
     .investment-card h3 {
-      font-size: 31px;
-      letter-spacing: -0.03em;
+      font-size: clamp(26px, 2vw, 30px);
       position: relative;
       z-index: 1;
     }
@@ -451,6 +427,7 @@
       padding: 24px;
       min-height: 150px;
       box-shadow: var(--soft-shadow);
+      cursor: default;
     }
 
     .fact small {
@@ -512,6 +489,7 @@
       padding: 30px;
       min-height: 280px;
       transition: transform 420ms ease, background 420ms ease, border-color 420ms ease;
+      cursor: default;
     }
 
     .thesis-card:hover {
@@ -546,16 +524,14 @@
       padding: 0;
       position: relative;
       z-index: 2;
-      box-shadow: 0 24px 60px rgba(20, 16, 12, 0.08);
-    }
-
-    .section#detalles {
-      padding-top: 0;
+      box-shadow: var(--shadow);
+      background: var(--stone);
+      margin: 0;
     }
 
     .gallery-single {
-      width: 100vw;
-      height: 50vh;
+      height: 40vh;
+      max-height: 300px;
       overflow: hidden;
     }
 
@@ -573,7 +549,7 @@
 
     .vision-list {
       display: grid;
-      gap: 14px;
+      gap: 0;
       margin-top: 28px;
     }
 
@@ -584,6 +560,7 @@
       padding: 18px 0;
       border-bottom: 1px solid var(--line);
       color: var(--muted);
+      cursor: default;
     }
 
     .vision-item span:first-child {
@@ -598,6 +575,7 @@
       overflow: hidden;
       box-shadow: var(--shadow);
       background: var(--stone);
+      min-height: 400px;
     }
 
     .image-panel img {
@@ -616,7 +594,7 @@
       left: 28px;
       right: 28px;
       bottom: 28px;
-      background: rgba(244, 242, 237, 0.9);
+      background: rgba(244, 242, 237, 0.75);
       backdrop-filter: blur(12px);
       padding: 22px;
       color: var(--ink);
@@ -626,16 +604,16 @@
     .image-panel-caption strong {
       display: block;
       font-family: 'Lora', Georgia, serif;
-      font-size: 25px;
+      font-size: 21px;
       font-weight: 500;
       letter-spacing: -0.02em;
     }
 
     .image-panel-caption span {
       display: block;
-      color: var(--muted);
       margin-top: 8px;
       font-size: 14px;
+      font-weight: 400;
     }
 
     .details-wrapper {
@@ -666,6 +644,7 @@
       padding: 20px;
       background: #fff;
       transition: transform 300ms ease, border-color 300ms ease, box-shadow 300ms ease;
+      cursor: default;
     }
 
     .detail-item:hover {
@@ -754,13 +733,7 @@
     }
 
     .cta-actions {
-      display: grid;
-      gap: 12px;
-      min-width: 260px;
-    }
-
-    .cta-actions .btn {
-      width: 100%;
+      display: inline-block;
     }
 
     .btn-light {
@@ -822,11 +795,7 @@
     .prev-lightbox { left: 24px; top: 50%; transform: translateY(-50%); }
     .next-lightbox { right: 24px; top: 50%; transform: translateY(-50%); }
 
-    @media (max-width: 980px) {
-      .site-header {
-        padding: 22px;
-      }
-
+    @media (max-width: 930px) {
       .header-note { display: none; }
 
       .hero {
@@ -838,13 +807,6 @@
         background:
           linear-gradient(0deg, rgba(16, 14, 11, 0.84) 0%, rgba(16, 14, 11, 0.24) 100%),
           linear-gradient(90deg, rgba(16, 14, 11, 0.6), rgba(16, 14, 11, 0.22));
-      }
-
-      .hero-metrics,
-      .facts-grid,
-      .thesis-grid,
-      .detail-list {
-        grid-template-columns: 1fr;
       }
 
       .intro-grid,
@@ -859,27 +821,56 @@
         box-shadow: 0 18px 42px rgba(20, 16, 12, 0.07);
       }
 
-      .gallery-single,
-      .gallery-single img {
-        min-height: 420px;
-      }
-
-      .image-panel,
-      .image-panel img {
-        min-height: 440px;
-      }
-
       .sidebar-panel { position: static; }
     }
 
+    @media (max-width: 767px) {
+      .brand-link img {
+        max-width: 70px;
+        width: 70px;
+      }
+      .hero-bg,
+      .hero-content > * {
+        animation: none;
+      }
+
+      .hero-content > *,
+      .reveal {
+        --reveal-y: 0px;
+        --parallax-y: 0px;
+        opacity: 1;
+        transform: none;
+      }
+
+      .brand-link img,
+      .btn,
+      .metric,
+      .investment-card,
+      .thesis-card,
+      .gallery-single img,
+      .image-panel img,
+      .detail-item,
+      .lightbox,
+      .lightbox img {
+        transition: none;
+      }
+
+      .hero-metrics,
+      .facts-grid,
+      .thesis-grid,
+      .detail-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 560px) {
-      .metric { padding: 18px; }
+      .metric { padding: 18px; display: flex; justify-content: space-between; align-items: center; }
+      .metric span { margin-bottom: 0; }
       .section { padding: 68px 20px; }
       .gallery-section {
         padding: 0;
         box-shadow: 0 18px 42px rgba(20, 16, 12, 0.07);
       }
-      .btn { width: 100%; }
       .hero-actions { width: 100%; }
       .hero-actions .btn {
         width: auto;
@@ -979,11 +970,6 @@
       </div>
     </section>
 
-    <section class="section gallery-section" id="galeria">
-      <div class="gallery-single">
-        <img src="https://drive.google.com/thumbnail?id=1fOaHjqDQeWQnYp58-E2bAsv4Cm-96QSq&sz=w2400" alt="Vista panorámica del entorno natural en San Andrés Lakeview Terrace" />
-      </div>
-    </section>
 
     <section class="section reveal parallax-section" data-parallax-speed="0.045">
       <div class="section-narrow development-grid">
@@ -1053,7 +1039,7 @@
       </div>
     </section>
 
-    <section class="cta-section reveal parallax-section" id="contacto" data-parallax-speed="0.025">
+    <section class="cta-section reveal" id="contacto">
       <div class="cta-box">
         <div>
           <h2>Solicite información para evaluar lotes y disponibilidad.</h2>
@@ -1079,18 +1065,6 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const photos = [
-        { src: 'https://drive.google.com/thumbnail?id=1KDQ8PjgIaBFDq6xke2hwnI6mNjMYBe3z&sz=w2400', alt: 'Vista del terreno hacia el Lago de Atitlán' },
-        { src: 'https://drive.google.com/thumbnail?id=1QJslmuf-sciWYHlKOclXzmidgJCtR9Rc&sz=w2400', alt: 'Vista panorámica del entorno natural' },
-        { src: 'https://drive.google.com/thumbnail?id=1g0fweE7-IrQjSM_QlaB3GAh9X0m50vbh&sz=w2400', alt: 'Terrenos en San Andrés Lakeview Terrace' },
-        { src: 'https://drive.google.com/thumbnail?id=1IjzCGRoYPUjPN5TsF-RF5_u8aI__XlWs&sz=w2400', alt: 'Vista hacia volcanes y lago' },
-        { src: 'https://drive.google.com/thumbnail?id=1qjI_2yVBvMfE2kl9DW5bCY-eOW3VbMh0&sz=w2400', alt: 'Entorno del proyecto San Andrés Lakeview Terrace' },
-        { src: 'https://drive.google.com/thumbnail?id=1fOaHjqDQeWQnYp58-E2bAsv4Cm-96QSq&sz=w2400', alt: 'Paisaje y terreno con potencial de desarrollo en Atitlán' },
-        { src: 'https://drive.google.com/thumbnail?id=1zpJtlrVK-VJ94kaHc_pxp8fVGaUwbbuT&sz=w2400', alt: 'Acceso y entorno de la lotificación' },
-        { src: 'https://drive.google.com/thumbnail?id=1N8Id-GhLJ-xsMODHT9lz1tm2GQQcu1rn&sz=w2400', alt: 'Vista natural desde el proyecto' },
-        { src: 'https://drive.google.com/thumbnail?id=1nUsllmqe_xlaa0QkSpUDiobygzH0l3f3&sz=w2400', alt: 'Terreno con vista en San Andrés Semetabaj' }
-      ];
-
       const fichaUrl = window.location.href;
       const whatsappNumber = '50232465215';
       const investmentName = 'terrenos con vista al Lago de Atitlán en San Andrés Lakeview Terrace';
@@ -1102,62 +1076,6 @@
 
       if (whatsappMain) whatsappMain.href = whatsappUrl;
       if (whatsappHero) whatsappHero.href = whatsappUrl;
-
-      const lightbox = document.getElementById('lightbox');
-      const lightboxImage = document.getElementById('lightboxImage');
-      const closeLightboxButton = document.getElementById('closeLightbox');
-      const nextLightboxButton = document.getElementById('nextLightbox');
-      const prevLightboxButton = document.getElementById('prevLightbox');
-      let currentIndex = 0;
-
-      function updateLightboxImage() {
-        if (!lightboxImage || !photos[currentIndex]) return;
-        lightboxImage.src = photos[currentIndex].src;
-        lightboxImage.alt = photos[currentIndex].alt;
-      }
-
-      function openLightbox(index) {
-        if (!lightbox || !lightboxImage) return;
-        currentIndex = Number.isFinite(index) ? index : 0;
-        updateLightboxImage();
-        lightbox.classList.add('open');
-        lightbox.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeLightbox() {
-        if (!lightbox) return;
-        lightbox.classList.remove('open');
-        lightbox.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-      }
-
-      function showNext() {
-        currentIndex = (currentIndex + 1) % photos.length;
-        updateLightboxImage();
-      }
-
-      function showPrev() {
-        currentIndex = (currentIndex - 1 + photos.length) % photos.length;
-        updateLightboxImage();
-      }
-
-      if (closeLightboxButton) closeLightboxButton.addEventListener('click', closeLightbox);
-      if (nextLightboxButton) nextLightboxButton.addEventListener('click', showNext);
-      if (prevLightboxButton) prevLightboxButton.addEventListener('click', showPrev);
-
-      if (lightbox) {
-        lightbox.addEventListener('click', event => {
-          if (event.target === lightbox) closeLightbox();
-        });
-      }
-
-      document.addEventListener('keydown', event => {
-        if (!lightbox || !lightbox.classList.contains('open')) return;
-        if (event.key === 'Escape') closeLightbox();
-        if (event.key === 'ArrowRight') showNext();
-        if (event.key === 'ArrowLeft') showPrev();
-      });
 
       const revealElements = document.querySelectorAll('.reveal');
       const supportsIntersectionObserver = 'IntersectionObserver' in window;
