@@ -165,7 +165,7 @@ a {
 }
 
 .hero > div:first-child {
-    width: min(1180px, calc(100% - 48px));
+    width: min(1140px, calc(100% - 48px));
     margin: 0 auto;
     padding: 110px 0 96px;
     position: relative;
@@ -309,10 +309,11 @@ h3,
 .section-header {
     max-width: 760px;
     margin-bottom: 34px;
+    max-width: 555px;
 }
 
 .section-header h2 {
-    font-size: clamp(32px, 3.2vw, 45px);
+    font-size: clamp(2rem, 2vw, 3.6rem);
     line-height: 1.04;
     letter-spacing: -0.035em;
     font-weight: 500;
@@ -468,7 +469,7 @@ h3,
 }
 
 .featured-content h2 {
-    font-size: clamp(2rem, 3vw, 3.6rem);
+    font-size: clamp(2rem, 2vw, 3.6rem);
     line-height: 1;
     letter-spacing: -0.04em;
     font-weight: 500;
@@ -581,7 +582,7 @@ h3,
 }
 
 .cta h2 {
-    font-size: clamp(28px, 4vw, 38px);
+    font-size: clamp(2rem, 2vw, 3.6rem);
     line-height: 1;
     font-weight: 500;
     max-width: 860px;
