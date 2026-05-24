@@ -574,7 +574,7 @@ h3,
     border-radius: 0;
     background:
     linear-gradient(90deg, rgba(7, 6, 5, 0.88), rgba(20, 17, 15, 0.62)),
-    url('/images/investments/invest-001.jpg') center/cover;
+    url('../images/investments/invest-001.jpg') center/cover;
     color: var(--text);
     text-align: center;
 }

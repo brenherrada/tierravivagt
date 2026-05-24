@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terrenos con vista al Lago de Atitlán | Tierra Viva Investments</title>
+  <meta name="description" content="Terrenos en San Andrés Semetabaj, Sololá, con vista al Lago de Atitlán y volcanes. Una oportunidad para desarrollar cabañas de lujo dentro de un condominio nuevo." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ivory: #f4f2ed;
+      --stone: #e8ded1;
+      --sand: #d9d2c5;
+      --white: #ffffff;
+      --ink: #211a14;
+      --muted: #756b61;
+      --olive: #66704b;
+      --olive-dark: #4f5739;
+      --gold: #9b7b45;
+      --gold-soft: #d5c29d;
+      --terracotta: #b85f43;
+      --charcoal: #171411;
+      --forest: #263225;
+      --sage-dark: #48513b;
+      --line: rgba(36, 27, 20, 0.13);
+      --shadow: 0 28px 80px rgba(20, 16, 12, 0.18);
+      --soft-shadow: 0 18px 48px rgba(20, 16, 12, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--ivory);
+      color: var(--ink);
+      font-weight: 300;
+      line-height: 1.35;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    img { max-width: 100%; display: block; }
+
+    .site-footer {
+        padding: 34px 24px;
+        text-align: center;
+        font-family: 'Manrope', Arial, sans-serif;
+        color: var(--muted);
+        font-size: 0.88rem;
+    }
+
+    .site-footer .construction-note {
+        margin: 0;
+        color: var(--muted);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes softZoom {
+      from { transform: scale(1.04); }
+      to { transform: scale(1.01); }
+    }
+
+    .reveal {
+      --reveal-y: 22px;
+      --parallax-y: 0px;
+      opacity: 0;
+      transform: translate3d(0, calc(var(--reveal-y) + var(--parallax-y)), 0);
+      transition: opacity 900ms ease, transform 900ms ease;
+      will-change: opacity, transform;
+    }
+
+    .reveal.is-visible {
+      --reveal-y: 0px;
+      opacity: 1;
+    }
+
+    .parallax-section {
+      will-change: transform;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .reveal {
+        --reveal-y: 0px;
+        --parallax-y: 0px;
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .hero-bg,
+      .hero-content > * {
+        animation: none;
+      }
+
+      .hero-content > *,
+      .reveal {
+        --reveal-y: 0px;
+        --parallax-y: 0px;
+        opacity: 1;
+        transform: none;
+      }
+
+      .brand-link img,
+      .btn,
+      .metric,
+      .investment-card,
+      .thesis-card,
+      .gallery-single img,
+      .image-panel img,
+      .detail-item,
+      .lightbox,
+      .lightbox img {
+        transition: none;
+      }
+    }
+
+    .page {
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(155, 123, 69, 0.14), transparent 28%),
+        radial-gradient(circle at 88% 2%, rgba(102, 112, 75, 0.16), transparent 32%),
+        var(--ivory);
+    }
+
+    .site-header {
+      width: 100%;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(9, 10, 9, 0.6);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand-link img {
+    width: 90px;
+    max-width: 90px;
+    height: auto;
+    display: block;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.brand-link:hover img {
+    transform: scale(1.035);
+    opacity: 0.86;
+}
+
+    .header-note {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.82);
+      font-weight: 500;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      color: #fff;
+      display: grid;
+      place-items: end start;
+      padding: 150px clamp(22px, 6vw, 86px) 72px;
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(16, 14, 11, 0.88) 0%, rgba(16, 14, 11, 0.58) 42%, rgba(16, 14, 11, 0.12) 100%),
+        linear-gradient(0deg, rgba(16, 14, 11, 0.72) 0%, rgba(16, 14, 11, 0.1) 48%);
+      z-index: -1;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+      transform: scale(1.01);
+      animation: softZoom 1800ms ease-out both;
+    }
+
+    .hero-content {
+      max-width: 1040px;
+      display: grid;
+      gap: 26px;
+    }
+
+    .hero-content > * {
+      opacity: 0;
+      animation: fadeUp 850ms ease forwards;
+    }
+
+    .hero-content > *:nth-child(1) { animation-delay: 120ms; }
+    .hero-content > *:nth-child(2) { animation-delay: 240ms; }
+    .hero-content > *:nth-child(3) { animation-delay: 360ms; }
+    .hero-content > *:nth-child(4) { animation-delay: 480ms; }
+    .hero-content > *:nth-child(5) { animation-delay: 600ms; }
+
+    .eyebrow {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 12px;
+      font-size: 11px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Lora', Georgia, serif;
+      font-weight: 500;
+      margin: 0;
+      line-height: 1.04;
+    }
+
+    h1 {
+      max-width: 900px;
+      font-size: clamp(36px, 5vw, 50px);
+      letter-spacing: -0.055em;
+    }
+
+    .hero-subtitle {
+      max-width: 690px;
+      font-size: clamp(17px, 2vw, 20px);
+      color: rgba(255,255,255,0.82);
+      font-weight: 300;
+      margin: 0;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 14px 22px;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 600;
+      border: 1px solid transparent;
+      transition: transform 240ms ease, background 240ms ease, border-color 240ms ease, box-shadow 240ms ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(20, 16, 12, 0.14);
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #fff;
+    }
+
+    .btn-primary:hover { background: #876936; }
+
+    .btn-ghost {
+      border-color: rgba(255,255,255,0.45);
+      color: #fff;
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      width: 100%;
+      max-width: 1040px;
+      margin-top: 28px;
+      background: rgba(255,255,255,0.24);
+      border: 1px solid rgba(255,255,255,0.22);
+      backdrop-filter: blur(18px);
+    }
+
+    .metric {
+      padding: 22px 24px;
+      background: rgba(18, 15, 12, 0.35);
+      transition: background 300ms ease, transform 300ms ease;
+    }
+
+    .metric:hover {
+      background: rgba(18, 15, 12, 0.48);
+      transform: translateY(-2px);
+    }
+
+    .metric strong {
+      display: block;
+      font-family: 'Lora', Georgia, serif;
+      font-size: clamp(19px, 3vw, 27px);
+      line-height: 1;
+      font-weight: 500;
+      color: #fff;
+    }
+
+    .metric span {
+      display: block;
+      margin-bottom: 9px;
+      color: rgba(255,255,255,0.7);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section {
+      padding: clamp(72px, 9vw, 128px) clamp(22px, 6vw, 86px);
+    }
+
+    .section-narrow {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+      gap: clamp(42px, 6vw, 86px);
+      align-items: start;
+    }
+
+    .kicker {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 3.5vw, 40px);
+      letter-spacing: -0.045em;
+      color: var(--ink);
+    }
+
+    .lead {
+      font-size: clamp(17px, 2vw, 20px);
+      color: var(--muted);
+      margin: 24px 0 0;
+      max-width: 760px;
+      font-weight: 300;
+    }
+
+    .investment-card {
+      background: linear-gradient(180deg, var(--olive-dark), #242719);
+      color: #fff;
+      padding: clamp(28px, 4vw, 44px);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      transition: transform 420ms ease, box-shadow 420ms ease;
+    }
+
+    .investment-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 34px 90px rgba(72, 81, 59, 0.22);
+    }
+
+    .investment-card h3 {
+      font-size: 31px;
+      letter-spacing: -0.03em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .investment-card p {
+      color: rgba(255,255,255,0.7);
+      margin: 18px 0 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .price-line {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.22);
+      position: relative;
+      z-index: 1;
+    }
+
+    .price-line .label {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 8px;
+    }
+
+    .price-line .price {
+      font-family: 'Lora', Georgia, serif;
+      font-size: clamp(24px, 4vw, 32px);
+      line-height: 1;
+      color: var(--gold-soft);
+    }
+
+    .facts-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 44px;
+    }
+
+    .fact {
+      background: rgba(255,255,255,0.7);
+      border: 1px solid var(--line);
+      padding: 24px;
+      min-height: 150px;
+      box-shadow: var(--soft-shadow);
+    }
+
+    .fact small {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .fact strong {
+      display: block;
+      font-family: 'Lora', Georgia, serif;
+      font-size: 24px;
+      line-height: 1.18;
+      font-weight: 500;
+    }
+
+    .fact span {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .dark-band {
+      background: var(--forest);
+      color: #fff;
+      position: relative;
+    }
+
+    .dark-band::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 18% 20%, rgba(213, 194, 157, 0.13), transparent 26%),
+        radial-gradient(circle at 78% 78%, rgba(255, 255, 255, 0.06), transparent 30%);
+      pointer-events: none;
+    }
+
+    .dark-band .section-narrow { position: relative; z-index: 1; }
+
+    .dark-band .section-title { color: #fff; }
+    .dark-band .lead { color: rgba(255,255,255,0.68); }
+
+    .thesis-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 48px;
+    }
+
+    .thesis-card {
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.045);
+      padding: 30px;
+      min-height: 280px;
+      transition: transform 420ms ease, background 420ms ease, border-color 420ms ease;
+    }
+
+    .thesis-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255,255,255,0.075);
+      border-color: rgba(213, 194, 157, 0.34);
+    }
+
+    .thesis-number {
+      display: inline-grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(213, 194, 157, 0.55);
+      color: var(--gold-soft);
+      font-family: 'Lora', Georgia, serif;
+      margin-bottom: 30px;
+    }
+
+    .thesis-card h3 {
+      font-size: 27px;
+      letter-spacing: -0.03em;
+    }
+
+    .thesis-card p {
+      color: rgba(255,255,255,0.64);
+      margin: 16px 0 0;
+      font-size: 15px;
+    }
+
+    .gallery-section {
+      padding: 0;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 24px 60px rgba(20, 16, 12, 0.08);
+    }
+
+    .section#detalles {
+      padding-top: 0;
+    }
+
+    .gallery-single {
+      width: 100vw;
+      height: 50vh;
+      overflow: hidden;
+    }
+
+    .gallery-single img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .development-grid {
+      display: grid;
+      grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1.1fr);
+      gap: clamp(38px, 6vw, 86px);
+    }
+
+    .vision-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .vision-item {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 14px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    .vision-item span:first-child {
+      color: var(--gold);
+      font-family: 'Lora', Georgia, serif;
+      font-size: 19px;
+      line-height: 1;
+    }
+
+    .image-panel {
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: var(--stone);
+    }
+
+    .image-panel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 900ms ease;
+    }
+
+    .image-panel:hover img {
+      transform: scale(1.035);
+    }
+
+    .image-panel-caption {
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      bottom: 28px;
+      background: rgba(244, 242, 237, 0.9);
+      backdrop-filter: blur(12px);
+      padding: 22px;
+      color: var(--ink);
+      border: 1px solid rgba(255,255,255,0.45);
+    }
+
+    .image-panel-caption strong {
+      display: block;
+      font-family: 'Lora', Georgia, serif;
+      font-size: 25px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+
+    .image-panel-caption span {
+      display: block;
+      color: var(--muted);
+      margin-top: 8px;
+      font-size: 14px;
+    }
+
+    .details-wrapper {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .detail-panel,
+    .sidebar-panel {
+      background: var(--white);
+      border: 1px solid var(--line);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .detail-panel {
+      padding: clamp(28px, 4vw, 46px);
+    }
+
+    .detail-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .detail-item {
+      border: 1px solid var(--line);
+      padding: 20px;
+      background: #fff;
+      transition: transform 300ms ease, border-color 300ms ease, box-shadow 300ms ease;
+    }
+
+    .detail-item:hover {
+      transform: translateY(-2px);
+      border-color: rgba(155, 123, 69, 0.32);
+      box-shadow: 0 14px 32px rgba(20, 16, 12, 0.07);
+    }
+
+    .detail-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    .detail-item strong {
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .sidebar-panel {
+      padding: 30px;
+      position: sticky;
+      top: 24px;
+    }
+
+    .sidebar-panel h3 {
+      font-size: 29px;
+      letter-spacing: -0.03em;
+    }
+
+    .sidebar-panel p {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 14px 0 24px;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .check {
+      display: grid;
+      grid-template-columns: 20px 1fr;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .check::before {
+      content: '•';
+      color: var(--gold);
+      font-size: 24px;
+      line-height: 0.8;
+    }
+
+    .cta-section {
+      padding: clamp(72px, 9vw, 120px) clamp(22px, 6vw, 86px);
+      background: linear-gradient(135deg, var(--olive-dark), #242719);
+      color: #fff;
+    }
+
+    .cta-box {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .cta-box h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      max-width: 760px;
+    }
+
+    .cta-box p {
+      margin: 18px 0 0;
+      color: rgba(255,255,255,0.7);
+      max-width: 620px;
+      font-size: 17px;
+    }
+
+    .cta-actions {
+      display: grid;
+      gap: 12px;
+      min-width: 260px;
+    }
+
+    .cta-actions .btn {
+      width: 100%;
+    }
+
+    .btn-light {
+      background: #fff;
+      color: var(--olive-dark);
+    }
+
+    .btn-outline-dark {
+      border-color: rgba(255,255,255,0.35);
+      color: #fff;
+      background: transparent;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(9, 8, 7, 0.94);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 280ms ease;
+    }
+
+    .lightbox.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .lightbox img {
+      max-height: 86vh;
+      max-width: 92vw;
+      object-fit: contain;
+      box-shadow: 0 28px 80px rgba(0,0,0,0.42);
+      transform: scale(0.985);
+      transition: transform 280ms ease;
+    }
+
+    .lightbox.open img {
+      transform: scale(1);
+    }
+
+    .lightbox button {
+      position: absolute;
+      border: 1px solid rgba(255,255,255,0.22);
+      color: #fff;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      width: 46px;
+      height: 46px;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    .close-lightbox { top: 24px; right: 24px; }
+    .prev-lightbox { left: 24px; top: 50%; transform: translateY(-50%); }
+    .next-lightbox { right: 24px; top: 50%; transform: translateY(-50%); }
+
+    @media (max-width: 980px) {
+      .site-header {
+        padding: 22px;
+      }
+
+      .header-note { display: none; }
+
+      .hero {
+        min-height: 92vh;
+        padding: 128px 22px 44px;
+      }
+
+      .hero::before {
+        background:
+          linear-gradient(0deg, rgba(16, 14, 11, 0.84) 0%, rgba(16, 14, 11, 0.24) 100%),
+          linear-gradient(90deg, rgba(16, 14, 11, 0.6), rgba(16, 14, 11, 0.22));
+      }
+
+      .hero-metrics,
+      .facts-grid,
+      .thesis-grid,
+      .detail-list {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-grid,
+      .development-grid,
+      .details-wrapper,
+      .cta-box {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-section {
+        padding: 0;
+        box-shadow: 0 18px 42px rgba(20, 16, 12, 0.07);
+      }
+
+      .gallery-single,
+      .gallery-single img {
+        min-height: 420px;
+      }
+
+      .image-panel,
+      .image-panel img {
+        min-height: 440px;
+      }
+
+      .sidebar-panel { position: static; }
+    }
+
+    @media (max-width: 560px) {
+      .metric { padding: 18px; }
+      .section { padding: 68px 20px; }
+      .gallery-section {
+        padding: 0;
+        box-shadow: 0 18px 42px rgba(20, 16, 12, 0.07);
+      }
+      .btn { width: 100%; }
+      .hero-actions { width: 100%; }
+      .hero-actions .btn {
+        width: auto;
+      }
+      .cta-actions { min-width: 0; }
+      .prev-lightbox { left: 12px; }
+      .next-lightbox { right: 12px; }
+
+      .thesis-card {
+        min-height: 0;
+      }
+
+      .thesis-number {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a href="tierra-viva-investments.html" class="brand-link" aria-label="Volver a Tierra Viva Investments">
+      <img src="../images/logow.png" alt="Tierra Viva Propiedades" />
+    </a>
+  </header>
+  <main class="page">
+    <section class="hero" id="inicio">
+      <img class="hero-bg" src="https://drive.google.com/thumbnail?id=1KDQ8PjgIaBFDq6xke2hwnI6mNjMYBe3z&sz=w2400" alt="Vista hacia el Lago de Atitlán desde terrenos en San Andrés Semetabaj" />
+      <div class="hero-content">
+        <div class="eyebrow">San Andrés Lakeview Terrace · Sololá</div>
+        <h1>Terrenos con vista al Lago de Atitlán para desarrollar cabañas de lujo.</h1>
+        <p class="hero-subtitle">Una oportunidad en condominio nuevo para inversionistas que desean desarrollar un proyecto boutique de hospedaje, descanso o renta vacacional premium frente a uno de los paisajes más apreciados de Guatemala.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" id="whatsappHero" href="#contacto">Solicitar información</a>
+        </div>
+        <div class="hero-metrics">
+          <div class="metric">
+            <span>varas² por terreno</span>
+            <strong>1,160–2,100</strong>
+          </div>
+          <div class="metric">
+            <span>precio por vara²</span>
+            <strong>US$150–200</strong>
+          </div>
+          <div class="metric">
+            <span>vista estratégica</span>
+            <strong>Lago + volcanes</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal parallax-section" data-parallax-speed="0.045">
+      <div class="section-narrow intro-grid">
+        <div>
+          <div class="kicker">Oportunidad de inversión</div>
+          <h2 class="section-title">Una ubicación con vista privilegiada y alto potencial para un proyecto con identidad propia.</h2>
+          <p class="lead">Los terrenos se ubican en la Lotificación San Andrés Lakeview Terrace, en San Andrés Semetabaj, Sololá. El proyecto cuenta con acceso por bulevar desde carretera asfaltada, seguridad, muro perimetral y vistas hacia el Lago de Atitlán y sus volcanes.</p>
+          <p class="lead">Por su escala, ubicación y entorno natural, la propiedad se presta para un desarrollo de cabañas premium, villas privadas, unidades de descanso o renta vacacional de alto nivel.</p>
+        </div>
+
+        <aside class="investment-card">
+          <h3>Una base estratégica para desarrollar valor.</h3>
+          <p>El atractivo no está únicamente en el metraje. Está en la posibilidad de convertir un terreno con vista en una experiencia bien diseñada: arquitectura, privacidad, paisaje, terrazas, amenidades y operación.</p>
+          <div class="price-line">
+            <span class="label">Precio de referencia</span>
+            <div class="price">US$150–200 / vara²</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section dark-band reveal parallax-section" id="tesis" data-parallax-speed="0.035">
+      <div class="section-narrow">
+        <div class="kicker">Enfoque de inversión</div>
+        <h2 class="section-title">Un enfoque claro para invertir en paisaje, producto y potencial operativo.</h2>
+        <p class="lead">Atitlán ya cuenta con un posicionamiento natural muy sólido. La oportunidad está en desarrollar un producto bien diseñado, bien ubicado y comercialmente atractivo.</p>
+
+        <div class="thesis-grid">
+          <article class="thesis-card">
+            <div class="thesis-number">01</div>
+            <h3>Desarrollo boutique</h3>
+            <p>Los lotes permiten proyectar cabañas o villas de lujo con identidad propia: unidades independientes, terrazas panorámicas y una experiencia de descanso atractiva para renta vacacional.</p>
+          </article>
+
+          <article class="thesis-card">
+            <div class="thesis-number">02</div>
+            <h3>Vista como valor agregado</h3>
+            <p>La vista al lago y a los volcanes puede convertirse en uno de los principales atributos comerciales del proyecto, especialmente para un producto de hospitalidad boutique.</p>
+          </article>
+
+          <article class="thesis-card">
+            <div class="thesis-number">03</div>
+            <h3>Entorno planificado</h3>
+            <p>La urbanización inteligente, el acceso por bulevar, el muro perimetral y la seguridad ofrecen una base ordenada para proyectar inversión, construcción y operación futura.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery-section" id="galeria">
+      <div class="gallery-single">
+        <img src="https://drive.google.com/thumbnail?id=1fOaHjqDQeWQnYp58-E2bAsv4Cm-96QSq&sz=w2400" alt="Vista panorámica del entorno natural en San Andrés Lakeview Terrace" />
+      </div>
+    </section>
+
+    <section class="section reveal parallax-section" data-parallax-speed="0.045">
+      <div class="section-narrow development-grid">
+        <div>
+          <div class="kicker">Visión de desarrollo</div>
+          <h2 class="section-title">Una visión natural: cabañas de lujo integradas al paisaje.</h2>
+
+          <div class="vision-list">
+            <div class="vision-item"><span>01</span><div>Cabañas o villas independientes orientadas hacia lago y volcanes.</div></div>
+            <div class="vision-item"><span>02</span><div>Arquitectura integrada al terreno, con materiales nobles, terrazas y una relación cuidada con el paisaje.</div></div>
+            <div class="vision-item"><span>03</span><div>Producto ideal para una estrategia de renta vacacional, estadías boutique o uso mixto personal-comercial.</div></div>
+            <div class="vision-item"><span>04</span><div>Proyecto sujeto a validación de normativa, permisos, topografía, factibilidad de servicios y reglamento interno.</div></div>
+          </div>
+        </div>
+
+        <div class="image-panel">
+          <img src="https://drive.google.com/thumbnail?id=1nUsllmqe_xlaa0QkSpUDiobygzH0l3f3&sz=w1600" alt="Paisaje y terreno con potencial de desarrollo en Atitlán" />
+          <div class="image-panel-caption">
+            <strong>Lujo sereno y bien integrado.</strong>
+            <span>Un entorno privilegiado para desarrollar con elegancia, respeto por el paisaje y una experiencia de alto nivel.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="detalles">
+      <div class="section-narrow details-wrapper">
+        <article class="detail-panel">
+          <div class="kicker">Información general</div>
+          <h2 class="section-title">Datos principales de la oportunidad.</h2>
+
+          <div class="detail-list">
+            <div class="detail-item">
+              <span>Ubicación</span>
+              <strong>San Andrés Semetabaj, Sololá</strong>
+            </div>
+            <div class="detail-item">
+              <span>Proyecto</span>
+              <strong>Lotificación San Andrés Lakeview Terrace</strong>
+            </div>
+            <div class="detail-item">
+              <span>Áreas disponibles</span>
+              <strong>Desde 1,160 hasta 2,100 varas²</strong>
+            </div>
+            <div class="detail-item">
+              <span>Precio</span>
+              <strong>US$150 a US$200 por vara²</strong>
+            </div>
+            <div class="detail-item">
+              <span>Vista</span>
+              <strong>Lago de Atitlán y volcanes</strong>
+            </div>
+            <div class="detail-item">
+              <span>Acceso</span>
+              <strong>Bulevar desde carretera asfaltada</strong>
+            </div>
+            <div class="detail-item">
+              <span>Urbanización</span>
+              <strong>Urbanización inteligente</strong>
+            </div>
+            <div class="detail-item">
+              <span>Seguridad</span>
+              <strong>Muro perimetral y seguridad</strong>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-section reveal parallax-section" id="contacto" data-parallax-speed="0.025">
+      <div class="cta-box">
+        <div>
+          <h2>Solicite información para evaluar lotes y disponibilidad.</h2>
+          <p>Una oportunidad dirigida a inversionistas que desean analizar tierra con potencial turístico-residencial en Atitlán y contar con información concreta antes de avanzar.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn-light" id="whatsappMain" href="#">Solicitar información</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div>Tierra Viva Investments · Activos inmobiliarios en Guatemala</div>
+    <p class="construction-note">Sitio web en construcción.</p>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="close-lightbox" id="closeLightbox" aria-label="Cerrar">×</button>
+    <button class="prev-lightbox" id="prevLightbox" aria-label="Imagen anterior">‹</button>
+    <img id="lightboxImage" src="" alt="Imagen ampliada" />
+    <button class="next-lightbox" id="nextLightbox" aria-label="Imagen siguiente">›</button>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const photos = [
+        { src: 'https://drive.google.com/thumbnail?id=1KDQ8PjgIaBFDq6xke2hwnI6mNjMYBe3z&sz=w2400', alt: 'Vista del terreno hacia el Lago de Atitlán' },
+        { src: 'https://drive.google.com/thumbnail?id=1QJslmuf-sciWYHlKOclXzmidgJCtR9Rc&sz=w2400', alt: 'Vista panorámica del entorno natural' },
+        { src: 'https://drive.google.com/thumbnail?id=1g0fweE7-IrQjSM_QlaB3GAh9X0m50vbh&sz=w2400', alt: 'Terrenos en San Andrés Lakeview Terrace' },
+        { src: 'https://drive.google.com/thumbnail?id=1IjzCGRoYPUjPN5TsF-RF5_u8aI__XlWs&sz=w2400', alt: 'Vista hacia volcanes y lago' },
+        { src: 'https://drive.google.com/thumbnail?id=1qjI_2yVBvMfE2kl9DW5bCY-eOW3VbMh0&sz=w2400', alt: 'Entorno del proyecto San Andrés Lakeview Terrace' },
+        { src: 'https://drive.google.com/thumbnail?id=1fOaHjqDQeWQnYp58-E2bAsv4Cm-96QSq&sz=w2400', alt: 'Paisaje y terreno con potencial de desarrollo en Atitlán' },
+        { src: 'https://drive.google.com/thumbnail?id=1zpJtlrVK-VJ94kaHc_pxp8fVGaUwbbuT&sz=w2400', alt: 'Acceso y entorno de la lotificación' },
+        { src: 'https://drive.google.com/thumbnail?id=1N8Id-GhLJ-xsMODHT9lz1tm2GQQcu1rn&sz=w2400', alt: 'Vista natural desde el proyecto' },
+        { src: 'https://drive.google.com/thumbnail?id=1nUsllmqe_xlaa0QkSpUDiobygzH0l3f3&sz=w2400', alt: 'Terreno con vista en San Andrés Semetabaj' }
+      ];
+
+      const fichaUrl = window.location.href;
+      const whatsappNumber = '50232465215';
+      const investmentName = 'terrenos con vista al Lago de Atitlán en San Andrés Lakeview Terrace';
+      const message = `Hola Brenda, quisiera solicitar información sobre los ${investmentName}. Vi la ficha aquí: ${fichaUrl}`;
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+      const whatsappMain = document.getElementById('whatsappMain');
+      const whatsappHero = document.getElementById('whatsappHero');
+
+      if (whatsappMain) whatsappMain.href = whatsappUrl;
+      if (whatsappHero) whatsappHero.href = whatsappUrl;
+
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImage = document.getElementById('lightboxImage');
+      const closeLightboxButton = document.getElementById('closeLightbox');
+      const nextLightboxButton = document.getElementById('nextLightbox');
+      const prevLightboxButton = document.getElementById('prevLightbox');
+      let currentIndex = 0;
+
+      function updateLightboxImage() {
+        if (!lightboxImage || !photos[currentIndex]) return;
+        lightboxImage.src = photos[currentIndex].src;
+        lightboxImage.alt = photos[currentIndex].alt;
+      }
+
+      function openLightbox(index) {
+        if (!lightbox || !lightboxImage) return;
+        currentIndex = Number.isFinite(index) ? index : 0;
+        updateLightboxImage();
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        if (!lightbox) return;
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      function showNext() {
+        currentIndex = (currentIndex + 1) % photos.length;
+        updateLightboxImage();
+      }
+
+      function showPrev() {
+        currentIndex = (currentIndex - 1 + photos.length) % photos.length;
+        updateLightboxImage();
+      }
+
+      if (closeLightboxButton) closeLightboxButton.addEventListener('click', closeLightbox);
+      if (nextLightboxButton) nextLightboxButton.addEventListener('click', showNext);
+      if (prevLightboxButton) prevLightboxButton.addEventListener('click', showPrev);
+
+      if (lightbox) {
+        lightbox.addEventListener('click', event => {
+          if (event.target === lightbox) closeLightbox();
+        });
+      }
+
+      document.addEventListener('keydown', event => {
+        if (!lightbox || !lightbox.classList.contains('open')) return;
+        if (event.key === 'Escape') closeLightbox();
+        if (event.key === 'ArrowRight') showNext();
+        if (event.key === 'ArrowLeft') showPrev();
+      });
+
+      const revealElements = document.querySelectorAll('.reveal');
+      const supportsIntersectionObserver = 'IntersectionObserver' in window;
+
+      if (supportsIntersectionObserver) {
+        const revealObserver = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          });
+        }, { threshold: 0.14 });
+
+        revealElements.forEach(element => revealObserver.observe(element));
+      } else {
+        revealElements.forEach(element => element.classList.add('is-visible'));
+      }
+
+      const parallaxSections = document.querySelectorAll('.parallax-section');
+      const canUseMatchMedia = typeof window.matchMedia === 'function';
+      const reduceMotion = canUseMatchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)').matches : false;
+      const allowMotion = canUseMatchMedia ? window.matchMedia('(min-width: 768px)').matches : window.innerWidth >= 768;
+      let ticking = false;
+
+      function updateParallax() {
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+        parallaxSections.forEach(section => {
+          const rect = section.getBoundingClientRect();
+          const isInView = rect.bottom > 0 && rect.top < viewportHeight;
+          if (!isInView) return;
+
+          const speed = Number(section.dataset.parallaxSpeed || 0.035);
+          const distanceFromCenter = rect.top + rect.height / 2 - viewportHeight / 2;
+          const movement = Math.max(Math.min(distanceFromCenter * -speed, 22), -22);
+
+          section.style.setProperty('--parallax-y', `${movement.toFixed(2)}px`);
+        });
+
+        ticking = false;
+      }
+
+      function requestParallaxUpdate() {
+        if (reduceMotion || !allowMotion || ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(updateParallax);
+      }
+
+      if (!reduceMotion && allowMotion && parallaxSections.length) {
+        updateParallax();
+        window.addEventListener('scroll', requestParallaxUpdate, { passive: true });
+        window.addEventListener('resize', requestParallaxUpdate);
+      }
+    });
+  </script>
+</body>
+</html>

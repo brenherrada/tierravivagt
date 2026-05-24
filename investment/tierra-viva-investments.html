@@ -110,6 +110,15 @@
       </div>
     </section>
 
+    <section class="featured-investment atitlan-land-opportunity" id="atitlan-lakeview-terrace"></section>
+    <script>
+      fetch('components/section_terrenos_atitlan.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('atitlan-lakeview-terrace').innerHTML = html;
+        });
+    </script>
+
     <section class="section" id="destacada">
       <article class="featured-panel reveal">
         <div class="featured-image" role="img" aria-label="Activo hotelero o propiedad de inversión en Guatemala"></div>
@@ -201,7 +210,7 @@
 
   <footer class="site-footer">
     <div>Tierra Viva Investments · Activos inmobiliarios en Guatemala</div>
-    <p class="construction-note">Sitio web en construcción. La información puede variar de un día al otro.</p>
+    <p class="construction-note">Sitio web en construcción.</p>
   </footer>
   <script src="investment-data.js" defer></script>
   <script src="tierra-viva-investments.js" defer></script>
