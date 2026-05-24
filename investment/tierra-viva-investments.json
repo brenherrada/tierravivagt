@@ -18,27 +18,11 @@
     }
   },
   "hero": {
-    "eyebrow": "Inversión privada · Guatemala",
+    "eyebrow": "Área exclusiva de inversiones",
     "title": "Un espacio reservado para evaluar activos inmobiliarios.",
-    "paragraph": "Una selección curada de oportunidades en Guatemala para quienes buscan invertir con visión patrimonial: hoteles boutique, terrenos, fincas, activos con potencial de renta y propiedades con valor estratégico.",
-    "actions": [
-      {
-        "text": "Conocer oportunidades",
-        "href": "#oportunidades",
-        "class": "btn btn-primary"
-      },
-      {
-        "text": "Solicitar información privada",
-        "href": "https://wa.me/50232465215?text=Hola%20Brenda%2C%20deseo%20recibir%20informaci%C3%B3n%20sobre%20activos%20de%20inversi%C3%B3n%20en%20Guatemala%20con%20Tierra%20Viva.",
-        "class": "btn btn-secondary",
-        "target": "_blank",
-        "rel": "noopener"
-      }
-    ],
-    "floating_card": {
-      "strong": "Selección privada de inversión.",
-      "span": "Activos evaluados por ubicación, potencial, uso ideal, condiciones comerciales y aspectos clave a validar antes de avanzar."
-    }
+    "paragraph": null,
+    "actions": [],
+    "floating_card": null
   },
   "criteria": [
     {
@@ -120,10 +104,10 @@
     ],
     "actions": [
       {
-        "text": "Solicitar dossier privado",
-        "href": "https://wa.me/50232465215?text=Hola%20Brenda%2C%20deseo%20informaci%C3%B3n%20sobre%20activos%20hoteleros%20o%20propiedades%20de%20inversi%C3%B3n%20en%20Guatemala.",
-        "target": "_blank",
-        "rel": "noopener"
+        "text": "Ver ficha completa",
+        "href": "/investment/investment_ficha_venta_hotel_boutique_aldea_santa_ana.html",
+        "target": null,
+        "rel": null
       },
       {
         "text": "Volver a propiedades",
@@ -157,7 +141,7 @@
     "title": "¿Desea conocer oportunidades fuera del catálogo tradicional?",
     "paragraph": "Escríbanos para recibir activos seleccionados según su perfil de inversión, ticket estimado, zona de interés y objetivo patrimonial dentro de Guatemala.",
     "action": {
-      "text": "Solicitar oportunidades privadas",
+      "text": "Solicitar más información",
       "href": "https://wa.me/50232465215?text=Hola%20Brenda%2C%20deseo%20recibir%20opciones%20de%20inversi%C3%B3n%20inmobiliaria%20en%20Guatemala.",
       "target": "_blank",
       "rel": "noopener"
@@ -165,7 +149,7 @@
   },
   "footer": {
     "text": "Tierra Viva Investments · Activos inmobiliarios en Guatemala",
-    "construction_note": "Sitio web en construcción. La información puede variar de un día al otro."
+    "construction_note": "Sitio web en construcción."
   },
   "hotel_ficha": {
     "page_title": "Hotel Boutique — Aldea Santa Ana | Tierra Viva Investment",
