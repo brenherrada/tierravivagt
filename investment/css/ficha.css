@@ -152,9 +152,11 @@ padding: 10px 14px;
 }
 
 .hero-content {
-max-width: 880px;
+max-width: 1140px;
 position: relative;
 z-index: 2;
+width: 100%;
+margin: 0 auto;
 }
 
 .hero-content > * {
@@ -215,7 +217,7 @@ display: inline-flex;
 align-items: center;
 justify-content: center;
 min-height: 48px;
-padding: 0 22px;
+padding: 12px 22px;
 border: 1px solid var(--gold);
 background: var(--gold);
 color: var(--text-light);
@@ -287,6 +289,12 @@ animation-timeline: view();
 animation-range: entry 8% cover 28%;
 }
 
+section:not(.panel-light,.gallery-section,.cta-section) {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 section::before {
 content: "";
 position: absolute;
@@ -303,15 +311,17 @@ animation-range: entry 0% cover 20%;
 
 section.gallery-section {
     border: none;
-    margin-bottom: -2px;
+    margin-bottom: -3px;
     background: var(--panel);
 }
 
 .section-grid {
-display: grid;
-grid-template-columns: minmax(220px, 0.85fr) minmax(0, 1.55fr);
-gap: 8vw;
-align-items: start;
+    display: grid;
+    grid-template-columns: minmax(220px, 0.85fr) minmax(0, 1.55fr);
+    gap: 8vw;
+    align-items: start;
+    max-width: 1140px;
+    margin: 0 auto;
 }
 
 .section-kicker {
@@ -422,6 +432,7 @@ border-color: rgba(36,27,20,0.12);
 display: grid;
 grid-template-columns: repeat(2, minmax(0, 1fr));
 gap: 18px;
+margin-top: 15px;
 }
 
 .card {
@@ -527,7 +538,7 @@ margin: 0;
 
 .list {
 display: grid;
-gap: 12px;
+gap: 0;
 }
 
 .list-item {
@@ -561,10 +572,12 @@ font-weight: 600;
 }
 
 .gallery {
-display: grid;
-grid-template-columns: 1.2fr 0.8fr;
-gap: 18px;
-min-height: 540px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 18px;
+    min-height: 540px;
+    max-width: 1140px;
+    margin: 0 auto;
 }
 
 .gallery-mobile-carousel {
@@ -581,6 +594,7 @@ border: 1px solid var(--line);
 overflow: hidden;
 transition: transform 0.5s ease, filter 0.5s ease, border-color 0.5s ease;
 filter: saturate(0.92) contrast(1.02);
+background-repeat: no-repeat;
 }
 
 .gallery-main:hover,
@@ -610,10 +624,11 @@ background-image: url('../images/investments/invest-007.jpg');
 }
 
 .gallery-row {
-display: grid;
-grid-template-columns: repeat(3, minmax(0, 1fr));
-gap: 18px;
-margin-top: 18px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    max-width: 1140px;
+    margin: 18px auto 0;
 }
 
 .gallery-row div {
@@ -707,32 +722,9 @@ text-transform: uppercase;
     .hero { min-height: 46vh; padding-bottom: 44px; }
     .private-label { display: none; }
     .asset-strip,
-    .snapshot,
     .cards,
     .section-grid {
         grid-template-columns: 1fr;
-    }
-
-    .gallery,
-    .gallery-row {
-        display: none;
-    }
-
-    .gallery-mobile-carousel {
-        display: flex;
-        gap: 14px;
-        width: 100vw;
-        margin-left: calc(50% - 50vw);
-        padding: 18px 6vw;
-        overflow-x: auto;
-        overflow-y: hidden;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-    }
-
-    .gallery-mobile-carousel::-webkit-scrollbar {
-        display: none;
     }
 
     .card,
@@ -782,22 +774,54 @@ text-transform: uppercase;
     .asset-strip div { padding: 22px 6vw; }
     .list-item { display: block; }
     .list-item span:last-child { display: block; text-align: left; margin-top: 6px; }
-    .gallery-slide {
-        flex-basis: 88vw;
-        height: 62vh;
-        min-height: 380px;
-    }
-    footer { flex-direction: column; }
 
+    footer { flex-direction: column; align-items: center;
+        gap: 0;}
+
+    .list {
+        gap: 0;
+    }
+
+    .section-grid {
+        gap: 2vw;
+    }
+}
+
+@media (max-width: 767px){
+    .snapshot {
+        grid-template-columns: 1fr;
+    }
     section.gallery-section {
         padding: 0;
     }
     section.gallery-section::before {
         display: none;
     }
+    .gallery,
+    .gallery-row {
+        display: none;
+    }
 
-    .list {
-        gap: 0;
+    .gallery-mobile-carousel {
+        display: flex;
+        gap: 14px;
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        padding: 18px 6vw;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .gallery-mobile-carousel::-webkit-scrollbar {
+        display: none;
+    }
+    .gallery-slide {
+        flex-basis: 88vw;
+        height: 62vh;
+        min-height: 380px;
     }
 }
 
@@ -816,11 +840,6 @@ text-transform: uppercase;
         height: 56vh;
         min-height: 330px;
     }
-
-    .gallery-slide:focus, .gallery-slide:focus-visible, .gallery-slide:active {
-        transform: scale(1.02);
-    }
-
     .card-image-mobile {
         min-height: 180px;
         border-left: 0;
