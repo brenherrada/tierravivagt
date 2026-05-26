@@ -11,1563 +11,9 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
-
-  <style>
-    /*
-      Preview HTML para Tierra Viva.
-      Producción sugerida: mover esta base a Sass y compilar a styles.css.
-
-      Sistema visual:
-      - Bootstrap para estructura.
-      - Manrope para UI.
-      - Lora para lectura editorial.
-      - Playfair Display solo para impacto.
-      - Paleta moderna editorial sin marrón ni terracota.
-    */
-
-    :root {
-      --bg: #f6f4ef;
-      --bg-soft: #ebe9e1;
-      --bg-accent: #e7eceb;
-      --card: #ffffff;
-      --text: #202321;
-      --muted: #6f736d;
-      --line: #dedbd2;
-      --sage: #51615b;
-      --sage-light: #6d7c76;
-      --slate: #7c8a92;
-      --mist: #a8b2bd;
-      --clay-rose: #b9a6a0;
-      --mineral-blue: #8fa1aa;
-      --soft-gold: #E8D98B;
-      --ink: #111513;
-    }
-
-    html.story-cards-active,
-    body.story-cards-active {
-      overflow-x: hidden;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: geometricPrecision;
-    }
-
-    h1, h2, h3, h4, h5, .font-serif {
-      font-family: 'Lora', Georgia, serif;
-      letter-spacing: -.035em;
-    }
-
-    h1 {
-      font-size: clamp(2.75rem, 5.8vw, 64px);
-    }
-
-    h2 {
-      font-size: clamp(2.15rem, 4.2vw, 48px);
-    }
-
-    h3 {
-      font-size: clamp(1.55rem, 2.8vw, 34px);
-    }
-
-    h4 {
-      font-size: clamp(1.25rem, 2vw, 26px);
-    }
-
-    h5 {
-      font-size: clamp(1.08rem, 1.55vw, 20px);
-    }
-
-    h6 {
-      font-size: clamp(.9rem, 1.2vw, 16px);
-    }
-
-    .heading-sm {
-      font-size: clamp(1.15rem, 2.8vw, 22px);
-    }
-
-    .lead-editorial {
-      font-size: clamp(1.15rem, 2vw, 1.45rem);
-      line-height: 1.55;
-    }
-
-    .font-serif-italic {
-      font-family: 'Lora', Georgia, serif;
-      font-style: italic;
-      letter-spacing: -.02em;
-    }
-
-    .font-display {
-      font-family: 'Playfair Display', Georgia, serif;
-      letter-spacing: -.05em;
-    }
-
-    .hero-display {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(2.75rem, 5.8vw, 64px);
-      line-height: .9;
-      letter-spacing: -.055em;
-      font-weight: 600;
-    }
-
-    .editorial-display {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(1.4rem, 4.8vw, 2.8rem);
-      line-height: .95;
-      letter-spacing: -.05em;
-      font-weight: 600;
-    }
-
-    .quote-display {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-style: italic;
-      font-size: clamp(2.2rem, 4vw, 4.2rem);
-      line-height: 1;
-      letter-spacing: -.04em;
-    }
-
-    .navbar {
-      background: rgba(246, 244, 239, .88);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(222, 219, 210, .78);
-      transition: padding .32s ease, background-color .32s ease, box-shadow .32s ease, border-color .32s ease;
-    }
-
-    .navbar.scrolled {
-      background: rgba(246, 244, 239, .96);
-      border-bottom-color: rgba(222, 219, 210, .95);
-      box-shadow: 0 14px 42px rgba(17, 21, 19, .08);
-      padding-top: .55rem !important;
-      padding-bottom: .55rem !important;
-    }
-
-    .navbar-nav {
-      transition: column-gap .32s ease, row-gap .32s ease;
-    }
-
-    .navbar.scrolled .navbar-nav {
-      column-gap: 1rem !important;
-      row-gap: .45rem !important;
-    }
-
-    .navbar-brand {
-      display: inline-flex;
-      align-items: center;
-      line-height: 0;
-      padding: 0 0 10px;
-      transition: opacity .25s ease, transform .25s ease;
-    }
-
-    .navbar-brand:hover,
-    .navbar-brand:focus {
-      opacity: .78;
-      transform: translateY(-1px);
-    }
-
-    .brand-logo {
-      width: 200px;
-      height: auto;
-      display: block;
-      color: var(--sage);
-      transition: width .32s ease, opacity .32s ease;
-    }
-
-    .navbar.scrolled .brand-logo {
-      width: 170px;
-    }
-
-    .nav-link {
-      --nav-scale: 1;
-      color: var(--text);
-      font-size: 15px;
-      letter-spacing: .13em;
-      text-transform: uppercase;
-      font-weight: 600;
-      position: relative;
-      padding-inline: .15rem !important;
-      transform: scale(var(--nav-scale));
-      transform-origin: center;
-      transition: color .25s ease, transform .32s ease, letter-spacing .32s ease;
-    }
-
-    .navbar.scrolled .nav-link {
-      --nav-scale: .9;
-      letter-spacing: .11em;
-    }
-
-    .navbar.scrolled .nav-whatsapp svg {
-      width: 13px;
-      height: 13px;
-    }
-
-    @media (max-width: 991.98px) {
-      .nav-link,
-      .nav-link:hover,
-      .nav-link:focus,
-      .navbar.scrolled .nav-link {
-        --nav-scale: 1;
-        transform: none;
-      }
-
-      .navbar.scrolled .nav-link {
-        letter-spacing: .13em;
-      }
-
-      .navbar.scrolled .navbar-nav {
-        column-gap: initial !important;
-        row-gap: initial !important;
-      }
-
-      .navbar.scrolled .nav-whatsapp svg {
-        width: 14px;
-        height: 14px;
-      }
-    }
-
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      left: .15rem;
-      right: .15rem;
-      bottom: .15rem;
-      height: 1px;
-      background: linear-gradient(90deg, var(--mineral-blue), var(--clay-rose));
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform .32s ease;
-    }
-
-    .nav-link:hover,
-    .nav-link:focus {
-      color: var(--sage);
-      transform: translateY(-1px) scale(var(--nav-scale));
-    }
-
-    .nav-link:hover::after,
-    .nav-link:focus::after {
-      transform: scaleX(1);
-      transform-origin: left;
-    }
-
-    .nav-whatsapp {
-      display: inline-flex;
-      align-items: center;
-      gap: .42rem;
-      color: var(--sage) !important;
-    }
-
-    .nav-whatsapp:hover,
-    .nav-whatsapp:focus {
-      color: var(--mineral-blue) !important;
-    }
-
-    .nav-whatsapp svg {
-      width: 14px;
-      height: 14px;
-      flex: 0 0 auto;
-      transform: translateY(-1px);
-    }
-
-
-    .hero {
-      min-height: 70vh;
-      display: flex;
-      align-items: end;
-      background-image: linear-gradient(115deg, rgba(17,21,19,.76) 0%, rgba(17,21,19,.25) 44%, rgba(17,21,19,.05) 100%), url('https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80&w=2400&auto=format&fit=crop');
-      background-size: cover;
-      background-position: center;
-    }
-
-    .hero-card {
-      max-width: 820px;
-      background: rgba(246, 244, 239, .92);
-      border: 1px solid rgba(255, 255, 255, .64);
-      box-shadow: 0 28px 80px rgba(17, 21, 19, .20);
-    }
-
-    .eyebrow {
-      color: var(--slate);
-      font-size: .68rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-
-    .text-muted-tv {
-      color: var(--muted);
-    }
-
-    .lead {
-      line-height: 1.6;
-      font-size: 1.08rem;
-    }
-
-    .section-compact {
-      padding-top: 3.5rem;
-      padding-bottom: 3.5rem;
-    }
-
-    .section-kicker {
-      border-top: 1px solid var(--line);
-      padding-top: 20px;
-    }
-
-    .btn-tv,
-    .btn-tv-outline {
-      border-radius: 0;
-      padding: .85rem 1.15rem;
-      font-size: .72rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    .btn-tv.btn-sm,
-    .btn-tv-outline.btn-sm {
-      padding: .58rem .82rem;
-      font-size: .64rem;
-      letter-spacing: .11em;
-      line-height: 1.1;
-    }
-
-    .btn-tv {
-      background: var(--sage);
-      color: #fff;
-      border: 1px solid var(--sage);
-    }
-
-    .btn-tv:hover,
-    .btn-tv:focus {
-      background: var(--ink);
-      border-color: var(--ink);
-      color: #fff;
-    }
-
-    .btn-tv-outline {
-      color: var(--sage);
-      border: 1px solid rgba(81, 97, 91, .55);
-      background: transparent;
-    }
-
-    .btn-tv-outline:hover,
-    .btn-tv-outline:focus {
-      background: var(--sage);
-      border-color: var(--sage);
-      color: #fff;
-    }
-
-    .section-compact .container > .row:first-child {
-      margin-bottom: clamp(1.65rem, 3vw, 2.25rem);
-    }
-
-    .eyebrow {
-      margin-bottom: 5px;
-      line-height: normal;
-      font-weight: 600;
-    }
-
-    .footer .font-serif {
-      margin-bottom: .75rem;
-    }
-
-    .hero-card h1,
-    .section-compact h2,
-    .split-feature h2,
-    .quote-panel h2,
-    .investment-panel h2 {
-      margin-bottom: 1.1rem;
-    }
-
-    .hero-card .lead,
-    .split-feature .lead-editorial,
-    .split-feature .text-muted-tv,
-    .quote-panel .text-muted-tv,
-    .investment-panel .text-muted-tv,
-    .journal-card h3,
-    .component-card h3,
-    .accent-swatch h3,
-    .image-tile h3 {
-      margin-bottom: 1.1rem;
-    }
-
-    .hero-card .lead + .d-flex {
-      margin-top: 1.35rem;
-    }
-
-    .story-expand-panel h3 {
-      margin-bottom: 1rem;
-    }
-
-    .story-specs {
-      margin-bottom: 1.15rem;
-    }
-
-    .type-card {
-      padding: clamp(1.15rem, 1.8vw, 1.65rem);
-    }
-
-        .type-card h3 {
-      margin-bottom: 1.15rem;
-    }
-
-    .type-card > :last-child,
-    .property-body > :last-child,
-    .journal-card > :last-child,
-    .component-card > :last-child,
-    .accent-swatch > :last-child,
-    .hero-card > :last-child,
-    .investment-panel > :last-child,
-    .quote-panel > :last-child,
-    .footer p:last-child {
-      margin-bottom: 0;
-    }
-
-    .type-card .btn {
-      margin-top: .35rem;
-    }
-
-    .type-card h3 {
-      font-size: clamp(2rem, 3vw, 42px);
-      line-height: 1.08;
-      letter-spacing: -.035em;
-    }
-
-    .type-card .font-serif-italic {
-      font-size: clamp(1.9rem, 2.8vw, 40px);
-      line-height: 1.22;
-    }
-
-    .type-card .type-manrope-title {
-      font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-size: clamp(1.85rem, 2.5vw, 36px);
-      line-height: 1.18;
-      letter-spacing: -.03em;
-      font-weight: 500;
-    }
-
-    .property-card,
-    .type-card,
-    .component-card,
-    .accent-swatch {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 0;
-      height: 100%;
-      overflow: hidden;
-    }
-
-    .property-card,
-    .accent-swatch {
-      transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
-    }
-
-    .property-card {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .property-card .property-body {
-      display: flex;
-      flex: 1 1 auto;
-      flex-direction: column;
-    }
-
-    .property-card .property-description {
-      margin-bottom: 1.5rem;
-    }
-
-    .property-meta {
-      margin-top: auto;
-      position: relative;
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 1rem;
-      padding-right: 4.75rem;
-      min-height: 3.65rem;
-    }
-
-    .price-block {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: .18rem;
-      min-width: 0;
-      white-space: nowrap;
-    }
-
-    .price {
-      color: var(--sage);
-      font-weight: 700;
-      font-size: clamp(1.08rem, 1.28vw, 1.28rem);
-      line-height: 1;
-      letter-spacing: .01em;
-    }
-
-    .price-note {
-      color: var(--muted);
-      font-family: 'Lora', Georgia, serif;
-      font-size: .9rem;
-      font-weight: 500;
-      font-style: italic;
-      line-height: 1;
-      opacity: .95;
-    }
-
-    .property-bubble {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      width: clamp(45px,1vw,54px);
-      height: clamp(45px,1vw,54px);
-      min-width: clamp(45px,1vw,54px);
-      min-height: clamp(45px,1vw,54px);
-      border-radius: 999px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: #fff;
-      color: var(--sage);
-      border: 1px solid rgba(81, 97, 91, .18);
-      box-shadow: 0 10px 24px rgba(17, 21, 19, .10);
-      text-decoration: none;
-      transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease, color .25s ease;
-      animation: bubbleFloat 2.2s ease-in-out infinite;
-    }
-
-    .property-bubble svg {
-      width: 20px;
-      height: 20px;
-    }
-
-    .property-bubble:hover,
-    .property-bubble:focus {
-      transform: translateY(-2px);
-      background: var(--bg-accent);
-      box-shadow: 0 14px 30px rgba(17, 21, 19, .16);
-    }
-
-    @keyframes bubbleFloat {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-2px);
-      }
-    }
-
-    .property-card:hover,
-    .accent-swatch:hover {
-      transform: translateY(-5px);
-      border-color: rgba(81, 97, 91, .30);
-      box-shadow: 0 22px 60px rgba(17, 21, 19, .09);
-    }
-
-    .property-card img,
-    .journal-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: saturate(.88) contrast(1.03);
-      transition: transform .55s ease;
-    }
-
-    .property-card:hover img,
-    .journal-card:hover img {
-      transform: scale(1.035);
-    }
-
-    .property-card .ratio,
-    .journal-thumb {
-      background: var(--bg-accent);
-      overflow: hidden;
-    }
-
-    .property-media {
-      position: relative;
-      background: var(--bg-accent);
-      overflow: hidden;
-    }
-
-    .property-media img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .property-badges {
-      position: absolute;
-      z-index: 3;
-      top: auto;
-      bottom: .9rem;
-      left: .9rem;
-      width: auto;
-      height: auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 4px;
-      max-width: calc(100% - 1.8rem);
-    }
-
-    .property-badge-new-floating {
-      position: absolute;
-      z-index: 4;
-      top: .9rem;
-      right: .9rem;
-      transform-origin: right center;
-    }
-
-    .property-badge {
-      --badge-scale: .86;
-      display: inline-flex;
-      align-items: center;
-      min-height: 26px;
-      padding: .38rem .56rem;
-      border-radius: 999px;
-      background: rgba(143, 161, 170, .94);
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, .42);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 10px 24px rgba(17, 21, 19, .08);
-      font-size: 15px;
-      line-height: 1;
-      font-weight: 700;
-      letter-spacing: .1em;
-      transform: scale(var(--badge-scale));
-      transform-origin: left center;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .property-badge.badge-sale,
-    .property-badge.badge-rent {
-      color: #fff;
-      background: rgba(143, 161, 170, .94);
-      border-color: rgba(255, 255, 255, .38);
-    }
-
-    .property-badge.badge-featured {
-      color: #fff;
-      background: rgba(81, 97, 91, .92);
-      border-color: rgba(81, 97, 91, .2);
-    }
-
-    .property-badge.badge-new {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      left: auto;
-      width: auto;
-      height: auto;
-      color: #3C3426;
-      background: #E8D98B;
-      border-color: rgba(232, 217, 139, .55);
-    }
-
-
-    .story-properties-section {
-      background: #fff;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      overflow: hidden;
-    }
-
-    .story-properties-shell {
-      width: 100%;
-      margin-inline: auto;
-      overflow: visible;
-    }
-
-    @media (min-width: 1200px) {
-      .story-properties-shell {
-        max-width: min(1440px, calc(100vw - 3rem));
-      }
-    }
-
-    @media (min-width: 992px) and (max-width: 1199.98px) and (orientation: landscape) {
-      .story-properties {
-        height: clamp(330px, 48vh, 420px);
-      }
-    }
-
-    .story-properties {
-      --story-gap: 5px;
-      --story-card-base: calc((100% - (var(--story-gap) * 2)) / 3);
-      display: flex;
-      gap: var(--story-gap);
-      align-items: stretch;
-      height: clamp(420px, 82vh, 680px);
-      overflow: visible;
-      transition: transform .5s ease;
-      will-change: transform;
-    }
-
-    .story-property-card {
-      position: relative;
-      flex: 0 0 var(--story-card-base);
-      min-width: 0;
-      overflow: hidden;
-      background: #fff;
-      border: 1px solid var(--line);
-      box-shadow: 0 12px 34px rgba(17, 21, 19, .06);
-      transition: flex-basis .5s ease, transform .35s ease, box-shadow .35s ease, border-color .35s ease;
-    }
-
-    .story-property-card:hover {
-      border-color: rgba(81, 97, 91, .28);
-      box-shadow: 0 24px 60px rgba(17, 21, 19, .12);
-    }
-
-    .story-property-media {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      min-height: 100%;
-      background: var(--bg-accent);
-    }
-
-    .story-video,
-    .story-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      filter: saturate(.88) contrast(1.03);
-      transition: transform .55s ease, filter .45s ease;
-    }
-
-    .story-overlay {
-      position: absolute;
-      z-index: 2;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      padding: 1.35rem 1.2rem 1.2rem;
-      color: #fff;
-      background: linear-gradient(to top, rgba(17, 21, 19, .84) 0%, rgba(17, 21, 19, .42) 46%, rgba(17, 21, 19, 0) 100%);
-      transition: opacity .3s ease, transform .3s ease;
-    }
-
-    .story-operation {
-      margin-bottom: .45rem;
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      opacity: .92;
-    }
-
-    .story-location {
-      font-family: 'Lora', Georgia, serif;
-      font-size: clamp(1.55rem, 1.6vw, 1.95rem);
-      line-height: 1.06;
-      letter-spacing: -.035em;
-      margin-bottom: .55rem;
-    }
-
-    .story-price {
-      margin-bottom: 0;
-      font-size: 1.02rem;
-      font-weight: 700;
-      letter-spacing: .01em;
-    }
-
-    .story-price span {
-      font-family: 'Lora', Georgia, serif;
-      font-style: italic;
-      font-weight: 500;
-      opacity: .88;
-    }
-
-    .story-expand-panel {
-      position: absolute;
-      z-index: 3;
-      top: 0;
-      right: 0;
-      width: 0;
-      height: 100%;
-      overflow: hidden;
-      box-sizing: border-box;
-      background: rgba(246, 244, 239, .9);
-      backdrop-filter: blur(5px);
-      border-left: 0 solid rgba(222, 219, 210, 0);
-      padding: 0;
-      opacity: 0;
-      transform: translateX(12px);
-      transition: width .45s ease, opacity .18s ease, transform .35s ease, padding .35s ease, border-color .35s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      pointer-events: none;
-    }
-
-    .story-expand-panel > * {
-      opacity: 0;
-      transform: translateY(8px);
-      transition: opacity .22s ease, transform .22s ease;
-    }
-
-    .story-specs {
-      display: grid;
-      gap: 0;
-    }
-
-    .story-specs li {
-      color: var(--text);
-      padding: 8px 0;
-      line-height: 1.35;
-      border-bottom: 1px solid rgba(222, 219, 210, .95);
-      background: transparent;
-      font-size: .88rem;
-      font-weight: 300;
-    }
-
-    .story-specs li:last-child {
-      border-bottom: 0;
-    }
-
-    .story-expand-panel .d-flex {
-      position: relative;
-      min-height: 54px;
-      padding-right: 0;
-      flex-direction: column !important;
-      align-items: flex-start !important;
-    }
-
-    .story-expand-panel .property-bubble {
-      position: static;
-    }
-
-    .story-mobile-link {
-      display: none;
-    }
-
-    .story-badge-new {
-      position: absolute;
-      z-index: 4;
-      top: 10px;
-      right: 10px;
-      left: auto;
-      width: auto;
-      height: auto;
-      transform-origin: right center;
-    }
-
-    @media (hover: hover) and (pointer: fine) {
-      .story-properties .story-property-card:hover {
-        flex-basis: calc(var(--story-card-base) + 300px);
-        z-index: 8;
-      }
-
-      .story-properties:has(.story-property-card:nth-child(1):hover) {
-        transform: translateX(0);
-      }
-
-      .story-properties:has(.story-property-card:nth-child(2):hover) {
-        transform: translateX(-150px);
-      }
-
-      .story-properties:has(.story-property-card:nth-child(3):hover) {
-        transform: translateX(-300px);
-      }
-
-      .story-properties .story-property-card:hover .story-video,
-      .story-properties .story-property-card:hover .story-image {
-        transform: scale(1.04);
-        filter: saturate(.98) contrast(1.04);
-      }
-
-      .story-properties .story-property-card:hover .story-overlay {
-        opacity: 0;
-        transform: translateY(10px);
-        pointer-events: none;
-      }
-
-      .story-properties .story-property-card:hover .story-expand-panel {
-        width: 44%;
-        padding: 2.4rem 1.55rem;
-        opacity: 1;
-        border-left-width: 1px;
-        border-left-color: rgba(222, 219, 210, .9);
-        transform: translateX(0);
-        pointer-events: auto;
-      }
-
-      .story-properties .story-property-card:hover .story-expand-panel > * {
-        opacity: 1;
-        transform: translateY(0);
-        transition-delay: .36s;
-      }
-    }
-
-    .visual-slider-section {
-      background: var(--bg-soft);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .tv-slider-shell {
-      position: relative;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      background: var(--card);
-    }
-
-    .tv-slider-shell::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background: linear-gradient(90deg, rgba(17, 21, 19, .68) 0%, rgba(17, 21, 19, .32) 46%, rgba(17, 21, 19, .06) 100%);
-      pointer-events: none;
-    }
-
-    .tv-slider {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .tv-slider .carousel-inner,
-    .tv-slider .carousel-item {
-      height: clamp(360px, 62vh, 680px);
-    }
-
-    .tv-slider img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      filter: saturate(.9) contrast(1.03);
-    }
-
-    .tv-slider-content {
-      position: absolute;
-      z-index: 2;
-      left: clamp(1.2rem, 4vw, 3.5rem);
-      right: clamp(1.2rem, 4vw, 3.5rem);
-      bottom: clamp(4.75rem, 7vw, 6rem);
-      max-width: 560px;
-      color: #fff;
-    }
-
-    .tv-slider-kicker {
-      color: rgba(255, 255, 255, .76);
-    }
-
-    .tv-slider-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(2.1rem, 4vw, 54px);
-      line-height: .96;
-      letter-spacing: -.05em;
-      margin-bottom: 1rem;
-    }
-
-    .tv-slider-copy {
-      color: rgba(255, 255, 255, .82);
-      max-width: 440px;
-      margin-bottom: 0;
-    }
-
-    .tv-slider-actions {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: .75rem;
-      margin-top: 1.35rem;
-    }
-
-    .tv-slider-link {
-      color: rgba(255, 255, 255, .9);
-      font-size: .72rem;
-      font-weight: 600;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(255, 255, 255, .48);
-      padding-bottom: .18rem;
-      transition: color .25s ease, border-color .25s ease;
-    }
-
-    .tv-slider-link:hover,
-    .tv-slider-link:focus {
-      color: #fff;
-      border-color: #fff;
-    }
-
-    .tv-slider .btn-tv,
-    .tv-slider .btn-tv-outline {
-      border-color: rgba(255, 255, 255, .52);
-    }
-
-    .tv-slider .btn-tv {
-      background: rgba(255, 255, 255, .92);
-      color: var(--ink);
-    }
-
-    .tv-slider .btn-tv:hover,
-    .tv-slider .btn-tv:focus {
-      background: #fff;
-      border-color: #fff;
-      color: var(--ink);
-    }
-
-    .tv-slider .btn-tv-outline {
-      color: #fff;
-      background: rgba(246, 244, 239, .12);
-      backdrop-filter: blur(10px);
-    }
-
-    .tv-slider .btn-tv-outline:hover,
-    .tv-slider .btn-tv-outline:focus {
-      color: var(--ink);
-      background: rgba(255, 255, 255, .92);
-      border-color: rgba(255, 255, 255, .92);
-    }
-
-    .tv-slider .carousel-indicators {
-      right: auto;
-      left: clamp(1.2rem, 4vw, 3.5rem);
-      bottom: 1.25rem;
-      justify-content: flex-start;
-      margin: 0;
-      gap: .45rem;
-      z-index: 3;
-    }
-
-    .tv-slider .carousel-indicators [data-bs-target] {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      border: 0;
-      background-color: rgba(255, 255, 255, .62);
-      opacity: 1;
-      transition: width .25s ease, background-color .25s ease;
-    }
-
-    .tv-slider .carousel-indicators .active {
-      width: 26px;
-      background-color: #fff;
-    }
-
-    .tv-slider-arrow {
-      position: absolute;
-      z-index: 3;
-      top: auto;
-      bottom: 1.15rem;
-      left: auto;
-      width: 54px;
-      min-width: 54px;
-      max-width: 54px;
-      height: 34px;
-      min-height: 34px;
-      max-height: 34px;
-      flex: 0 0 54px;
-      padding: 0;
-      opacity: 1;
-      border: 1px solid rgba(255, 255, 255, .44);
-      border-radius: 0;
-      background: rgba(246, 244, 239, .16);
-      backdrop-filter: blur(12px);
-      color: rgba(255, 255, 255, .88);
-      font-family: 'Manrope', system-ui, sans-serif;
-      font-size: 0;
-      font-weight: 300;
-      line-height: 1;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      appearance: none;
-      box-sizing: border-box;
-      box-shadow: none;
-      transition: color .25s ease, background-color .25s ease, border-color .25s ease, transform .25s ease;
-    }
-
-    .tv-slider-arrow::before {
-      font-size: 1.25rem;
-      line-height: 1;
-      transform: translateY(-1px);
-    }
-
-    .tv-slider-prev::before {
-      content: '←';
-    }
-
-    .tv-slider-next::before {
-      content: '→';
-    }
-
-    .tv-slider-arrow:hover,
-    .tv-slider-arrow:focus {
-      color: #fff;
-      background: rgba(246, 244, 239, .28);
-      border-color: rgba(255, 255, 255, .64);
-      transform: translateY(-2px);
-    }
-
-    .tv-slider-prev {
-      left: auto;
-      right: calc(1.25rem + 62px);
-    }
-
-    .tv-slider-next {
-      left: auto;
-      right: 1.25rem;
-    }
-
-    .journal-section {
-      background: linear-gradient(to bottom, #ffffff 0%, var(--bg-accent) 100%);
-    }
-
-    .journal-card {
-      border: 0;
-      border-radius: 0;
-      background: transparent;
-    }
-
-    .section-accent {
-      background: var(--bg-accent);
-      position: relative;
-    }
-
-    .section-accent::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top right, rgba(124, 138, 146, .12), transparent 42%);
-      pointer-events: none;
-    }
-
-    .investment-panel,
-    .quote-panel {
-      background: var(--ink);
-      color: var(--bg);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .investment-panel::after {
-      content: '';
-      position: absolute;
-      inset: auto -12% -45% auto;
-      width: 420px;
-      height: 420px;
-      background: radial-gradient(circle, rgba(124, 138, 146, .36), rgba(124, 138, 146, 0) 68%);
-      pointer-events: none;
-    }
-
-    .investment-panel .text-muted-tv,
-    .quote-panel .text-muted-tv {
-      color: rgba(246,244,239,.72);
-    }
-
-    .investment-panel .eyebrow,
-    .quote-panel .eyebrow {
-      color: #aeb9bd;
-    }
-
-    .split-feature {
-      background: #fff;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .split-feature-image {
-      min-height: 440px;
-      background-image: linear-gradient(to bottom, rgba(17,21,19,.04), rgba(17,21,19,.22)), url('https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=1800&auto=format&fit=crop');
-      background-size: cover;
-      background-position: center;
-    }
-
-    .quote-panel::before {
-      content: '';
-      position: absolute;
-      inset: -30% auto auto -10%;
-      width: 460px;
-      height: 460px;
-      background: radial-gradient(circle, rgba(185,166,160,.35), transparent 66%);
-    }
-
-    .gradient-blocks-section {
-      background: var(--bg);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .gradient-block {
-      position: relative;
-      min-height: 280px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      overflow: hidden;
-      border: 1px solid rgba(222, 219, 210, .75);
-      padding: clamp(1.25rem, 2.6vw, 2rem);
-      color: var(--ink);
-    }
-
-    .gradient-block::before {
-      content: '';
-      position: absolute;
-      inset: auto -20% -35% auto;
-      width: 240px;
-      height: 240px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, .28);
-      filter: blur(2px);
-      pointer-events: none;
-    }
-
-    .gradient-block > * {
-      position: relative;
-      z-index: 2;
-    }
-
-    .gradient-block .eyebrow {
-      color: rgba(17, 21, 19, .62);
-    }
-
-    .gradient-block h3 {
-      max-width: 520px;
-      margin-bottom: .85rem;
-    }
-
-    .gradient-block code,
-    .button-style-card code {
-      display: inline-flex;
-      align-items: center;
-      width: fit-content;
-      margin-bottom: .85rem;
-      padding: .28rem .48rem;
-      border: 1px solid rgba(17, 21, 19, .12);
-      background: rgba(255, 255, 255, .38);
-      color: rgba(17, 21, 19, .7);
-      font-size: .72rem;
-      line-height: 1.2;
-    }
-
-    .gradient-block-ink code {
-      border-color: rgba(246, 244, 239, .18);
-      background: rgba(246, 244, 239, .12);
-      color: rgba(246, 244, 239, .78);
-    }
-
-    .gradient-block p:not(.eyebrow) {
-      max-width: 460px;
-      margin-bottom: 0;
-      color: rgba(17, 21, 19, .68);
-    }
-
-    .gradient-block-sage {
-      background: linear-gradient(135deg, rgba(231, 236, 235, .96) 0%, rgba(109, 124, 118, .42) 58%, rgba(81, 97, 91, .72) 100%);
-    }
-
-    .gradient-block-mineral {
-      background: linear-gradient(135deg, rgba(246, 244, 239, .95) 0%, rgba(168, 178, 189, .74) 48%, rgba(143, 161, 170, .92) 100%);
-    }
-
-    .gradient-block-clay {
-      background: linear-gradient(135deg, rgba(246, 244, 239, .98) 0%, rgba(185, 166, 160, .66) 56%, rgba(168, 178, 189, .38) 100%);
-    }
-
-    .gradient-block-ink {
-      color: var(--bg);
-      background: radial-gradient(circle at 82% 18%, rgba(143, 161, 170, .42) 0%, rgba(143, 161, 170, 0) 34%), linear-gradient(135deg, var(--ink) 0%, var(--sage) 62%, var(--slate) 100%);
-    }
-
-    .gradient-block-ink .eyebrow,
-    .gradient-block-ink p:not(.eyebrow) {
-      color: rgba(246, 244, 239, .72);
-    }
-
-    .gradient-block-gold {
-      background: linear-gradient(135deg, rgba(246, 244, 239, .98) 0%, rgba(232, 217, 139, .64) 48%, rgba(185, 166, 160, .46) 100%);
-    }
-
-    .gradient-block-wide {
-      min-height: 340px;
-    }
-
-    .button-styles-section {
-      background: #fff;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .button-style-card {
-      height: 100%;
-      padding: clamp(1.2rem, 2vw, 1.65rem);
-      border: 1px solid var(--line);
-      background: var(--card);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 1.25rem;
-    }
-
-    .button-style-card p:not(.eyebrow) {
-      color: var(--muted);
-      margin-bottom: 0;
-    }
-
-    .button-style-preview {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: .85rem;
-      padding-top: .4rem;
-    }
-
-    .link-tv {
-      color: var(--sage);
-      font-size: .72rem;
-      font-weight: 600;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(81, 97, 91, .42);
-      padding-bottom: .18rem;
-      transition: color .25s ease, border-color .25s ease;
-    }
-
-    .link-tv:hover,
-    .link-tv:focus {
-      color: var(--ink);
-      border-color: var(--ink);
-    }
-
-    .link-tv-muted {
-      color: var(--muted);
-      border-color: rgba(111, 115, 109, .34);
-    }
-
-    .link-tv-light {
-      color: rgba(255,255,255,.9);
-      border-color: rgba(255,255,255,.48);
-    }
-
-    .link-tv-light:hover,
-    .link-tv-light:focus {
-      color: #fff;
-      border-color: #fff;
-    }
-
-    .feature-strip {
-      background: var(--bg-accent);
-      border-block: 1px solid var(--line);
-    }
-
-    .image-tile {
-      min-height: 340px;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .image-tile::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, transparent 35%, rgba(17,21,19,.58));
-    }
-
-    .image-tile-content {
-      position: absolute;
-      inset: auto 0 0 0;
-      z-index: 2;
-      color: #fff;
-    }
-
-    .accent-lab {
-      background: var(--bg);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .accent-chip {
-      width: 100%;
-      height: 110px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .accent-chip-mist { background: var(--mist); }
-    .accent-chip-clay { background: var(--clay-rose); }
-    .accent-chip-mineral { background: var(--mineral-blue); }
-    .accent-chip-gold { background: var(--soft-gold); }
-
-    .footer {
-      border-top: 1px solid var(--line);
-    }
-
-    @media (max-width: 989.98px) {
-      .brand-logo {
-        width: 180px;
-      }
-
-      .navbar.scrolled .brand-logo {
-        width: 155px;
-      }
-
-      .hero {
-        min-height: 64vh;
-      }
-
-      .hero-card {
-        margin-inline: 0;
-      }
-
-      .split-feature-image,
-      .image-tile {
-        min-height: 300px;
-      }
-
-      .property-meta {
-        padding-right: 4.25rem;
-      }
-
-      .property-bubble {
-        width: 50px;
-        height: 50px;
-      }
-
-      .property-badges {
-        bottom: .7rem;
-        left: .7rem;
-        gap: 4px;
-      }
-
-      .property-badge-new-floating {
-        top: .7rem;
-        right: .7rem;
-      }
-
-      .property-badge {
-        --badge-scale: .82;
-        min-height: 24px;
-        padding: .34rem .5rem;
-      }
-
-      .story-properties-shell {
-        width: 100vw;
-        max-width: 100vw;
-        overflow-x: auto;
-        overflow-y: visible;
-        margin-left: calc(50% - 50vw);
-        margin-right: calc(50% - 50vw);
-        padding-inline: calc(var(--bs-gutter-x, 1.5rem) * .5);
-        scroll-snap-type: x mandatory;
-        scroll-padding-inline: calc(var(--bs-gutter-x, 1.5rem) * .5);
-        -webkit-overflow-scrolling: touch;
-      }
-
-      .story-properties-shell::-webkit-scrollbar {
-        display: none;
-      }
-
-      .story-properties {
-        flex-direction: row;
-        min-height: auto;
-        width: max-content;
-        transform: none !important;
-        height: auto;
-      }
-
-      .story-property-card {
-        flex: 0 0 min(82vw, 360px);
-        scroll-snap-align: start;
-      }
-
-      .story-property-card,
-      .story-property-media {
-        height: clamp(430px, 72vh, 620px);
-        min-height: 0;
-      }
-
-      .story-expand-panel {
-        display: none;
-      }
-
-      .story-location {
-        font-size: 1.7rem;
-      }
-
-      .tv-slider .carousel-inner,
-      .tv-slider .carousel-item {
-        height: clamp(360px, 58vh, 560px);
-      }
-
-      .tv-slider-content {
-        bottom: 4rem;
-      }
-
-      .price {
-        font-size: 1.04rem;
-      }
-
-      .price-note {
-        font-size: .86rem;
-      }
-    }
-
-    @media (min-width: 540px) and (max-width: 989.98px) {
-      .story-property-card {
-        flex-basis: min(46vw, 370px);
-      }
-
-      .story-property-card,
-      .story-property-media {
-        height: clamp(420px, 56vh, 540px);
-      }
-    }
-
-    @media (max-width: 575.98px) {
-      .tv-slider-shell {
-        width: 100vw;
-        margin-left: calc(50% - 50vw);
-        margin-right: calc(50% - 50vw);
-        border-left: 0;
-        border-right: 0;
-      }
-
-      .tv-slider-arrow {
-        width: 50px;
-        min-width: 50px;
-        max-width: 50px;
-        height: 32px;
-        min-height: 32px;
-        max-height: 32px;
-        flex-basis: 50px;
-      }
-
-      .tv-slider-prev {
-        right: calc(1.25rem + 58px);
-      }
-    }
-
-    @media (hover: none), (pointer: coarse) {
-      .story-mobile-link {
-        display: block;
-        position: absolute;
-        inset: 0;
-        z-index: 5;
-        font-size: 0;
-        color: transparent;
-        text-decoration: none;
-      }
-
-      .story-property-card:hover {
-        border-color: var(--line);
-        box-shadow: 0 12px 34px rgba(17, 21, 19, .06);
-      }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Manrope:wght@300..800&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/styleguide.css">
 </head>
 
 <body>
@@ -1907,39 +353,45 @@
             <div class="carousel-inner">
               <div class="carousel-item active tv-slider-card">
                 <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=2200&auto=format&fit=crop" alt="Interior cálido con arquitectura contemporánea">
-                <div class="tv-slider-content">
-                  <p class="eyebrow tv-slider-kicker">Arquitectura con carácter</p>
-                  <h3 class="tv-slider-title">Interiores que cuentan una historia.</h3>
-                  <p class="tv-slider-copy">Una forma de mostrar atmósfera, textura y sensibilidad de marca en una sola pieza visual.</p>
-                  <div class="tv-slider-actions">
-                    <a href="#propiedades" class="btn btn-tv btn-sm">Ver propiedades</a>
-                    <a href="#journal" class="tv-slider-link">Leer journal</a>
+                <div class="carousel-caption tv-slider-content">
+                  <div class="tv-slider-card">
+                    <p class="eyebrow tv-slider-kicker">Arquitectura con carácter</p>
+                    <h3 class="tv-slider-title">Interiores que cuentan una historia.</h3>
+                    <p class="tv-slider-copy">Una forma de mostrar atmósfera, textura y sensibilidad de marca en una sola pieza visual.</p>
+                    <div class="tv-slider-actions">
+                      <a href="#propiedades" class="btn btn-tv btn-sm">Ver propiedades</a>
+                      <a href="#journal" class="tv-slider-link">Leer journal</a>
+                    </div>
                   </div>
                 </div>
               </div>
 
               <div class="carousel-item tv-slider-card">
                 <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2200&auto=format&fit=crop" alt="Casa con patio e iluminación natural">
-                <div class="tv-slider-content">
-                  <p class="eyebrow tv-slider-kicker">Propiedades seleccionadas</p>
-                  <h3 class="tv-slider-title">Casas pensadas para vivirse.</h3>
-                  <p class="tv-slider-copy">Ideal para destacar una propiedad estrella sin convertir la sección en una ficha técnica.</p>
-                  <div class="tv-slider-actions">
-                    <a href="ficha_renta_casa_hacienda_del_comendador.html" class="btn btn-tv-outline btn-sm">Ver ficha</a>
-                    <a href="https://wa.me/50232465215" target="_blank" rel="noopener" class="tv-slider-link">Consultar</a>
+                <div class="carousel-caption tv-slider-content">
+                  <div class="tv-slider-card">
+                    <p class="eyebrow tv-slider-kicker">Propiedades seleccionadas</p>
+                    <h3 class="tv-slider-title">Casas pensadas para vivirse.</h3>
+                    <p class="tv-slider-copy">Ideal para destacar una propiedad estrella sin convertir la sección en una ficha técnica.</p>
+                    <div class="tv-slider-actions">
+                      <a href="ficha_renta_casa_hacienda_del_comendador.html" class="btn btn-tv-outline btn-sm">Ver ficha</a>
+                      <a href="https://wa.me/50232465215" target="_blank" rel="noopener" class="tv-slider-link">Consultar</a>
+                    </div>
                   </div>
                 </div>
               </div>
 
               <div class="carousel-item tv-slider-card">
                 <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?q=80&w=2200&auto=format&fit=crop" alt="Hotel boutique con piscina y arquitectura cálida">
-                <div class="tv-slider-content">
-                  <p class="eyebrow tv-slider-kicker">Inversión boutique</p>
-                  <h3 class="tv-slider-title">Activos con operación, ubicación y concepto.</h3>
-                  <p class="tv-slider-copy">Un bloque útil para hoteles, terrenos y oportunidades que necesitan presencia visual fuerte.</p>
-                  <div class="tv-slider-actions">
-                    <a href="investments.html" class="btn btn-tv btn-sm">Área privada</a>
-                    <a href="#inversionistas" class="tv-slider-link">Ver enfoque</a>
+                <div class="carousel-caption tv-slider-content">
+                  <div class="tv-slider-card">
+                    <p class="eyebrow tv-slider-kicker">Inversión boutique</p>
+                    <h3 class="tv-slider-title">Activos con operación, ubicación y concepto.</h3>
+                    <p class="tv-slider-copy">Un bloque útil para hoteles, terrenos y oportunidades que necesitan presencia visual fuerte.</p>
+                    <div class="tv-slider-actions">
+                      <a href="investments.html" class="btn btn-tv btn-sm">Área privada</a>
+                      <a href="#inversionistas" class="tv-slider-link">Ver enfoque</a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -2004,14 +456,15 @@
 
     <section class="section-compact investment-panel" id="inversionistas">
       <div class="container position-relative">
-        <div class="row align-items-center g-4">
+        <div class="row align-items-center g-4 my-0 text-center">
           <div class="col-lg-7">
             <p class="eyebrow">Área para inversionistas</p>
             <h2 class="mb-4">Oportunidades seleccionadas con potencial real.</h2>
             <p class="text-muted-tv">Terrenos, hoteles funcionando, propiedades llave en mano y activos con vocación comercial en Guatemala.</p>
           </div>
           <div class="col-lg-4 offset-lg-1">
-            <a href="investments.html" class="btn btn-tv w-100">Entrar al área privada</a>
+            <!-- Botón que abre el modal -->
+            <button class="btn btn-tv" type="button" data-bs-toggle="modal" data-bs-target="#offMarketAccessModal">Entrar al área privada</button>
           </div>
         </div>
       </div>
@@ -2042,6 +495,329 @@
             <h2 class="quote-display">No vendemos metros cuadrados. Curamos formas de habitar.</h2>
             <p class="text-muted-tv m-0">Statement de marca, pausa visual entre secciones o cierre emocional de una página.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-compact zone-spotlight-section" id="zone-spotlight">
+      <div class="container">
+        <div class="row align-items-end">
+          <div class="col-lg-7">
+            <p class="eyebrow section-kicker">Zona destacada</p>
+            <h2>Un bloque para vender contexto, no solo una propiedad.</h2>
+          </div>
+
+          <div class="col-lg-4 offset-lg-1">
+            <p class="text-muted-tv">
+              Ideal para presentar Antigua Guatemala, San Miguel Dueñas, El Hato o cualquier zona donde la ubicación sea parte del valor.
+            </p>
+          </div>
+        </div>
+
+        <article class="zone-spotlight-card">
+          <div class="zone-spotlight-content">
+            <div class="zone-spotlight-copy">
+              <p class="eyebrow">Antigua Guatemala</p>
+
+              <h3 class="editorial-display">
+                Calles con historia, vida boutique y alta demanda.
+              </h3>
+
+              <p class="font-serif-italic lead-editorial text-muted-tv">
+                Una zona donde arquitectura, turismo, inversión y vida cotidiana conviven con una identidad difícil de replicar.
+              </p>
+
+              <p class="text-muted-tv">
+                Este bloque puede usarse para explicar por qué una ubicación importa: qué tipo de vida ofrece, qué perfil de comprador atrae y qué potencial comercial sostiene.
+              </p>
+
+              <a href="#propiedades" class="btn btn-tv">
+                Ver propiedades en la zona
+              </a>
+            </div>
+
+            <div class="zone-spotlight-stats" aria-label="Datos destacados de la zona">
+              <div class="zone-stat">
+                <span class="eyebrow">Perfil</span>
+                <strong class="lead-editorial fs-5">Residencial boutique</strong>
+              </div>
+
+              <div class="zone-stat">
+                <span class="eyebrow">Potencial</span>
+                <strong class="lead-editorial fs-5">Turístico y comercial</strong>
+              </div>
+
+              <div class="zone-stat">
+                <span class="eyebrow">Ideal para</span>
+                <strong class="lead-editorial fs-5">Casas, hoteles y renta</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="zone-spotlight-media">
+            <img
+              src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80&w=1800&auto=format&fit=crop"
+              alt="Calle colonial con arquitectura histórica"
+            >
+
+            <div class="zone-spotlight-caption font-serif font-serif-italic">
+              <p>
+                Use esta pieza cuando la zona necesite explicación visual y comercial antes de mostrar fichas puntuales.
+              </p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-compact color-reference-section" id="color-reference">
+      <div class="container">
+        <div class="row align-items-end">
+          <div class="col-lg-7">
+            <p class="eyebrow section-kicker">Variables de color</p>
+            <h2 class="mb-0">Paleta oficial Tierra Viva.</h2>
+          </div>
+          <div class="col-lg-4 offset-lg-1">
+            <p class="text-muted-tv">
+              Referencia visual de las variables globales usadas en fondos, textos, bordes, botones, acentos y bloques editoriales.
+            </p>
+          </div>
+        </div>
+
+        <div class="color-reference-table-wrap">
+          <table class="color-reference-table">
+            <thead>
+              <tr>
+                <th>Swatch</th>
+                <th>Variable</th>
+                <th>Valor</th>
+                <th>Uso recomendado</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td><span class="color-swatch" style="--swatch-color: var(--bg);"></span></td>
+                <td><code>--bg</code></td>
+                <td><code>#f6f4ef</code></td>
+                <td>Fondo principal general. Base cálida clara de Tierra Viva.</td>
+              </tr>
+
+              <tr>
+                <td><span class="color-swatch" style="--swatch-color: var(--bg-soft);"></span></td>
+                <td><code>--bg-soft</code></td>
+                <td><code>#ebe9e1</code></td>
+                <td>Fondos alternos suaves, secciones secundarias y descansos visuales.</td>
+              </tr>
+
+              <tr>
+                <td><span class="color-swatch" style="--swatch-color: var(--bg-accent);"></span></td>
+                <td><code>--bg-accent</code></td>
+                <td><code>#e7eceb</code></td>
+                <td>Fondos con acento frío/sage, placeholders y áreas visuales sutiles.</td>
+              </tr>
+
+              <tr>
+                <td><span class="color-swatch" style="--swatch-color: var(--card);"></span></td>
+                <td><code>--card</code></td>
+                <td><code>#ffffff</code></td>
+                <td>Cards, superficies blancas y paneles limpios.</td>
+              </tr>
+
+              <tr>
+                <td><span class="color-swatch" style="--swatch-color: var(--text);"></span></td>
+                <td><code>--text</code></td>
+                <td><code>#202321</code></td>
+                <td>Texto principal.</td>
+              </tr>
+
+              <tr>
+                <td><span class="color-swatch" style="--swatch-color: var(--muted);"></span></td>
+                <td><code>--muted</code></td>
+                <td><code>#6f736d</code></td>
+                <td>Texto secundario, descripciones, bajadas y apoyos.</td>
+              </tr>
+
+              <tr>
+                <td><span class="color-swatch" style="--swatch-color: var(--line);"></span></td>
+                <td><code>--line</code></td>
+                <td><code>#dedbd2</code></td>
+                <td>Bordes, divisores y líneas sutiles.</td>
+              </tr>
+
+              <tr>
+                <td><span class="color-swatch" style="--swatch-color: var(--sage);"></span></td>
+                <td><code>--sage</code></td>
+                <td><code>#51615b</code></td>
+                <td>Color principal de marca: botones, links, acciones y acentos.</td>
+              </tr>
+
+              <tr>
+                <td><span class="color-swatch" style="--swatch-color: var(--sage-light);"></span></td>
+                <td><code>--sage-light</code></td>
+                <td><code>#6d7c76</code></td>
+                <td>Variante clara del sage para hovers o acentos suaves.</td>
+              </tr>
+
+              <tr>
+                <td><span class="color-swatch" style="--swatch-color: var(--slate);"></span></td>
+                <td><code>--slate</code></td>
+                <td><code>#7c8a92</code></td>
+                <td>Eyebrows, microtextos y acentos fríos sobrios.</td>
+              </tr>
+
+              <tr>
+                <td><span class="color-swatch" style="--swatch-color: var(--mist);"></span></td>
+                <td><code>--mist</code></td>
+                <td><code>#a8b2bd</code></td>
+                <td>Acento frío claro, detalles editoriales y bloques suaves.</td>
+              </tr>
+
+              <tr>
+                <td><span class="color-swatch" style="--swatch-color: var(--clay-rose);"></span></td>
+                <td><code>--clay-rose</code></td>
+                <td><code>#b9a6a0</code></td>
+                <td>Acento cálido editorial, lifestyle y humanidad sin terracota fuerte.</td>
+              </tr>
+
+              <tr>
+                <td><span class="color-swatch" style="--swatch-color: var(--mineral-blue);"></span></td>
+                <td><code>--mineral-blue</code></td>
+                <td><code>#8fa1aa</code></td>
+                <td>Acento arquitectónico/moderno, frío y sofisticado.</td>
+              </tr>
+
+              <tr>
+                <td><span class="color-swatch" style="--swatch-color: var(--soft-gold);"></span></td>
+                <td><code>--soft-gold</code></td>
+                <td><code>#E8D98B</code></td>
+                <td>Microacento luminoso. Ideal para avisos puntuales o NEW! si se solicita badge.</td>
+              </tr>
+
+              <tr>
+                <td><span class="color-swatch" style="--swatch-color: var(--ink);"></span></td>
+                <td><code>--ink</code></td>
+                <td><code>#111513</code></td>
+                <td>Fondo oscuro premium, bloques de inversión, CTA fuertes y gradient ink.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-compact typography-reference-section" id="typography-reference">
+      <div class="container">
+        <div class="row align-items-end">
+          <div class="col-lg-7">
+            <p class="eyebrow section-kicker">Sistema tipográfico</p>
+            <h2 class="mb-0">Referencias de tipografías Tierra Viva.</h2>
+          </div>
+          <div class="col-lg-4 offset-lg-1">
+            <p class="text-muted-tv">
+              Guía de uso para mantener consistencia entre textos editoriales, navegación, botones, labels y datos comerciales.
+            </p>
+          </div>
+        </div>
+
+        <div class="typography-reference-table-wrap">
+          <table class="typography-reference-table">
+            <thead>
+              <tr>
+                <th>Fuente</th>
+                <th>Rol</th>
+                <th>Uso recomendado</th>
+                <th>Ejemplo</th>
+                <th>Referencia CSS</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td>
+                  <strong>Playfair Display</strong>
+                </td>
+                <td>Impacto editorial</td>
+                <td>
+                  Hero principal, títulos grandes, statements visuales, frases de marca y bloques con presencia editorial.
+                </td>
+                <td>
+                  <span class="typography-sample sample-playfair">
+                    Propiedades con carácter.
+                  </span>
+                </td>
+                <td>
+                  <code>.hero-display</code><br>
+                  <code>.editorial-display</code><br>
+                  <code>.quote-display</code><br>
+                  <code>.font-display</code>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Lora</strong>
+                </td>
+                <td>Lectura editorial</td>
+                <td>
+                  Headings generales, títulos de cards, bajadas editoriales, textos con calidez, citas suaves y notas descriptivas.
+                </td>
+                <td>
+                  <span class="typography-sample sample-lora">
+                    Una casa también puede sentirse como una pausa.
+                  </span>
+                </td>
+                <td>
+                  <code>h1, h2, h3, h4, h5</code><br>
+                  <code>.font-serif</code><br>
+                  <code>.font-serif-italic</code><br>
+                  <code>.lead-editorial</code>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Montserrat</strong>
+                </td>
+                <td>Funcional / comercial</td>
+                <td>
+                  Navbar, botones, eyebrows, labels, filtros, datos comerciales, specs, links funcionales y microcopy de acción.
+                </td>
+                <td>
+                  <span class="typography-sample sample-montserrat">
+                    Casa en renta · Antigua Guatemala
+                  </span>
+                </td>
+                <td>
+                  <code>--font-functional</code><br>
+                  <code>.nav-link</code><br>
+                  <code>.btn-tv</code><br>
+                  <code>.eyebrow</code><br>
+                  <code>.summary-label</code>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <strong>Manrope</strong>
+                </td>
+                <td>Base UI / fallback funcional</td>
+                <td>
+                  Texto base del sitio, lectura funcional, cuerpo general, descripciones, soportes y respaldo si Montserrat no carga.
+                </td>
+                <td>
+                  <span class="typography-sample sample-manrope">
+                    Información clara, sobria y fácil de leer.
+                  </span>
+                </td>
+                <td>
+                  <code>body</code><br>
+                  <code>--font-functional fallback</code><br>
+                  <code>.text-muted-tv</code>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
@@ -2228,7 +1004,7 @@
       </div>
     </section>
 
-    <section class="section-compact" id="image-tiles">
+    <section class="section-compact button-styles-section" id="image-tiles">
       <div class="container">
         <div class="row">
           <div class="col-lg-8">
@@ -2239,7 +1015,7 @@
 
         <div class="row g-4">
           <div class="col-lg-8">
-            <article class="image-tile" style="background-image:url('https://images.unsplash.com/photo-1600566752229-250ed79470b4?q=80&w=1800&auto=format&fit=crop')">
+            <article class="image-tile" style="background-image:url('https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?q=80&w=1800&auto=format&fit=crop')">
               <div class="image-tile-content p-4">
                 <p class="eyebrow text-white">Zona destacada</p>
                 <h3 class="font-display">Antigua Guatemala</h3>
@@ -2248,10 +1024,346 @@
           </div>
 
           <div class="col-lg-4">
-            <article class="image-tile" style="background-image:url('https://images.unsplash.com/photo-1600607687644-c7171b42498b?q=80&w=1400&auto=format&fit=crop')">
+            <article class="image-tile" style="background-image:url('https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1200&auto=format&fit=crop')">
               <div class="image-tile-content p-4">
                 <p class="eyebrow text-white">Categoría</p>
                 <h3 class="font-display">Casas con patio</h3>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-compact bootstrap-components-section" id="bootstrap-components">
+      <div class="container">
+        <div class="row align-items-end">
+          <div class="col-lg-7">
+            <p class="eyebrow section-kicker">Componentes Bootstrap</p>
+            <h2>List groups, controles de formulario, dropdowns y nav-pills con estética Tierra Viva.</h2>
+          </div>
+
+          <div class="col-lg-4 offset-lg-1">
+            <p class="text-muted-tv">
+              Una base visual para usar componentes nativos de Bootstrap sin que parezcan pegados desde otra web.
+            </p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <article class="tv-demo-panel">
+              <p class="eyebrow">List group</p>
+              <h3 class="heading-sm">Listado editorial para zonas o filtros destacados.</h3>
+
+              <div class="list-group tv-list-group">
+                <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                  <span class="tv-list-title">Antigua Guatemala</span>
+                  <span class="tv-list-copy">Alta demanda residencial, turística y boutique.</span>
+                </a>
+
+                <a href="#" class="list-group-item list-group-item-action">
+                  <span class="tv-list-title">San Miguel Dueñas</span>
+                  <span class="tv-list-copy">Mayor privacidad, paisaje y propiedades con terreno.</span>
+                </a>
+
+                <a href="#" class="list-group-item list-group-item-action">
+                  <span class="tv-list-title">El Hato</span>
+                  <span class="tv-list-copy">Naturaleza, vistas y casas con atmósfera de retiro.</span>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-lg-6">
+            <article class="tv-demo-panel">
+              <p class="eyebrow">Checks y radios</p>
+              <h3 class="heading-sm">Opciones de búsqueda o preferencias de cliente.</h3>
+
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <p class="tv-form-label">Tipo de operación</p>
+
+                  <div class="form-check tv-check">
+                    <input class="form-check-input" type="radio" name="operationDemo" id="operationRent" checked>
+                    <label class="form-check-label" for="operationRent">Renta</label>
+                    <div class="form-text">Propiedades disponibles para alquiler.</div>
+                  </div>
+
+                  <div class="form-check tv-check mt-3">
+                    <input class="form-check-input" type="radio" name="operationDemo" id="operationSale">
+                    <label class="form-check-label" for="operationSale">Venta</label>
+                    <div class="form-text">Activos para compra o inversión.</div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <p class="tv-form-label">Preferencias</p>
+
+                  <div class="form-check tv-check">
+                    <input class="form-check-input" type="checkbox" value="" id="featureGarden" checked>
+                    <label class="form-check-label" for="featureGarden">Jardín o patio</label>
+                  </div>
+
+                  <div class="form-check tv-check mt-3">
+                    <input class="form-check-input" type="checkbox" value="" id="featureSecurity">
+                    <label class="form-check-label" for="featureSecurity">Seguridad 24/7</label>
+                  </div>
+
+                  <div class="form-check tv-check mt-3">
+                    <input class="form-check-input" type="checkbox" value="" id="featureInvestment">
+                    <label class="form-check-label" for="featureInvestment">Potencial de inversión</label>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-lg-6">
+            <article class="tv-demo-panel">
+              <p class="eyebrow">Dropdown y select</p>
+              <h3 class="heading-sm">Acciones y filtros desplegables.</h3>
+
+              <div class="d-flex flex-column flex-sm-row gap-3 align-items-sm-end">
+                <div class="flex-grow-1">
+                  <label for="zoneSelectDemo" class="tv-form-label">Zona</label>
+
+                  <select class="form-select tv-form-select" id="zoneSelectDemo">
+                    <option selected>Antigua Guatemala</option>
+                    <option>San Miguel Dueñas</option>
+                    <option>Ciudad Vieja</option>
+                    <option>El Hato</option>
+                  </select>
+                </div>
+
+                <div class="dropdown tv-dropdown">
+                  <button class="btn btn-tv-outline dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Acciones
+                  </button>
+
+                  <ul class="dropdown-menu tv-dropdown-menu">
+                    <li><a class="dropdown-item active" href="#">Ver propiedades</a></li>
+                    <li><a class="dropdown-item" href="#">Solicitar información</a></li>
+                    <li><a class="dropdown-item" href="#">Compartir ficha</a></li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-lg-6">
+            <article class="tv-demo-panel">
+              <p class="eyebrow">Nav pills</p>
+              <h3 class="heading-sm">Tabs compactas para filtros, categorías o vistas.</h3>
+
+              <ul class="nav nav-pills tv-nav-pills" role="tablist" aria-label="Filtros de propiedades">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" type="button">Renta</button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" type="button">Venta</button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" type="button">Inversión</button>
+                </li>
+              </ul>
+
+              <p class="text-muted-tv mt-3 mb-0">
+                Útil para sorters simples, tabs de categorías o estados de una grilla sin depender de botones sueltos.
+              </p>
+            </article>
+          </div>
+
+          <div class="col-lg-6">
+            <article class="tv-demo-panel">
+              <p class="eyebrow">Tabs</p>
+              <h3 class="heading-sm">Navegación por pestañas con contenido asociado.</h3>
+
+              <ul class="nav nav-tabs tv-nav-tabs" id="tvDemoTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link active"
+                    id="tv-overview-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#tv-overview-tab-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="tv-overview-tab-pane"
+                    aria-selected="true"
+                  >
+                    Resumen
+                  </button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="tv-details-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#tv-details-tab-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="tv-details-tab-pane"
+                    aria-selected="false"
+                  >
+                    Detalles
+                  </button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="tv-location-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#tv-location-tab-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="tv-location-tab-pane"
+                    aria-selected="false"
+                  >
+                    Ubicación
+                  </button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="tv-disabled-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#tv-disabled-tab-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="tv-disabled-tab-pane"
+                    aria-selected="false"
+                    disabled
+                  >
+                    Privado
+                  </button>
+                </li>
+              </ul>
+
+              <div class="tab-content tv-tab-content" id="tvDemoTabContent">
+                <div
+                  class="tab-pane fade show active"
+                  id="tv-overview-tab-pane"
+                  role="tabpanel"
+                  aria-labelledby="tv-overview-tab"
+                  tabindex="0"
+                >
+                  <div class="tv-tab-pane-box">
+                    <h4>Resumen editorial</h4>
+                    <p class="text-muted-tv">
+                      Ideal para presentar una propiedad, una zona o una oportunidad con una primera lectura clara antes de entrar al detalle.
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  class="tab-pane fade"
+                  id="tv-details-tab-pane"
+                  role="tabpanel"
+                  aria-labelledby="tv-details-tab"
+                  tabindex="0"
+                >
+                  <div class="tv-tab-pane-box">
+                    <h4>Detalle comercial</h4>
+                    <p class="text-muted-tv">
+                      Puede alojar características, condiciones, amenidades, notas de operación o información técnica sin alargar la página.
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  class="tab-pane fade"
+                  id="tv-location-tab-pane"
+                  role="tabpanel"
+                  aria-labelledby="tv-location-tab"
+                  tabindex="0"
+                >
+                  <div class="tv-tab-pane-box">
+                    <h4>Contexto de zona</h4>
+                    <p class="text-muted-tv">
+                      Útil para explicar cercanía, accesos, perfil del área, demanda y razones por las que la ubicación suma valor.
+                    </p>
+                  </div>
+                </div>
+
+                <div
+                  class="tab-pane fade"
+                  id="tv-disabled-tab-pane"
+                  role="tabpanel"
+                  aria-labelledby="tv-disabled-tab"
+                  tabindex="0"
+                >
+                  <div class="tv-tab-pane-box">
+                    <h4>Contenido privado</h4>
+                    <p class="text-muted-tv">
+                      Este panel queda como referencia para estados bloqueados o información reservada.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-lg-6">
+            <article class="tv-demo-panel">
+              <p class="eyebrow">Tooltips y popovers</p>
+              <h3 class="heading-sm">Ayudas rápidas sin ensuciar la interfaz.</h3>
+              <p class="text-muted-tv">
+                Para microaclaraciones de precio, condiciones, ubicación o requisitos de acceso.
+              </p>
+
+              <div class="tv-inline-actions">
+                <button
+                  type="button"
+                  class="btn btn-tv-outline btn-sm"
+                  data-bs-toggle="tooltip"
+                  data-bs-custom-class="tv-tooltip"
+                  data-bs-title="Información breve para orientar sin abrir otro bloque."
+                >
+                  Ver tooltip
+                </button>
+
+                <button
+                  type="button"
+                  class="btn btn-tv btn-sm"
+                  data-bs-toggle="popover"
+                  data-bs-custom-class="tv-popover"
+                  data-bs-title="Acceso privado"
+                  data-bs-content="Las propiedades off-market requieren contacto previo y validación antes de compartir información sensible."
+                >
+                  Ver popover
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-lg-6">
+            <article class="tv-demo-panel">
+              <p class="eyebrow">Collapse</p>
+              <h3 class="heading-sm">Bloques plegables para fichas, FAQs o detalles.</h3>
+
+              <div class="tv-collapse-card">
+                <button
+                  class="tv-collapse-trigger"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#tvCollapseDemo"
+                  aria-expanded="false"
+                  aria-controls="tvCollapseDemo"
+                >
+                  <span>Condiciones de visita</span>
+                  <span class="collapse-icon" aria-hidden="true"></span>
+                </button>
+
+                <div class="collapse" id="tvCollapseDemo">
+                  <div class="tv-collapse-body">
+                    Ideal para ocultar información secundaria: horarios de visita, requisitos de reserva, condiciones de renta o notas comerciales que no deben ocupar espacio principal.
+                  </div>
+                </div>
               </div>
             </article>
           </div>
@@ -2322,7 +1434,128 @@
         </div>
       </div>
     </section>
+
+    <section class="section-compact wide-post-section button-styles-section" id="wide-post-blocks">
+      <div class="container">
+        <div class="row align-items-end">
+          <div class="col-lg-7">
+            <p class="eyebrow section-kicker">Bloque horizontal</p>
+            <h2>Cards anchas para artículos, zonas o propiedades destacadas.</h2>
+          </div>
+
+          <div class="col-lg-4 offset-lg-1">
+            <p class="text-muted-tv">
+              Una opción editorial para destacar notas, zonas, propiedades o accesos importantes con texto claro e imagen protagonista.
+            </p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <article class="wide-post-card">
+              <div class="wide-post-body">
+                <div>
+                  <p class="eyebrow">Lifestyle</p>
+                  <h3 class="heading-sm">Vivir cerca de Antigua.</h3>
+                  <p class="text-muted-tv">Nov 12</p>
+
+                  <p class="wide-post-copy">
+                    Una lectura breve sobre ubicación, ritmo cotidiano y el tipo de propiedad que mejor acompaña cada forma de vivir.
+                  </p>
+                </div>
+
+                <a href="#journal" class="link-tv">Continuar leyendo</a>
+              </div>
+
+              <div class="wide-post-media">
+                <img
+                  src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop"
+                  alt="Patio con vegetación y luz natural"
+                >
+              </div>
+            </article>
+          </div>
+
+          <div class="col-lg-6">
+            <article class="wide-post-card">
+              <div class="wide-post-body">
+                <div>
+                  <p class="eyebrow">Inversión</p>
+                  <h3 class="heading-sm">Activos boutique con operación.</h3>
+                  <p class="text-muted-tv">Nov 11</p>
+
+                  <p class="wide-post-copy">
+                    Un formato útil para presentar oportunidades con contexto: hotel, terreno, zona o propiedad con potencial comercial.
+                  </p>
+                </div>
+
+                <a href="#inversionistas" class="link-tv">Continuar leyendo</a>
+              </div>
+
+              <div class="wide-post-media">
+                <div class="wide-post-placeholder">Thumbnail</div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <div class="modal fade tv-access-modal" id="offMarketAccessModal" tabindex="-1" aria-labelledby="offMarketAccessModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <button type="button" class="btn-close tv-access-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        <div class="modal-body">
+          <p class="eyebrow">Acceso restringido</p>
+
+          <h2 class="editorial-display mb-3 fs-1" id="offMarketAccessModalLabel">
+            Propiedades off-market
+          </h2>
+
+          <p class="tv-access-copy mb-4">
+            Esta sección está reservada para inversionistas previamente filtrados. 
+            Ingrese la contraseña de acceso o comuníquese con Tierra Viva para solicitar información.
+          </p>
+
+          <form class="tv-access-form" id="offMarketPasswordForm">
+            <label class="summary-label" for="offMarketPassword">
+              Contraseña de acceso
+            </label>
+
+            <input 
+              class="form-control tv-access-input" 
+              type="password" 
+              id="offMarketPassword" 
+              placeholder="Ingrese la contraseña"
+              autocomplete="off"
+            >
+
+            <p class="tv-access-error" id="offMarketPasswordError" hidden>
+              Contraseña incorrecta. Solicite acceso directamente con Tierra Viva.
+            </p>
+
+            <button class="btn-tv w-100" type="submit">
+              Ingresar
+            </button>
+          </form>
+
+          <a 
+            class="link-tv tv-access-contact" 
+            href="https://wa.me/50232465215?text=Hola%20Brenda%2C%20quisiera%20solicitar%20acceso%20a%20propiedades%20off-market%20de%20Tierra%20Viva."
+            target="_blank"
+            rel="noopener">
+            Solicitar acceso por WhatsApp
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M8 6h10v10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </div>
 
   <footer class="footer py-5" id="contacto">
     <div class="container">
@@ -2339,39 +1572,6 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    const mainNavbar = document.querySelector('.navbar');
-
-    function updateNavbarOnScroll() {
-      if (!mainNavbar) return;
-      mainNavbar.classList.toggle('scrolled', window.scrollY > 24);
-    }
-
-    updateNavbarOnScroll();
-    window.addEventListener('scroll', updateNavbarOnScroll, { passive: true });
-
-
-    const canHoverVideo = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-
-    if (canHoverVideo) {
-      document.querySelectorAll('.story-property-card').forEach((card) => {
-        const video = card.querySelector('.story-video');
-        if (!video) return;
-
-        card.addEventListener('mouseenter', () => {
-          document.documentElement.classList.add('story-cards-active');
-          document.body.classList.add('story-cards-active');
-          video.play().catch(() => {});
-        });
-
-        card.addEventListener('mouseleave', () => {
-          document.documentElement.classList.remove('story-cards-active');
-          document.body.classList.remove('story-cards-active');
-          video.pause();
-          video.currentTime = 0;
-        });
-      });
-    }
-  </script>
+  <script src="js/theme.js"></script>
 </body>
 </html>
