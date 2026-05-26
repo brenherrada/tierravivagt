@@ -44,8 +44,8 @@
       --ink: #111513;
     }
 
-    html,
-    body {
+    html.story-cards-active,
+    body.story-cards-active {
       overflow-x: hidden;
     }
 
@@ -62,6 +62,39 @@
       letter-spacing: -.035em;
     }
 
+    h1 {
+      font-size: clamp(2.75rem, 5.8vw, 64px);
+    }
+
+    h2 {
+      font-size: clamp(2.15rem, 4.2vw, 48px);
+    }
+
+    h3 {
+      font-size: clamp(1.55rem, 2.8vw, 34px);
+    }
+
+    h4 {
+      font-size: clamp(1.25rem, 2vw, 26px);
+    }
+
+    h5 {
+      font-size: clamp(1.08rem, 1.55vw, 20px);
+    }
+
+    h6 {
+      font-size: clamp(.9rem, 1.2vw, 16px);
+    }
+
+    .heading-sm {
+      font-size: clamp(1.15rem, 2.8vw, 22px);
+    }
+
+    .lead-editorial {
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      line-height: 1.55;
+    }
+
     .font-serif-italic {
       font-family: 'Lora', Georgia, serif;
       font-style: italic;
@@ -75,7 +108,7 @@
 
     .hero-display {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(3.2rem, 6vw, 5.8rem);
+      font-size: clamp(2.75rem, 5.8vw, 64px);
       line-height: .9;
       letter-spacing: -.055em;
       font-weight: 600;
@@ -83,7 +116,7 @@
 
     .editorial-display {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(2.4rem, 4.8vw, 4.8rem);
+      font-size: clamp(1.4rem, 4.8vw, 2.8rem);
       line-height: .95;
       letter-spacing: -.05em;
       font-weight: 600;
@@ -171,6 +204,30 @@
       height: 13px;
     }
 
+    @media (max-width: 991.98px) {
+      .nav-link,
+      .nav-link:hover,
+      .nav-link:focus,
+      .navbar.scrolled .nav-link {
+        --nav-scale: 1;
+        transform: none;
+      }
+
+      .navbar.scrolled .nav-link {
+        letter-spacing: .13em;
+      }
+
+      .navbar.scrolled .navbar-nav {
+        column-gap: initial !important;
+        row-gap: initial !important;
+      }
+
+      .navbar.scrolled .nav-whatsapp svg {
+        width: 14px;
+        height: 14px;
+      }
+    }
+
     .nav-link::after {
       content: '';
       position: absolute;
@@ -215,6 +272,7 @@
       transform: translateY(-1px);
     }
 
+
     .hero {
       min-height: 70vh;
       display: flex;
@@ -255,7 +313,7 @@
 
     .section-kicker {
       border-top: 1px solid var(--line);
-      padding-top: 1rem;
+      padding-top: 20px;
     }
 
     .btn-tv,
@@ -266,6 +324,14 @@
       letter-spacing: .12em;
       text-transform: uppercase;
       font-weight: 600;
+    }
+
+    .btn-tv.btn-sm,
+    .btn-tv-outline.btn-sm {
+      padding: .58rem .82rem;
+      font-size: .64rem;
+      letter-spacing: .11em;
+      line-height: 1.1;
     }
 
     .btn-tv {
@@ -292,6 +358,95 @@
       background: var(--sage);
       border-color: var(--sage);
       color: #fff;
+    }
+
+    .section-compact .container > .row:first-child {
+      margin-bottom: clamp(1.65rem, 3vw, 2.25rem);
+    }
+
+    .eyebrow {
+      margin-bottom: 5px;
+      line-height: normal;
+      font-weight: 600;
+    }
+
+    .footer .font-serif {
+      margin-bottom: .75rem;
+    }
+
+    .hero-card h1,
+    .section-compact h2,
+    .split-feature h2,
+    .quote-panel h2,
+    .investment-panel h2 {
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-card .lead,
+    .split-feature .lead-editorial,
+    .split-feature .text-muted-tv,
+    .quote-panel .text-muted-tv,
+    .investment-panel .text-muted-tv,
+    .journal-card h3,
+    .component-card h3,
+    .accent-swatch h3,
+    .image-tile h3 {
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-card .lead + .d-flex {
+      margin-top: 1.35rem;
+    }
+
+    .story-expand-panel h3 {
+      margin-bottom: 1rem;
+    }
+
+    .story-specs {
+      margin-bottom: 1.15rem;
+    }
+
+    .type-card {
+      padding: clamp(1.15rem, 1.8vw, 1.65rem);
+    }
+
+        .type-card h3 {
+      margin-bottom: 1.15rem;
+    }
+
+    .type-card > :last-child,
+    .property-body > :last-child,
+    .journal-card > :last-child,
+    .component-card > :last-child,
+    .accent-swatch > :last-child,
+    .hero-card > :last-child,
+    .investment-panel > :last-child,
+    .quote-panel > :last-child,
+    .footer p:last-child {
+      margin-bottom: 0;
+    }
+
+    .type-card .btn {
+      margin-top: .35rem;
+    }
+
+    .type-card h3 {
+      font-size: clamp(2rem, 3vw, 42px);
+      line-height: 1.08;
+      letter-spacing: -.035em;
+    }
+
+    .type-card .font-serif-italic {
+      font-size: clamp(1.9rem, 2.8vw, 40px);
+      line-height: 1.22;
+    }
+
+    .type-card .type-manrope-title {
+      font-family: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: clamp(1.85rem, 2.5vw, 36px);
+      line-height: 1.18;
+      letter-spacing: -.03em;
+      font-weight: 500;
     }
 
     .property-card,
@@ -367,8 +522,10 @@
       position: absolute;
       right: 0;
       bottom: 0;
-      width: 54px;
-      height: 54px;
+      width: clamp(45px,1vw,54px);
+      height: clamp(45px,1vw,54px);
+      min-width: clamp(45px,1vw,54px);
+      min-height: clamp(45px,1vw,54px);
       border-radius: 999px;
       display: inline-flex;
       align-items: center;
@@ -379,7 +536,7 @@
       box-shadow: 0 10px 24px rgba(17, 21, 19, .10);
       text-decoration: none;
       transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease, color .25s ease;
-      animation: bubbleFloat 3.2s ease-in-out infinite;
+      animation: bubbleFloat 2.2s ease-in-out infinite;
     }
 
     .property-bubble svg {
@@ -390,8 +547,7 @@
     .property-bubble:hover,
     .property-bubble:focus {
       transform: translateY(-2px);
-      background: var(--sage);
-      color: #fff;
+      background: var(--bg-accent);
       box-shadow: 0 14px 30px rgba(17, 21, 19, .16);
     }
 
@@ -519,15 +675,34 @@
       background: #fff;
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .story-properties-shell {
+      width: 100%;
+      margin-inline: auto;
+      overflow: visible;
+    }
+
+    @media (min-width: 1200px) {
+      .story-properties-shell {
+        max-width: min(1440px, calc(100vw - 3rem));
+      }
+    }
+
+    @media (min-width: 992px) and (max-width: 1199.98px) and (orientation: landscape) {
+      .story-properties {
+        height: clamp(330px, 48vh, 420px);
+      }
     }
 
     .story-properties {
-      --story-gap: 1rem;
+      --story-gap: 5px;
       --story-card-base: calc((100% - (var(--story-gap) * 2)) / 3);
       display: flex;
       gap: var(--story-gap);
       align-items: stretch;
-      min-height: 680px;
+      height: clamp(420px, 82vh, 680px);
       overflow: visible;
       transition: transform .5s ease;
       will-change: transform;
@@ -553,7 +728,7 @@
       position: relative;
       width: 100%;
       height: 100%;
-      min-height: 680px;
+      min-height: 100%;
       background: var(--bg-accent);
     }
 
@@ -619,7 +794,8 @@
       height: 100%;
       overflow: hidden;
       box-sizing: border-box;
-      background: rgba(246, 244, 239, .98);
+      background: rgba(246, 244, 239, .9);
+      backdrop-filter: blur(5px);
       border-left: 0 solid rgba(222, 219, 210, 0);
       padding: 0;
       opacity: 0;
@@ -644,12 +820,12 @@
 
     .story-specs li {
       color: var(--text);
-      padding: .72rem 0;
+      padding: 8px 0;
       line-height: 1.35;
       border-bottom: 1px solid rgba(222, 219, 210, .95);
       background: transparent;
       font-size: .88rem;
-      font-weight: 500;
+      font-weight: 300;
     }
 
     .story-specs li:last-child {
@@ -666,6 +842,10 @@
 
     .story-expand-panel .property-bubble {
       position: static;
+    }
+
+    .story-mobile-link {
+      display: none;
     }
 
     .story-badge-new {
@@ -711,7 +891,7 @@
 
       .story-properties .story-property-card:hover .story-expand-panel {
         width: 44%;
-        padding: 1.4rem 1.35rem;
+        padding: 2.4rem 1.55rem;
         opacity: 1;
         border-left-width: 1px;
         border-left-color: rgba(222, 219, 210, .9);
@@ -724,6 +904,221 @@
         transform: translateY(0);
         transition-delay: .36s;
       }
+    }
+
+    .visual-slider-section {
+      background: var(--bg-soft);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .tv-slider-shell {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--card);
+    }
+
+    .tv-slider-shell::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(90deg, rgba(17, 21, 19, .68) 0%, rgba(17, 21, 19, .32) 46%, rgba(17, 21, 19, .06) 100%);
+      pointer-events: none;
+    }
+
+    .tv-slider {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tv-slider .carousel-inner,
+    .tv-slider .carousel-item {
+      height: clamp(360px, 62vh, 680px);
+    }
+
+    .tv-slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(.9) contrast(1.03);
+    }
+
+    .tv-slider-content {
+      position: absolute;
+      z-index: 2;
+      left: clamp(1.2rem, 4vw, 3.5rem);
+      right: clamp(1.2rem, 4vw, 3.5rem);
+      bottom: clamp(4.75rem, 7vw, 6rem);
+      max-width: 560px;
+      color: #fff;
+    }
+
+    .tv-slider-kicker {
+      color: rgba(255, 255, 255, .76);
+    }
+
+    .tv-slider-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.1rem, 4vw, 54px);
+      line-height: .96;
+      letter-spacing: -.05em;
+      margin-bottom: 1rem;
+    }
+
+    .tv-slider-copy {
+      color: rgba(255, 255, 255, .82);
+      max-width: 440px;
+      margin-bottom: 0;
+    }
+
+    .tv-slider-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: .75rem;
+      margin-top: 1.35rem;
+    }
+
+    .tv-slider-link {
+      color: rgba(255, 255, 255, .9);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, .48);
+      padding-bottom: .18rem;
+      transition: color .25s ease, border-color .25s ease;
+    }
+
+    .tv-slider-link:hover,
+    .tv-slider-link:focus {
+      color: #fff;
+      border-color: #fff;
+    }
+
+    .tv-slider .btn-tv,
+    .tv-slider .btn-tv-outline {
+      border-color: rgba(255, 255, 255, .52);
+    }
+
+    .tv-slider .btn-tv {
+      background: rgba(255, 255, 255, .92);
+      color: var(--ink);
+    }
+
+    .tv-slider .btn-tv:hover,
+    .tv-slider .btn-tv:focus {
+      background: #fff;
+      border-color: #fff;
+      color: var(--ink);
+    }
+
+    .tv-slider .btn-tv-outline {
+      color: #fff;
+      background: rgba(246, 244, 239, .12);
+      backdrop-filter: blur(10px);
+    }
+
+    .tv-slider .btn-tv-outline:hover,
+    .tv-slider .btn-tv-outline:focus {
+      color: var(--ink);
+      background: rgba(255, 255, 255, .92);
+      border-color: rgba(255, 255, 255, .92);
+    }
+
+    .tv-slider .carousel-indicators {
+      right: auto;
+      left: clamp(1.2rem, 4vw, 3.5rem);
+      bottom: 1.25rem;
+      justify-content: flex-start;
+      margin: 0;
+      gap: .45rem;
+      z-index: 3;
+    }
+
+    .tv-slider .carousel-indicators [data-bs-target] {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      border: 0;
+      background-color: rgba(255, 255, 255, .62);
+      opacity: 1;
+      transition: width .25s ease, background-color .25s ease;
+    }
+
+    .tv-slider .carousel-indicators .active {
+      width: 26px;
+      background-color: #fff;
+    }
+
+    .tv-slider-arrow {
+      position: absolute;
+      z-index: 3;
+      top: auto;
+      bottom: 1.15rem;
+      left: auto;
+      width: 54px;
+      min-width: 54px;
+      max-width: 54px;
+      height: 34px;
+      min-height: 34px;
+      max-height: 34px;
+      flex: 0 0 54px;
+      padding: 0;
+      opacity: 1;
+      border: 1px solid rgba(255, 255, 255, .44);
+      border-radius: 0;
+      background: rgba(246, 244, 239, .16);
+      backdrop-filter: blur(12px);
+      color: rgba(255, 255, 255, .88);
+      font-family: 'Manrope', system-ui, sans-serif;
+      font-size: 0;
+      font-weight: 300;
+      line-height: 1;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      appearance: none;
+      box-sizing: border-box;
+      box-shadow: none;
+      transition: color .25s ease, background-color .25s ease, border-color .25s ease, transform .25s ease;
+    }
+
+    .tv-slider-arrow::before {
+      font-size: 1.25rem;
+      line-height: 1;
+      transform: translateY(-1px);
+    }
+
+    .tv-slider-prev::before {
+      content: '←';
+    }
+
+    .tv-slider-next::before {
+      content: '→';
+    }
+
+    .tv-slider-arrow:hover,
+    .tv-slider-arrow:focus {
+      color: #fff;
+      background: rgba(246, 244, 239, .28);
+      border-color: rgba(255, 255, 255, .64);
+      transform: translateY(-2px);
+    }
+
+    .tv-slider-prev {
+      left: auto;
+      right: calc(1.25rem + 62px);
+    }
+
+    .tv-slider-next {
+      left: auto;
+      right: 1.25rem;
     }
 
     .journal-section {
@@ -799,6 +1194,170 @@
       background: radial-gradient(circle, rgba(185,166,160,.35), transparent 66%);
     }
 
+    .gradient-blocks-section {
+      background: var(--bg);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .gradient-block {
+      position: relative;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+      border: 1px solid rgba(222, 219, 210, .75);
+      padding: clamp(1.25rem, 2.6vw, 2rem);
+      color: var(--ink);
+    }
+
+    .gradient-block::before {
+      content: '';
+      position: absolute;
+      inset: auto -20% -35% auto;
+      width: 240px;
+      height: 240px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .28);
+      filter: blur(2px);
+      pointer-events: none;
+    }
+
+    .gradient-block > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .gradient-block .eyebrow {
+      color: rgba(17, 21, 19, .62);
+    }
+
+    .gradient-block h3 {
+      max-width: 520px;
+      margin-bottom: .85rem;
+    }
+
+    .gradient-block code,
+    .button-style-card code {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      margin-bottom: .85rem;
+      padding: .28rem .48rem;
+      border: 1px solid rgba(17, 21, 19, .12);
+      background: rgba(255, 255, 255, .38);
+      color: rgba(17, 21, 19, .7);
+      font-size: .72rem;
+      line-height: 1.2;
+    }
+
+    .gradient-block-ink code {
+      border-color: rgba(246, 244, 239, .18);
+      background: rgba(246, 244, 239, .12);
+      color: rgba(246, 244, 239, .78);
+    }
+
+    .gradient-block p:not(.eyebrow) {
+      max-width: 460px;
+      margin-bottom: 0;
+      color: rgba(17, 21, 19, .68);
+    }
+
+    .gradient-block-sage {
+      background: linear-gradient(135deg, rgba(231, 236, 235, .96) 0%, rgba(109, 124, 118, .42) 58%, rgba(81, 97, 91, .72) 100%);
+    }
+
+    .gradient-block-mineral {
+      background: linear-gradient(135deg, rgba(246, 244, 239, .95) 0%, rgba(168, 178, 189, .74) 48%, rgba(143, 161, 170, .92) 100%);
+    }
+
+    .gradient-block-clay {
+      background: linear-gradient(135deg, rgba(246, 244, 239, .98) 0%, rgba(185, 166, 160, .66) 56%, rgba(168, 178, 189, .38) 100%);
+    }
+
+    .gradient-block-ink {
+      color: var(--bg);
+      background: radial-gradient(circle at 82% 18%, rgba(143, 161, 170, .42) 0%, rgba(143, 161, 170, 0) 34%), linear-gradient(135deg, var(--ink) 0%, var(--sage) 62%, var(--slate) 100%);
+    }
+
+    .gradient-block-ink .eyebrow,
+    .gradient-block-ink p:not(.eyebrow) {
+      color: rgba(246, 244, 239, .72);
+    }
+
+    .gradient-block-gold {
+      background: linear-gradient(135deg, rgba(246, 244, 239, .98) 0%, rgba(232, 217, 139, .64) 48%, rgba(185, 166, 160, .46) 100%);
+    }
+
+    .gradient-block-wide {
+      min-height: 340px;
+    }
+
+    .button-styles-section {
+      background: #fff;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .button-style-card {
+      height: 100%;
+      padding: clamp(1.2rem, 2vw, 1.65rem);
+      border: 1px solid var(--line);
+      background: var(--card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.25rem;
+    }
+
+    .button-style-card p:not(.eyebrow) {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .button-style-preview {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: .85rem;
+      padding-top: .4rem;
+    }
+
+    .link-tv {
+      color: var(--sage);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(81, 97, 91, .42);
+      padding-bottom: .18rem;
+      transition: color .25s ease, border-color .25s ease;
+    }
+
+    .link-tv:hover,
+    .link-tv:focus {
+      color: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .link-tv-muted {
+      color: var(--muted);
+      border-color: rgba(111, 115, 109, .34);
+    }
+
+    .link-tv-light {
+      color: rgba(255,255,255,.9);
+      border-color: rgba(255,255,255,.48);
+    }
+
+    .link-tv-light:hover,
+    .link-tv-light:focus {
+      color: #fff;
+      border-color: #fff;
+    }
+
     .feature-strip {
       background: var(--bg-accent);
       border-block: 1px solid var(--line);
@@ -847,7 +1406,7 @@
       border-top: 1px solid var(--line);
     }
 
-    @media (max-width: 767.98px) {
+    @media (max-width: 989.98px) {
       .brand-logo {
         width: 180px;
       }
@@ -895,14 +1454,40 @@
         padding: .34rem .5rem;
       }
 
+      .story-properties-shell {
+        width: 100vw;
+        max-width: 100vw;
+        overflow-x: auto;
+        overflow-y: visible;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        padding-inline: calc(var(--bs-gutter-x, 1.5rem) * .5);
+        scroll-snap-type: x mandatory;
+        scroll-padding-inline: calc(var(--bs-gutter-x, 1.5rem) * .5);
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .story-properties-shell::-webkit-scrollbar {
+        display: none;
+      }
+
       .story-properties {
-        flex-direction: column;
+        flex-direction: row;
         min-height: auto;
+        width: max-content;
+        transform: none !important;
+        height: auto;
+      }
+
+      .story-property-card {
+        flex: 0 0 min(82vw, 360px);
+        scroll-snap-align: start;
       }
 
       .story-property-card,
       .story-property-media {
-        min-height: 520px;
+        height: clamp(430px, 72vh, 620px);
+        min-height: 0;
       }
 
       .story-expand-panel {
@@ -913,12 +1498,73 @@
         font-size: 1.7rem;
       }
 
+      .tv-slider .carousel-inner,
+      .tv-slider .carousel-item {
+        height: clamp(360px, 58vh, 560px);
+      }
+
+      .tv-slider-content {
+        bottom: 4rem;
+      }
+
       .price {
         font-size: 1.04rem;
       }
 
       .price-note {
         font-size: .86rem;
+      }
+    }
+
+    @media (min-width: 540px) and (max-width: 989.98px) {
+      .story-property-card {
+        flex-basis: min(46vw, 370px);
+      }
+
+      .story-property-card,
+      .story-property-media {
+        height: clamp(420px, 56vh, 540px);
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      .tv-slider-shell {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        border-left: 0;
+        border-right: 0;
+      }
+
+      .tv-slider-arrow {
+        width: 50px;
+        min-width: 50px;
+        max-width: 50px;
+        height: 32px;
+        min-height: 32px;
+        max-height: 32px;
+        flex-basis: 50px;
+      }
+
+      .tv-slider-prev {
+        right: calc(1.25rem + 58px);
+      }
+    }
+
+    @media (hover: none), (pointer: coarse) {
+      .story-mobile-link {
+        display: block;
+        position: absolute;
+        inset: 0;
+        z-index: 5;
+        font-size: 0;
+        color: transparent;
+        text-decoration: none;
+      }
+
+      .story-property-card:hover {
+        border-color: var(--line);
+        box-shadow: 0 12px 34px rgba(17, 21, 19, .06);
       }
     }
   </style>
@@ -954,10 +1600,10 @@
 
   <header class="hero">
     <div class="container pb-4 pb-md-5">
-      <div class="hero-card p-4 p-md-5 mb-4">
-        <p class="eyebrow mb-3">Antigua Guatemala · Real Estate Boutique</p>
-        <h1 class="hero-display mb-4">Propiedades con historia, luz y carácter.</h1>
-        <p class="lead text-muted-tv mb-4">Una selección curada de casas, cabañas, hoteles boutique y oportunidades de inversión en Antigua Guatemala y sus alrededores.</p>
+      <div class="hero-card p-4 p-md-5">
+        <p class="eyebrow">Antigua Guatemala · Real Estate Boutique</p>
+        <h1 class="hero-display">Propiedades con historia, luz y carácter.</h1>
+        <p class="lead text-muted-tv">Una selección curada de casas, cabañas, hoteles boutique y oportunidades de inversión en Antigua Guatemala y sus alrededores.</p>
         <div class="d-flex flex-column flex-sm-row gap-3">
           <a href="#propiedades" class="btn btn-tv">Ver propiedades</a>
           <a href="#journal" class="btn btn-tv-outline">Explorar journal</a>
@@ -969,39 +1615,39 @@
   <main>
     <section class="section-compact" id="type-system">
       <div class="container">
-        <div class="row align-items-end mb-4">
+        <div class="row align-items-end">
           <div class="col-lg-7">
-            <p class="eyebrow section-kicker mb-3">Sistema tipográfico</p>
-            <h2 class="display-6 mb-0">Playfair para impacto, Lora para profundidad, Manrope para precisión.</h2>
+            <p class="eyebrow section-kicker">Sistema tipográfico</p>
+            <h2 class="mb-0">Playfair para impacto, Lora para profundidad, Manrope para precisión.</h2>
           </div>
-          <div class="col-lg-4 offset-lg-1 mt-3 mt-lg-0">
-            <p class="text-muted-tv mb-0">Una convivencia controlada: impacto donde hace falta, lectura donde importa y claridad donde se decide.</p>
+          <div class="col-lg-4 offset-lg-1">
+            <p class="text-muted-tv">Una convivencia controlada: impacto donde hace falta, lectura donde importa y claridad donde se decide.</p>
           </div>
         </div>
 
         <div class="row g-4">
           <div class="col-lg-4">
-            <article class="type-card p-4">
-              <p class="eyebrow mb-4">Playfair Display</p>
-              <h3 class="editorial-display mb-4">Quiet luxury, real places.</h3>
-              <p class="text-muted-tv mb-0">Para hero, statements y momentos editoriales puntuales.</p>
+            <article class="type-card">
+              <p class="eyebrow">Playfair Display</p>
+              <h3 class="editorial-display">Quiet luxury, real places.</h3>
+              <p class="text-muted-tv">Para hero, statements y momentos editoriales puntuales.</p>
             </article>
           </div>
 
           <div class="col-lg-4">
-            <article class="type-card p-4">
-              <p class="eyebrow mb-4">Lora Italic</p>
-              <h3 class="font-serif-italic display-6 mb-4">Una casa también puede sentirse como una pausa.</h3>
-              <p class="text-muted-tv mb-0">Para bajadas, citas suaves e introducciones con atmósfera humana.</p>
+            <article class="type-card">
+              <p class="eyebrow">Lora Italic</p>
+              <h3 class="font-serif-italic lead-editorial">Una casa también puede sentirse como una pausa.</h3>
+              <p class="text-muted-tv">Para bajadas, citas suaves e introducciones con atmósfera humana.</p>
             </article>
           </div>
 
           <div class="col-lg-4">
-            <article class="type-card p-4">
-              <p class="eyebrow mb-4">Manrope</p>
-              <h3 class="h4 mb-4">Sistema, navegación y lectura funcional.</h3>
-              <p class="text-muted-tv mb-4">Para botones, menú, specs, precios, filtros y todo lo que necesita claridad inmediata.</p>
-              <a href="#component-library" class="btn btn-tv-outline">Ver bloques</a>
+            <article class="type-card">
+              <p class="eyebrow">Manrope</p>
+              <h3 class="heading-sm type-manrope-title">Sistema, navegación y lectura funcional.</h3>
+              <p class="text-muted-tv">Para botones, menú, specs, precios, filtros y todo lo que necesita claridad inmediata.</p>
+              <a href="#component-library" class="btn btn-tv-outline btn-sm">Ver bloques</a>
             </article>
           </div>
         </div>
@@ -1010,13 +1656,13 @@
 
     <section class="section-compact" id="propiedades">
       <div class="container">
-        <div class="row align-items-end mb-4">
+        <div class="row align-items-end">
           <div class="col-lg-7">
-            <p class="eyebrow section-kicker mb-3">Selección Tierra Viva</p>
-            <h2 class="display-6 mb-0">Espacios elegidos por su ubicación, atmósfera y potencial.</h2>
+            <p class="eyebrow section-kicker">Selección Tierra Viva</p>
+            <h2 class="mb-0">Espacios elegidos por su ubicación, atmósfera y potencial.</h2>
           </div>
-          <div class="col-lg-4 offset-lg-1 mt-3 mt-lg-0">
-            <p class="text-muted-tv mb-0">No buscamos mostrar volumen. Buscamos mostrar propiedades que tengan una razón clara para ser vistas.</p>
+          <div class="col-lg-4 offset-lg-1">
+            <p class="text-muted-tv">No buscamos mostrar volumen. Buscamos mostrar propiedades que tengan una razón clara para ser vistas.</p>
           </div>
         </div>
 
@@ -1030,13 +1676,13 @@
                 </div>
               </div>
               <div class="property-body p-4">
-                <p class="eyebrow mb-2">Casa en renta</p>
-                <h3 class="h4 mb-3">Hacienda del Comendador</h3>
+                <p class="eyebrow">Casa en renta</p>
+                <h3 class="heading-sm">Hacienda del Comendador</h3>
                 <p class="property-description text-muted-tv">Una casa amplia y serena dentro de un entorno residencial con carácter.</p>
                 <div class="property-meta">
                   <div class="price-block">
                     <span class="price">USD 2,100</span>
-                    <span class="price-note">/ mes</span>
+                    <span class="price-note">/mes</span>
                   </div>
                   <a href="ficha_renta_casa_hacienda_del_comendador.html" class="property-bubble" aria-label="Ver ficha de Hacienda del Comendador">
                     <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
@@ -1059,13 +1705,13 @@
                 <span class="property-badge badge-new property-badge-new-floating">NEW!</span>
               </div>
               <div class="property-body p-4">
-                <p class="eyebrow mb-2">Casa en renta</p>
-                <h3 class="h4 mb-3">Los Franciscanos</h3>
+                <p class="eyebrow">Casa en renta</p>
+                <h3 class="heading-sm">Los Franciscanos</h3>
                 <p class="property-description text-muted-tv">Un residencial pensado para vivir cerca de Antigua con privacidad y comodidad.</p>
                 <div class="property-meta">
                   <div class="price-block">
                     <span class="price">USD 1,450</span>
-                    <span class="price-note">/ mes</span>
+                    <span class="price-note">/mes</span>
                   </div>
                   <a href="ficha_renta_casa_los_franciscanos.html" class="property-bubble" aria-label="Ver ficha de Los Franciscanos">
                     <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
@@ -1088,8 +1734,8 @@
                 </div>
               </div>
               <div class="property-body p-4">
-                <p class="eyebrow mb-2">Cabaña en venta y renta</p>
-                <h3 class="h4 mb-3">Las Macadamias</h3>
+                <p class="eyebrow">Cabaña en venta y renta</p>
+                <h3 class="heading-sm">Las Macadamias</h3>
                 <p class="property-description text-muted-tv">Naturaleza, privacidad y espacios exteriores para vivir Antigua desde otro ritmo.</p>
                 <div class="property-meta">
                   <div class="price-block">
@@ -1111,19 +1757,21 @@
 
     <section class="section-compact story-properties-section" id="story-properties-demo">
       <div class="container">
-        <div class="row align-items-end mb-4">
+        <div class="row align-items-end">
           <div class="col-lg-7">
-            <p class="eyebrow section-kicker mb-3">Demo interactiva</p>
-            <h2 class="display-6 mb-0">Propiedades destacadas con preview dinámico.</h2>
+            <p class="eyebrow section-kicker">Demo interactiva</p>
+            <h2 class="mb-0">Propiedades destacadas con preview dinámico.</h2>
           </div>
-          <div class="col-lg-4 offset-lg-1 mt-3 mt-lg-0">
-            <p class="text-muted-tv mb-0">Cards tipo story: imagen o video quieto de entrada, expansión al pasar el mouse y mini ficha lateral solo en dispositivos con hover.</p>
+          <div class="col-lg-4 offset-lg-1">
+            <p class="text-muted-tv">Cards tipo story: imagen o video quieto de entrada, expansión al pasar el mouse y mini ficha lateral solo en dispositivos con hover.</p>
           </div>
         </div>
 
-        <div class="story-properties">
+        <div class="story-properties-shell">
+          <div class="story-properties">
           <article class="story-property-card">
             <div class="story-property-media">
+              <a href="ficha_renta_casa_hacienda_del_comendador.html" class="story-mobile-link" aria-label="Ver ficha de Hacienda del Comendador">Ver ficha</a>
               <video class="story-video" muted loop playsinline preload="metadata" poster="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop">
                 <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
               </video>
@@ -1131,24 +1779,23 @@
               <div class="story-overlay">
                 <p class="story-operation">Renta</p>
                 <h3 class="story-location">Hacienda del Comendador</h3>
-                <p class="story-price">USD 2,100 <span>/ mes</span></p>
+                <p class="story-price">USD 2,100 <span>/mes</span></p>
               </div>
             </div>
 
             <div class="story-expand-panel">
-              <p class="eyebrow mb-2">Renta</p>
-              <h3 class="h4 mb-4">Hacienda del Comendador</h3>
-              <ul class="story-specs list-unstyled mb-4">
+              <p class="eyebrow">Renta</p>
+              <h3 class="heading-sm">Hacienda del Comendador</h3>
+              <ul class="story-specs list-unstyled">
                 <li>4 dormitorios</li>
                 <li>4.5 baños</li>
                 <li>Jardín interior</li>
                 <li>Parqueo para 2 vehículos</li>
-                <li>Residencial con seguridad</li>
               </ul>
               <div class="d-flex justify-content-between align-items-end gap-3">
                 <div class="price-block">
                   <span class="price">USD 2,100</span>
-                  <span class="price-note">/ mes</span>
+                  <span class="price-note">/mes</span>
                 </div>
                 <a href="ficha_renta_casa_hacienda_del_comendador.html" class="property-bubble" aria-label="Ver ficha de Hacienda del Comendador">
                   <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
@@ -1162,31 +1809,31 @@
 
           <article class="story-property-card">
             <div class="story-property-media">
+              <a href="ficha_renta_casa_los_franciscanos.html" class="story-mobile-link" aria-label="Ver ficha de Los Franciscanos">Ver ficha</a>
               <img class="story-image" src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1200&auto=format&fit=crop" alt="Casa en renta Los Franciscanos">
 
               <div class="story-overlay">
                 <p class="story-operation">Renta</p>
                 <h3 class="story-location">Los Franciscanos</h3>
-                <p class="story-price">USD 1,450 <span>/ mes</span></p>
+                <p class="story-price">USD 1,450 <span>/mes</span></p>
               </div>
 
               <span class="property-badge badge-new story-badge-new">NEW!</span>
             </div>
 
             <div class="story-expand-panel">
-              <p class="eyebrow mb-2">Renta</p>
-              <h3 class="h4 mb-4">Los Franciscanos</h3>
-              <ul class="story-specs list-unstyled mb-4">
+              <p class="eyebrow">Renta</p>
+              <h3 class="heading-sm">Los Franciscanos</h3>
+              <ul class="story-specs list-unstyled">
                 <li>3 dormitorios</li>
                 <li>2.5 baños</li>
                 <li>Seguridad 24/7</li>
                 <li>Parqueo privado</li>
-                <li>Cercano a Antigua</li>
               </ul>
               <div class="d-flex justify-content-between align-items-end gap-3">
                 <div class="price-block">
                   <span class="price">USD 1,450</span>
-                  <span class="price-note">/ mes</span>
+                  <span class="price-note">/mes</span>
                 </div>
                 <a href="ficha_renta_casa_los_franciscanos.html" class="property-bubble" aria-label="Ver ficha de Los Franciscanos">
                   <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
@@ -1200,6 +1847,7 @@
 
           <article class="story-property-card">
             <div class="story-property-media">
+              <a href="ficha_venta_cabana_las_macadamias.html" class="story-mobile-link" aria-label="Ver ficha de Las Macadamias">Ver ficha</a>
               <img class="story-image" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop" alt="Cabaña en venta Las Macadamias">
 
               <div class="story-overlay">
@@ -1210,14 +1858,13 @@
             </div>
 
             <div class="story-expand-panel">
-              <p class="eyebrow mb-2">Venta</p>
-              <h3 class="h4 mb-4">Las Macadamias</h3>
-              <ul class="story-specs list-unstyled mb-4">
+              <p class="eyebrow">Venta</p>
+              <h3 class="heading-sm">Las Macadamias</h3>
+              <ul class="story-specs list-unstyled">
                 <li>3 dormitorios</li>
                 <li>3 baños</li>
                 <li>Jardín amplio</li>
                 <li>Terraza exterior</li>
-                <li>Ideal para inversión boutique</li>
               </ul>
               <div class="d-flex justify-content-between align-items-end gap-3">
                 <div class="price-block">
@@ -1232,53 +1879,122 @@
               </div>
             </div>
           </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-compact visual-slider-section" id="visual-slider">
+      <div class="container">
+        <div class="row align-items-end">
+          <div class="col-lg-7">
+            <p class="eyebrow section-kicker">Slider editorial</p>
+            <h2>Una sección visual para destacar zonas, propiedades o estilos de vida.</h2>
+          </div>
+          <div class="col-lg-4 offset-lg-1">
+            <p class="text-muted-tv">Carrusel Bootstrap con tres imágenes, navegación por flechas y dots. Ideal para una home más inmersiva sin saturar de texto.</p>
+          </div>
+        </div>
+
+        <div class="tv-slider-shell">
+          <div id="tvVisualCarousel" class="carousel slide tv-slider" data-bs-ride="false" aria-label="Carrusel visual Tierra Viva">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#tvVisualCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Imagen 1"></button>
+              <button type="button" data-bs-target="#tvVisualCarousel" data-bs-slide-to="1" aria-label="Imagen 2"></button>
+              <button type="button" data-bs-target="#tvVisualCarousel" data-bs-slide-to="2" aria-label="Imagen 3"></button>
+            </div>
+
+            <div class="carousel-inner">
+              <div class="carousel-item active tv-slider-card">
+                <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=2200&auto=format&fit=crop" alt="Interior cálido con arquitectura contemporánea">
+                <div class="tv-slider-content">
+                  <p class="eyebrow tv-slider-kicker">Arquitectura con carácter</p>
+                  <h3 class="tv-slider-title">Interiores que cuentan una historia.</h3>
+                  <p class="tv-slider-copy">Una forma de mostrar atmósfera, textura y sensibilidad de marca en una sola pieza visual.</p>
+                  <div class="tv-slider-actions">
+                    <a href="#propiedades" class="btn btn-tv btn-sm">Ver propiedades</a>
+                    <a href="#journal" class="tv-slider-link">Leer journal</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-item tv-slider-card">
+                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2200&auto=format&fit=crop" alt="Casa con patio e iluminación natural">
+                <div class="tv-slider-content">
+                  <p class="eyebrow tv-slider-kicker">Propiedades seleccionadas</p>
+                  <h3 class="tv-slider-title">Casas pensadas para vivirse.</h3>
+                  <p class="tv-slider-copy">Ideal para destacar una propiedad estrella sin convertir la sección en una ficha técnica.</p>
+                  <div class="tv-slider-actions">
+                    <a href="ficha_renta_casa_hacienda_del_comendador.html" class="btn btn-tv-outline btn-sm">Ver ficha</a>
+                    <a href="https://wa.me/50232465215" target="_blank" rel="noopener" class="tv-slider-link">Consultar</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-item tv-slider-card">
+                <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?q=80&w=2200&auto=format&fit=crop" alt="Hotel boutique con piscina y arquitectura cálida">
+                <div class="tv-slider-content">
+                  <p class="eyebrow tv-slider-kicker">Inversión boutique</p>
+                  <h3 class="tv-slider-title">Activos con operación, ubicación y concepto.</h3>
+                  <p class="tv-slider-copy">Un bloque útil para hoteles, terrenos y oportunidades que necesitan presencia visual fuerte.</p>
+                  <div class="tv-slider-actions">
+                    <a href="investments.html" class="btn btn-tv btn-sm">Área privada</a>
+                    <a href="#inversionistas" class="tv-slider-link">Ver enfoque</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="carousel-control-prev tv-slider-arrow tv-slider-prev" type="button" data-bs-target="#tvVisualCarousel" data-bs-slide="prev" aria-label="Imagen anterior"></button>
+            <button class="carousel-control-next tv-slider-arrow tv-slider-next" type="button" data-bs-target="#tvVisualCarousel" data-bs-slide="next" aria-label="Imagen siguiente"></button>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section-compact journal-section" id="journal">
       <div class="container">
-        <div class="row mb-4">
+        <div class="row">
           <div class="col-lg-8">
-            <p class="eyebrow section-kicker mb-3">Journal Tierra Viva</p>
-            <h2 class="display-6 mb-3">Una mirada editorial sobre vivir e invertir en Antigua.</h2>
-            <p class="font-serif-italic fs-4 text-muted-tv mb-0">Arquitectura, barrios, inversión boutique y formas de habitar con sentido.</p>
+            <p class="eyebrow section-kicker">Journal Tierra Viva</p>
+            <h2 class="mb-3">Una mirada editorial sobre vivir e invertir en Antigua.</h2>
+            <p class="font-serif-italic lead-editorial text-muted-tv">Arquitectura, barrios, inversión boutique y formas de habitar con sentido.</p>
           </div>
         </div>
 
         <div class="row g-4">
           <div class="col-md-6 col-lg-4">
             <article class="journal-card card h-100">
-              <div class="journal-thumb ratio ratio-1x1 mb-4">
+              <div class="journal-thumb ratio ratio-1x1">
                 <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1400&auto=format&fit=crop" alt="Patio con vegetación y luz natural">
               </div>
               <div class="card-body p-0">
-                <p class="eyebrow mb-2">Estilo de vida</p>
-                <h3 class="h4">Vivir cerca de Antigua: calma, acceso y paisaje.</h3>
+                <p class="eyebrow mt-4">Estilo de vida</p>
+                <h3 class="heading-sm">Vivir cerca de Antigua: calma, acceso y paisaje.</h3>
               </div>
             </article>
           </div>
 
           <div class="col-md-6 col-lg-4">
             <article class="journal-card card h-100">
-              <div class="journal-thumb ratio ratio-1x1 mb-4">
+              <div class="journal-thumb ratio ratio-1x1">
                 <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=1400&auto=format&fit=crop" alt="Detalle arquitectónico con textura y sombra">
               </div>
               <div class="card-body p-0">
-                <p class="eyebrow mb-2">Arquitectura</p>
-                <h3 class="h4">Lo colonial contemporáneo: cuando la casa respira historia sin quedarse vieja.</h3>
+                <p class="eyebrow mt-4">Arquitectura</p>
+                <h3 class="heading-sm">Lo colonial contemporáneo: cuando la casa respira historia sin quedarse vieja.</h3>
               </div>
             </article>
           </div>
 
           <div class="col-md-6 col-lg-4">
             <article class="journal-card card h-100">
-              <div class="journal-thumb ratio ratio-1x1 mb-4">
+              <div class="journal-thumb ratio ratio-1x1">
                 <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?q=80&w=1400&auto=format&fit=crop" alt="Hotel boutique con piscina y arquitectura cálida">
               </div>
               <div class="card-body p-0">
-                <p class="eyebrow mb-2">Inversión</p>
-                <h3 class="h4">Hoteles boutique llave en mano: comprar operación, ubicación y concepto.</h3>
+                <p class="eyebrow mt-4">Inversión</p>
+                <h3 class="heading-sm">Hoteles boutique llave en mano: comprar operación, ubicación y concepto.</h3>
               </div>
             </article>
           </div>
@@ -1286,18 +2002,16 @@
       </div>
     </section>
 
-    <section class="section-compact section-accent" id="inversionistas">
+    <section class="section-compact investment-panel" id="inversionistas">
       <div class="container position-relative">
-        <div class="investment-panel p-4 p-md-5 py-md-4">
-          <div class="row align-items-center g-4">
-            <div class="col-lg-7">
-              <p class="eyebrow mb-3">Área para inversionistas</p>
-              <h2 class="display-6 mb-4">Oportunidades seleccionadas para quienes buscan activos con potencial real.</h2>
-              <p class="text-muted-tv mb-0">Terrenos, hoteles funcionando, propiedades llave en mano y activos con vocación comercial en Antigua Guatemala y alrededores.</p>
-            </div>
-            <div class="col-lg-4 offset-lg-1">
-              <a href="investments.html" class="btn btn-tv w-100">Entrar al área privada</a>
-            </div>
+        <div class="row align-items-center g-4">
+          <div class="col-lg-7">
+            <p class="eyebrow">Área para inversionistas</p>
+            <h2 class="mb-4">Oportunidades seleccionadas con potencial real.</h2>
+            <p class="text-muted-tv">Terrenos, hoteles funcionando, propiedades llave en mano y activos con vocación comercial en Guatemala.</p>
+          </div>
+          <div class="col-lg-4 offset-lg-1">
+            <a href="investments.html" class="btn btn-tv w-100">Entrar al área privada</a>
           </div>
         </div>
       </div>
@@ -1308,11 +2022,11 @@
         <div class="row g-0 align-items-stretch">
           <div class="col-lg-6 split-feature-image"></div>
           <div class="col-lg-6 d-flex align-items-center">
-            <div class="p-4 p-md-5 mx-lg-4">
-              <p class="eyebrow mb-3">Bloque split editorial</p>
-              <h2 class="editorial-display mb-4">Arquitectura que se siente antes de explicarse.</h2>
-              <p class="font-serif-italic fs-4 text-muted-tv mb-4">Ideal para abrir una ficha, presentar una zona o destacar una propiedad con más narrativa que ficha técnica.</p>
-              <p class="text-muted-tv mb-4">Este bloque sirve cuando querés que la imagen tenga peso protagonista, pero necesitás acompañarla con una idea fuerte.</p>
+            <div class="p-4 p-md-5">
+              <p class="eyebrow">Bloque split editorial</p>
+              <h2 class="editorial-display">Arquitectura que se siente antes de explicarse.</h2>
+              <p class="font-serif-italic lead-editorial text-muted-tv">Ideal para abrir una ficha, presentar una zona o destacar una propiedad con más narrativa que ficha técnica.</p>
+              <p class="text-muted-tv">Este bloque sirve cuando querés que la imagen tenga peso protagonista, pero necesitás acompañarla con una idea fuerte.</p>
               <a href="#" class="btn btn-tv">Explorar propiedad</a>
             </div>
           </div>
@@ -1324,9 +2038,143 @@
       <div class="container position-relative">
         <div class="row justify-content-center text-center">
           <div class="col-lg-10">
-            <p class="eyebrow mb-4">Bloque quote</p>
-            <h2 class="quote-display mb-4">No vendemos metros cuadrados. Curamos formas de habitar.</h2>
-            <p class="text-muted-tv mb-0">Statement de marca, pausa visual entre secciones o cierre emocional de una página.</p>
+            <p class="eyebrow">Bloque quote</p>
+            <h2 class="quote-display">No vendemos metros cuadrados. Curamos formas de habitar.</h2>
+            <p class="text-muted-tv m-0">Statement de marca, pausa visual entre secciones o cierre emocional de una página.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-compact gradient-blocks-section" id="gradient-blocks">
+      <div class="container">
+        <div class="row align-items-end">
+          <div class="col-lg-7">
+            <p class="eyebrow section-kicker">Gradient blocks</p>
+            <h2>Fondos con profundidad usando la paleta Tierra Viva.</h2>
+          </div>
+          <div class="col-lg-4 offset-lg-1">
+            <p class="text-muted-tv">Bloques pensados para destacar llamados editoriales, categorías, mensajes de marca o accesos especiales sin depender siempre de una foto.</p>
+          </div>
+        </div>
+
+        <div class="row g-3 g-lg-4">
+          <div class="col-lg-7">
+            <article class="gradient-block gradient-block-wide gradient-block-sage">
+              <p class="eyebrow">Bloque principal</p>
+              <h3 class="heading-sm">Una pausa visual para presentar una idea fuerte.</h3>
+              <code>.gradient-block-sage</code>
+              <p>Ideal para abrir una sección, destacar una zona o introducir una curaduría de propiedades.</p>
+            </article>
+          </div>
+
+          <div class="col-lg-5">
+            <article class="gradient-block gradient-block-mineral">
+              <p class="eyebrow">Arquitectura</p>
+              <h3 class="heading-sm">Mineral, sobrio y contemporáneo.</h3>
+              <code>.gradient-block-mineral</code>
+              <p>Funciona bien para bloques técnicos o visuales con enfoque moderno.</p>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <article class="gradient-block gradient-block-clay">
+              <p class="eyebrow">Lifestyle</p>
+              <h3 class="heading-sm">Calidez sin volver al terracota.</h3>
+              <code>.gradient-block-clay</code>
+              <p>Un bloque más humano para mensajes suaves o editoriales.</p>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <article class="gradient-block gradient-block-gold">
+              <p class="eyebrow">Microacento</p>
+              <h3 class="heading-sm">Luz puntual, sin gritar.</h3>
+              <code>.gradient-block-gold</code>
+              <p>Útil para avisos, novedades o llamadas sutiles.</p>
+            </article>
+          </div>
+
+          <div class="col-lg-4">
+            <article class="gradient-block gradient-block-ink">
+              <p class="eyebrow">Contraste</p>
+              <h3 class="heading-sm">Un cierre más profundo y elegante.</h3>
+              <code>.gradient-block-ink</code>
+              <p>Sirve para CTAs, inversión o mensajes de marca con peso.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-compact button-styles-section" id="button-styles">
+      <div class="container">
+        <div class="row align-items-end">
+          <div class="col-lg-7">
+            <p class="eyebrow section-kicker">Botones y links</p>
+            <h2>Estilos de acción para usar según jerarquía e intención.</h2>
+          </div>
+          <div class="col-lg-4 offset-lg-1">
+            <p class="text-muted-tv">Una mini guía visual para no inventar botones nuevos cada cinco minutos y mantener el sistema limpio.</p>
+          </div>
+        </div>
+
+        <div class="row g-3 g-lg-4">
+          <div class="col-md-6 col-lg-3">
+            <article class="button-style-card">
+              <div>
+                <p class="eyebrow">Botón principal</p>
+                <h3 class="heading-sm">Acción fuerte</h3>
+                <code>.btn .btn-tv</code>
+                <p>Para acciones importantes: ver propiedades, contactar o entrar a una sección clave.</p>
+              </div>
+              <div class="button-style-preview">
+                <a href="#propiedades" class="btn btn-tv">Ver propiedades</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <article class="button-style-card">
+              <div>
+                <p class="eyebrow">Botón secundario</p>
+                <h3 class="heading-sm">Acción suave</h3>
+                <code>.btn .btn-tv-outline</code>
+                <p>Para acompañar una acción principal sin competir visualmente.</p>
+              </div>
+              <div class="button-style-preview">
+                <a href="#journal" class="btn btn-tv-outline">Explorar journal</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <article class="button-style-card">
+              <div>
+                <p class="eyebrow">Botón pequeño</p>
+                <h3 class="heading-sm">CTA compacto</h3>
+                <code>.btn .btn-tv-outline .btn-sm</code>
+                <p>Para cards, bloques de prueba, microacciones y lugares donde un botón grande pesa demasiado.</p>
+              </div>
+              <div class="button-style-preview">
+                <a href="#component-library" class="btn btn-tv-outline btn-sm">Ver bloques</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <article class="button-style-card">
+              <div>
+                <p class="eyebrow">Link editorial</p>
+                <h3 class="heading-sm">Acción de texto</h3>
+                <code>.link-tv</code>
+                <p>Para enlaces sutiles cuando no conviene sumar otro botón al bloque.</p>
+              </div>
+              <div class="button-style-preview">
+                <a href="#visual-slider" class="link-tv">Ver slider</a>
+                <a href="#accent-lab" class="link-tv link-tv-muted">Ver color lab</a>
+              </div>
+            </article>
           </div>
         </div>
       </div>
@@ -1334,46 +2182,46 @@
 
     <section class="section-compact feature-strip" id="component-library">
       <div class="container">
-        <div class="row align-items-end mb-4">
+        <div class="row align-items-end">
           <div class="col-lg-7">
-            <p class="eyebrow section-kicker mb-3">Biblioteca de bloques</p>
-            <h2 class="display-6 mb-0">Estructuras reutilizables para home, fichas, journal e inversiones.</h2>
+            <p class="eyebrow section-kicker">Biblioteca de bloques</p>
+            <h2 class="mb-0">Estructuras reutilizables para home, fichas, journal e inversiones.</h2>
           </div>
-          <div class="col-lg-4 offset-lg-1 mt-3 mt-lg-0">
-            <p class="text-muted-tv mb-0">Cada bloque está pensado para Bootstrap: container, row, col, card, ratio, botones y utilidades limpias.</p>
+          <div class="col-lg-4 offset-lg-1">
+            <p class="text-muted-tv">Cada bloque está pensado para Bootstrap: container, row, col, card, ratio, botones y utilidades limpias.</p>
           </div>
         </div>
 
         <div class="row g-4">
           <div class="col-md-6 col-lg-3">
             <article class="component-card p-4">
-              <p class="eyebrow mb-3">01</p>
-              <h3 class="h4 mb-3">Hero editorial</h3>
-              <p class="text-muted-tv mb-0">Para home, landing de inversión o páginas con narrativa fuerte.</p>
+              <p class="eyebrow">01</p>
+              <h3 class="heading-sm">Hero editorial</h3>
+              <p class="text-muted-tv">Para home, landing de inversión o páginas con narrativa fuerte.</p>
             </article>
           </div>
 
           <div class="col-md-6 col-lg-3">
             <article class="component-card p-4">
-              <p class="eyebrow mb-3">02</p>
-              <h3 class="h4 mb-3">Split visual</h3>
-              <p class="text-muted-tv mb-0">Imagen protagonista + texto editorial + CTA claro.</p>
+              <p class="eyebrow">02</p>
+              <h3 class="heading-sm">Split visual</h3>
+              <p class="text-muted-tv">Imagen protagonista + texto editorial + CTA claro.</p>
             </article>
           </div>
 
           <div class="col-md-6 col-lg-3">
             <article class="component-card p-4">
-              <p class="eyebrow mb-3">03</p>
-              <h3 class="h4 mb-3">Quote statement</h3>
-              <p class="text-muted-tv mb-0">Para reforzar marca, filosofía o sensibilidad editorial.</p>
+              <p class="eyebrow">03</p>
+              <h3 class="heading-sm">Quote statement</h3>
+              <p class="text-muted-tv">Para reforzar marca, filosofía o sensibilidad editorial.</p>
             </article>
           </div>
 
           <div class="col-md-6 col-lg-3">
             <article class="component-card p-4">
-              <p class="eyebrow mb-3">04</p>
-              <h3 class="h4 mb-3">Cards curadas</h3>
-              <p class="text-muted-tv mb-0">Para propiedades, journal, zonas o categorías.</p>
+              <p class="eyebrow">04</p>
+              <h3 class="heading-sm">Cards curadas</h3>
+              <p class="text-muted-tv">Para propiedades, journal, zonas o categorías.</p>
             </article>
           </div>
         </div>
@@ -1382,10 +2230,10 @@
 
     <section class="section-compact" id="image-tiles">
       <div class="container">
-        <div class="row mb-4">
+        <div class="row">
           <div class="col-lg-8">
-            <p class="eyebrow section-kicker mb-3">Bloques visuales</p>
-            <h2 class="display-6 mb-0">Tiles grandes para zonas, categorías o propiedades destacadas.</h2>
+            <p class="eyebrow section-kicker">Bloques visuales</p>
+            <h2 class="mb-0">Tiles grandes para zonas, categorías o propiedades destacadas.</h2>
           </div>
         </div>
 
@@ -1393,8 +2241,8 @@
           <div class="col-lg-8">
             <article class="image-tile" style="background-image:url('https://images.unsplash.com/photo-1600566752229-250ed79470b4?q=80&w=1800&auto=format&fit=crop')">
               <div class="image-tile-content p-4">
-                <p class="eyebrow text-white mb-2">Zona destacada</p>
-                <h3 class="font-display display-5 mb-0">Antigua Guatemala</h3>
+                <p class="eyebrow text-white">Zona destacada</p>
+                <h3 class="font-display">Antigua Guatemala</h3>
               </div>
             </article>
           </div>
@@ -1402,8 +2250,8 @@
           <div class="col-lg-4">
             <article class="image-tile" style="background-image:url('https://images.unsplash.com/photo-1600607687644-c7171b42498b?q=80&w=1400&auto=format&fit=crop')">
               <div class="image-tile-content p-4">
-                <p class="eyebrow text-white mb-2">Categoría</p>
-                <h3 class="font-display display-6 mb-0">Casas con patio</h3>
+                <p class="eyebrow text-white">Categoría</p>
+                <h3 class="font-display">Casas con patio</h3>
               </div>
             </article>
           </div>
@@ -1413,13 +2261,13 @@
 
     <section class="section-compact accent-lab" id="accent-lab">
       <div class="container">
-        <div class="row align-items-end mb-4">
+        <div class="row align-items-end">
           <div class="col-lg-7">
-            <p class="eyebrow section-kicker mb-3">Color lab</p>
-            <h2 class="display-6 mb-0">Cuatro acentos posibles para darle una nota editorial al sistema.</h2>
+            <p class="eyebrow section-kicker">Color lab</p>
+            <h2 class="mb-0">Cuatro acentos posibles para darle una nota editorial al sistema.</h2>
           </div>
-          <div class="col-lg-4 offset-lg-1 mt-3 mt-lg-0">
-            <p class="text-muted-tv mb-0">La idea no es sumar color porque sí, sino encontrar microacentos que aporten identidad sin competir con las fotos.</p>
+          <div class="col-lg-4 offset-lg-1">
+            <p class="text-muted-tv">La idea no es sumar color porque sí, sino encontrar microacentos que aporten identidad sin competir con las fotos.</p>
           </div>
         </div>
 
@@ -1428,9 +2276,9 @@
             <article class="accent-swatch">
               <div class="accent-chip accent-chip-mist"></div>
               <div class="p-4">
-                <p class="eyebrow mb-2">Opción 01</p>
-                <h3 class="h4 mb-3">Mist blue</h3>
-                <p class="text-muted-tv mb-3">Frío, editorial y muy silencioso. Ideal para líneas, detalles, citas y hover states.</p>
+                <p class="eyebrow">Opción 01</p>
+                <h3 class="heading-sm">Mist blue</h3>
+                <p class="text-muted-tv">Frío, editorial y muy silencioso. Ideal para líneas, detalles, citas y hover states.</p>
                 <code>#a8b2bd</code>
               </div>
             </article>
@@ -1440,9 +2288,9 @@
             <article class="accent-swatch">
               <div class="accent-chip accent-chip-clay"></div>
               <div class="p-4">
-                <p class="eyebrow mb-2">Opción 02</p>
-                <h3 class="h4 mb-3">Clay rose</h3>
-                <p class="text-muted-tv mb-3">Más humano y cálido, sin volver al terracota. Puede servir para editorial lifestyle.</p>
+                <p class="eyebrow">Opción 02</p>
+                <h3 class="heading-sm">Clay rose</h3>
+                <p class="text-muted-tv">Más humano y cálido, sin volver al terracota. Puede servir para editorial lifestyle.</p>
                 <code>#b9a6a0</code>
               </div>
             </article>
@@ -1452,9 +2300,9 @@
             <article class="accent-swatch">
               <div class="accent-chip accent-chip-mineral"></div>
               <div class="p-4">
-                <p class="eyebrow mb-2">Opción 03</p>
-                <h3 class="h4 mb-3">Mineral blue</h3>
-                <p class="text-muted-tv mb-3">Más moderno y arquitectónico. Tiene presencia sin gritar ni ponerse corporativo.</p>
+                <p class="eyebrow">Opción 03</p>
+                <h3 class="heading-sm">Mineral blue</h3>
+                <p class="text-muted-tv">Más moderno y arquitectónico. Tiene presencia sin gritar ni ponerse corporativo.</p>
                 <code>#8fa1aa</code>
               </div>
             </article>
@@ -1464,9 +2312,9 @@
             <article class="accent-swatch">
               <div class="accent-chip accent-chip-gold"></div>
               <div class="p-4">
-                <p class="eyebrow mb-2">Opción 04</p>
-                <h3 class="h4 mb-3">Soft gold</h3>
-                <p class="text-muted-tv mb-3">Alegre y luminoso, ideal para microavisos como NEW! sin romper la estética editorial.</p>
+                <p class="eyebrow">Opción 04</p>
+                <h3 class="heading-sm">Soft gold</h3>
+                <p class="text-muted-tv">Alegre y luminoso, ideal para microavisos como NEW! sin romper la estética editorial.</p>
                 <code>#E8D98B</code>
               </div>
             </article>
@@ -1480,8 +2328,8 @@
     <div class="container">
       <div class="row g-4 align-items-center">
         <div class="col-md-6">
-          <p class="font-serif fs-4 mb-2">Tierra Viva Propiedades</p>
-          <p class="text-muted-tv mb-0">Real estate boutique en Antigua Guatemala.</p>
+          <p class="font-serif lead-editorial">Tierra Viva Propiedades</p>
+          <p class="text-muted-tv">Real estate boutique en Guatemala.</p>
         </div>
         <div class="col-md-6 text-md-end">
           <a href="https://wa.me/50232465215" class="btn btn-tv">Contactar por WhatsApp</a>
@@ -1502,6 +2350,7 @@
     updateNavbarOnScroll();
     window.addEventListener('scroll', updateNavbarOnScroll, { passive: true });
 
+
     const canHoverVideo = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
     if (canHoverVideo) {
@@ -1510,10 +2359,14 @@
         if (!video) return;
 
         card.addEventListener('mouseenter', () => {
+          document.documentElement.classList.add('story-cards-active');
+          document.body.classList.add('story-cards-active');
           video.play().catch(() => {});
         });
 
         card.addEventListener('mouseleave', () => {
+          document.documentElement.classList.remove('story-cards-active');
+          document.body.classList.remove('story-cards-active');
           video.pause();
           video.currentTime = 0;
         });
