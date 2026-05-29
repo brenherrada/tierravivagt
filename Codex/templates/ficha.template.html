@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{seo.title}}</title>
+  <meta name="description" content="{{seo.description}}" />
+
+  <!-- Bootstrap 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Manrope:wght@300..800&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{paths.root}}css/global.css">
+</head>
+
+<body>
+  <div data-component="nav"></div>
+
+  <main>
+    <section class="tv-slider-shell property-hero">
+      <div id="{{hero.carousel_id}}" class="carousel slide carousel-fade tv-slider" data-bs-ride="carousel" data-bs-interval="4000" data-bs-wrap="true">
+        <div class="carousel-indicators">
+          {{#each hero.images}}
+          <button type="button" data-bs-target="#{{../hero.carousel_id}}" data-bs-slide-to="{{@index}}" class="{{#if @first}}active{{/if}}" {{#if @first}}aria-current="true"{{/if}} aria-label="Imagen {{displayIndex}}"></button>
+          {{/each}}
+        </div>
+
+        <div class="carousel-inner">
+          {{#each hero.images}}
+          <div class="carousel-item {{#if @first}}active{{/if}}">
+            <img src="{{src}}" alt="{{alt}}">
+            <div class="carousel-caption tv-slider-content">
+              <div class="tv-slider-card">
+                <div class="tv-slider-kicker">{{../hero.kicker}}</div>
+                <h1 class="tv-slider-title hero-display">{{../hero.title}}</h1>
+                {{#if ../hero.copy}}
+                <p class="tv-slider-copy d-none d-md-block">{{../hero.copy}}</p>
+                {{/if}}
+              </div>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#{{hero.carousel_id}}" data-bs-slide="prev" aria-label="Imagen anterior">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#{{hero.carousel_id}}" data-bs-slide="next" aria-label="Imagen siguiente">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </section>
+
+    <section class="property-summary">
+      <div class="container-fluid container-xxl px-0 px-md-3 px-lg-5">
+        <div class="summary-panel">
+          <div class="summary-price-card gradient-block gradient-block-ink">
+            <div>
+              <div class="eyebrow">{{pricing.label}}</div>
+              <div class="summary-price">
+                <span class="summary-price-value">{{pricing.amount}}</span>
+                {{#if pricing.note}}
+                <span class="summary-price-note">{{pricing.note}}</span>
+                {{/if}}
+              </div>
+            </div>
+            <p class="summary-note d-none d-md-block">{{summary.note}}</p>
+          </div>
+
+          <div class="summary-details d-none d-sm-grid" aria-label="Datos principales de la propiedad">
+            {{#each summary.items}}
+            <div class="summary-item">
+              <span class="summary-label">{{label}}</span>
+              <span class="summary-value">{{value}}</span>
+              <span class="summary-support">{{support}}</span>
+            </div>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-compact property-intro">
+      <div class="container-fluid container-xxl px-3 px-lg-5">
+        {{#if intro}}
+        <div class="intro-layout">
+          {{#if intro.eyebrow}}
+          <div class="section-kicker">
+            <div class="eyebrow">{{intro.eyebrow}}</div>
+          </div>
+          {{/if}}
+          <div class="intro-copy">
+            {{#if intro.lead}}
+            <p class="lead-editorial text-dark mb-0">{{intro.lead}}</p>
+            {{/if}}
+            {{#if intro.body}}
+            <p>{{intro.body}}</p>
+            {{/if}}
+          </div>
+        </div>
+        {{/if}}
+
+        <div class="feature-layout">
+          <div class="feature-title-block section-kicker">
+            <div class="eyebrow">Detalle</div>
+            <h2 class="editorial-display">Características y amenidades.</h2>
+          </div>
+
+          <div class="feature-groups">
+            {{#each feature_groups}}
+            <div class="feature-group">
+              <h3>{{title}}</h3>
+              <div class="feature-grid">
+                {{#each items}}
+                <div class="feature-item">{{this}}</div>
+                {{/each}}
+              </div>
+            </div>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+
+      {{#if location}}
+      <div class="container-fluid container-xxl px-3 px-lg-5 mt-5">
+        <div class="location-card bg-white" id="ubicacion">
+          {{#if location.map.embed_url}}
+          <div class="map-frame order-2 order-lg-1 p-4">
+            <iframe
+              title="{{location.map.title}}"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="{{location.map.embed_url}}">
+            </iframe>
+          </div>
+          {{/if}}
+
+          <div class="location-copy p-4 order-1 order-lg-2 border-0">
+            <div>
+              {{#if location.eyebrow}}
+              <div class="eyebrow">{{location.eyebrow}}</div>
+              {{/if}}
+              {{#if location.title}}
+              <h2 class="editorial-display mb-0">{{location.title}}</h2>
+              {{/if}}
+            </div>
+            <div class="d-none d-lg-block mt-3">
+              {{#if location.description}}
+              <p>{{location.description}}</p>
+              {{/if}}
+              {{#if location.map.link_url}}
+              <a class="link-tv link-tv-light location-map-link" href="{{location.map.link_url}}" target="_blank" rel="noopener">
+                {{location.map.link_label}}
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M8 6h10v10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </a>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/if}}
+    </section>
+
+    {{#if image_feature.images}}
+    <section class="image-feature">
+      <div class="image-feature-grid">
+        <div class="image-feature-media">
+          <div id="{{image_feature.carousel_id}}" class="carousel slide carousel-fade image-feature-carousel" data-bs-ride="carousel" data-bs-interval="4000" data-bs-wrap="true">
+            <div class="carousel-indicators">
+              {{#each image_feature.images}}
+              <button type="button" data-bs-target="#{{../image_feature.carousel_id}}" data-bs-slide-to="{{@index}}" class="{{#if @first}}active{{/if}}" {{#if @first}}aria-current="true"{{/if}} aria-label="Imagen del condominio {{displayIndex}}"></button>
+              {{/each}}
+            </div>
+
+            <div class="carousel-inner">
+              {{#each image_feature.images}}
+              <div class="carousel-item {{#if @first}}active{{/if}}">
+                <img src="{{src}}" alt="{{alt}}">
+              </div>
+              {{/each}}
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#{{image_feature.carousel_id}}" data-bs-slide="prev" aria-label="Imagen anterior del condominio">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#{{image_feature.carousel_id}}" data-bs-slide="next" aria-label="Imagen siguiente del condominio">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+        <div class="image-feature-content">
+          <div class="eyebrow">{{image_feature.eyebrow}}</div>
+          <h2 class="editorial-display">{{image_feature.title}}</h2>
+          <p>{{image_feature.body}}</p>
+        </div>
+      </div>
+    </section>
+    {{/if}}
+
+    <section class="final-cta bg-soft">
+      <div class="container-fluid px-3 px-lg-5">
+        <div class="final-cta-inner">
+          <div class="eyebrow">{{final_cta.eyebrow}}</div>
+          <h2 class="editorial-display">{{final_cta.title}}</h2>
+          <p>{{final_cta.body}}</p>
+          <div class="final-actions">
+            <a class="btn-tv" id="whatsappButtonFooter" href="{{contact.whatsapp_url}}" target="_blank" rel="noopener">{{final_cta.primary_label}}</a>
+            <a class="btn-tv-outline" id="shareWhatsappButtonFooter" href="{{contact.share_url}}" target="_blank" rel="noopener">{{final_cta.secondary_label}}</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {{#if related_products.items}}
+    <section class="section-compact wide-post-section bg-mineral-blue related-products" id="location-related">
+      <div class="container-fluid container-xxl px-3 px-lg-5">
+        <div class="row align-items-end mb-2">
+          <div class="col-lg-8">
+            <p class="eyebrow">{{related_products.eyebrow}}</p>
+            <h2 class="editorial-display fs-3">{{related_products.title}}</h2>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid container-xxl px-3 px-lg-5">
+        <div class="row g-4 tv-scroll-carousel tv-scroll-carousel-md-2">
+          {{#each related_products.items}}
+          <div class="col-sm-6 col-md-4 col-lg-4">
+            <article class="wide-post-card bg-soft">
+              <a class="wide-post-body justify-content-center" href="{{href}}" aria-label="{{aria_label}}">
+                <span class="eyebrow mb-0">{{eyebrow}}</span>
+                <span class="heading-sm fs-5 mb-3 font-serif">{{title}}</span>
+                <span class="price-block d-inline-flex align-items-baseline">
+                  <span class="price fs-6">{{price}}</span>
+                  <span class="price-note">{{price_note}}</span>
+                </span>
+              </a>
+
+              <div class="wide-post-media p-2">
+                <a href="{{href}}" aria-label="{{aria_label}}"><img src="{{image.src}}" alt="{{image.alt}}"></a>
+              </div>
+            </article>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </section>
+    {{/if}}
+
+    {{#if zone_spotlight.enabled}}
+    <section class="section-compact zone-spotlight-section bg-ink" id="zone-spotlight">
+      <div class="container-fluid container-xxl">
+        <article class="zone-spotlight-card">
+          <div class="zone-spotlight-media">
+            <img src="{{zone_spotlight.image.src}}" alt="{{zone_spotlight.image.alt}}">
+          </div>
+          <div class="zone-spotlight-content">
+            <div class="zone-spotlight-copy">
+              <p class="eyebrow">{{zone_spotlight.eyebrow}}</p>
+              <h3 class="editorial-display">{{zone_spotlight.title}}</h3>
+
+              {{#if zone_spotlight.lead}}
+              <p class="font-serif-italic lead-editorial text-muted-tv mb-0">
+                {{zone_spotlight.lead}}
+              </p>
+              {{/if}}
+            </div>
+
+            {{#if zone_spotlight.stats}}
+            <div class="zone-spotlight-stats my-4" aria-label="Datos destacados de la zona">
+              {{#each zone_spotlight.stats}}
+              <div class="zone-stat">
+                <span class="eyebrow">{{label}}</span>
+                <strong class="lead-editorial">{{value}}</strong>
+              </div>
+              {{/each}}
+            </div>
+            {{/if}}
+
+            {{#if zone_spotlight.products_title}}
+            <h4 class="font-serif fs-5 section-kicker mb-3">{{zone_spotlight.products_title}}</h4>
+            {{/if}}
+
+            {{#if zone_spotlight.products}}
+            <div
+              id="locationProductsCarousel"
+              class="carousel slide location-products-carousel location-properties-preview"
+              data-bs-ride="carousel"
+              aria-label="Propiedades disponibles en {{zone_spotlight.title}}"
+            >
+              <div class="carousel-indicators">
+                {{#each zone_spotlight.products}}
+                <button
+                  type="button"
+                  data-bs-target="#locationProductsCarousel"
+                  data-bs-slide-to="{{@index}}"
+                  class="{{#if @first}}active{{/if}}"
+                  {{#if @first}}aria-current="true"{{/if}}
+                  aria-label="Propiedad {{displayIndex}}"
+                ></button>
+                {{/each}}
+              </div>
+
+              <div class="carousel-inner">
+                {{#each zone_spotlight.products}}
+                <div class="carousel-item {{#if @first}}active{{/if}}">
+                  <div class="location-product-card bg-soft">
+                    <div class="location-product-media">
+                      <img src="{{image.src}}" alt="{{image.alt}}">
+                    </div>
+
+                    <div class="location-product-body">
+                      <h4>{{title}}</h4>
+
+                      <p class="location-product-copy">
+                        {{body}}
+                      </p>
+
+                      <div class="location-product-meta">
+                        <a href="{{href}}" class="link-tv">Consultar</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {{/each}}
+              </div>
+
+              <button
+                class="carousel-control-prev location-product-arrow-control location-product-prev"
+                type="button"
+                data-bs-target="#locationProductsCarousel"
+                data-bs-slide="prev"
+                aria-label="Propiedad anterior"
+              ></button>
+
+              <button
+                class="carousel-control-next location-product-arrow-control location-product-next"
+                type="button"
+                data-bs-target="#locationProductsCarousel"
+                data-bs-slide="next"
+                aria-label="Propiedad siguiente"
+              ></button>
+            </div>
+            {{/if}}
+
+            {{#if zone_spotlight.all_properties_link.href}}
+            <a href="{{zone_spotlight.all_properties_link.href}}" class="btn-tv mt-4" aria-label="{{zone_spotlight.all_properties_link.aria_label}}">{{zone_spotlight.all_properties_link.label}}</a>
+            {{/if}}
+          </div>
+        </article>
+      </div>
+    </section>
+    {{/if}}
+
+    {{#if upsell_properties.items}}
+    <section class="section-compact story-properties-section upsell-products bg-white">
+      <div class="container-fluid container-xxl px-3 px-lg-5">
+        <div class="related-rentals-head">
+          <div class="eyebrow">{{upsell_properties.eyebrow}}</div>
+          <h2 class="editorial-display">{{upsell_properties.title}}</h2>
+        </div>
+
+        <div class="story-properties-shell">
+          <div class="story-properties">
+            {{#each upsell_properties.items}}
+            <article class="story-property-card">
+              <div class="story-property-media">
+                <a href="{{href}}" class="story-mobile-link" aria-label="{{mobile_aria_label}}">Ver ficha</a>
+                {{#if media.is_video}}
+                <video class="story-video" muted loop playsinline preload="metadata" poster="{{media.poster}}">
+                  <source src="{{media.src}}" type="video/mp4">
+                </video>
+                {{/if}}
+                {{#if media.is_image}}
+                <img class="story-image" src="{{media.src}}" alt="{{media.alt}}">
+                {{/if}}
+
+                <div class="story-overlay">
+                  <p class="story-operation">{{operation}}</p>
+                  <h3 class="story-location">{{title}}</h3>
+                  <p class="story-price">{{price}} <span>{{price_note}}</span></p>
+                </div>
+              </div>
+
+              <div class="story-expand-panel">
+                <p class="eyebrow">{{operation}}</p>
+                <h3 class="heading-sm">{{title}}</h3>
+                <ul class="story-specs list-unstyled">
+                  {{#each specs}}
+                  <li>{{this}}</li>
+                  {{/each}}
+                </ul>
+                <div class="d-flex justify-content-between align-items-end gap-3">
+                  <div class="price-block">
+                    <span class="price">{{price}}</span>
+                    <span class="price-note">{{price_note}}</span>
+                  </div>
+                  <a href="{{href}}" class="property-bubble" aria-label="{{mobile_aria_label}}">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
+                      <path d="M5 12h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+                      <path d="M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </section>
+    {{/if}}
+  </main>
+
+  <div data-component="footer"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{{paths.root}}js/component-loader.js" data-root="{{paths.root}}"></script>
+  <script src="{{paths.root}}js/theme.js"></script>
+</body>
+</html>

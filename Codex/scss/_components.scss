@@ -1,0 +1,665 @@
+// Components layer
+// Add approved reusable component styles here.
+
+/* Story properties component */
+
+  .story-expand-panel h3 {
+    margin-bottom: 1rem;
+  }
+
+  .story-specs {
+    margin-bottom: 1.15rem;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .story-properties .story-property-card:hover {
+      flex-basis: calc(var(--story-card-base) + 300px);
+      z-index: 8;
+    }
+
+    .story-properties:has(.story-property-card:nth-child(1):hover) {
+      transform: translateX(0);
+    }
+
+    .story-properties:has(.story-property-card:nth-child(2):hover) {
+      transform: translateX(-150px);
+    }
+
+    .story-properties:has(.story-property-card:nth-child(3):hover) {
+      transform: translateX(-300px);
+    }
+
+    .story-properties .story-property-card:hover .story-video,
+    .story-properties .story-property-card:hover .story-image {
+      transform: scale(1.04);
+      filter: saturate(.98) contrast(1.04);
+    }
+
+    .story-properties .story-property-card:hover .story-overlay {
+      opacity: 0;
+      transform: translateY(10px);
+      pointer-events: none;
+    }
+
+    .story-properties .story-property-card:hover .story-expand-panel {
+      width: 44%;
+      padding: 2.4rem 1.55rem;
+      opacity: 1;
+      border-left-width: 1px;
+      border-left-color: $tv-line-90;
+      transform: translateX(0);
+      pointer-events: auto;
+    }
+
+    .story-properties .story-property-card:hover .story-expand-panel > * {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .36s;
+    }
+  }
+
+@media (max-width: $tv-breakpoint-lg-custom-max) {
+    .story-location {
+      font-size: 1.7rem;
+    }
+}
+
+/* COMPONENTE GLOBAL — STORY PROPERTIES / PREVIEW DINÁMICO
+    Copiado del laboratorio aprobado de Tierra Viva.
+    No modificar ni reinterpretar en fichas individuales.
+*/
+
+.story-properties-section {
+    background: $tv-white;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
+}
+
+.story-properties-shell {
+    width: 100%;
+    margin-inline: auto;
+    overflow: visible;
+}
+
+@media (min-width: $tv-breakpoint-xl-min) {
+    .story-properties-shell {
+    max-width: min(1440px, calc(100vw - 3rem));
+    }
+}
+
+@media (min-width: $tv-breakpoint-lg-min) and (max-width: $tv-breakpoint-xl-max) and (orientation: landscape) {
+    .story-properties {
+    height: clamp(330px, 48vh, 420px);
+    }
+}
+
+.story-properties {
+    --story-gap: 5px;
+    --story-card-base: calc((100% - (var(--story-gap) * 2)) / 3);
+    display: flex;
+    gap: var(--story-gap);
+    align-items: stretch;
+    height: clamp(420px, 82vh, 680px);
+    overflow: visible;
+    transition: transform .5s ease;
+    will-change: transform;
+}
+
+.story-property-card {
+    position: relative;
+    flex: 0 0 var(--story-card-base);
+    min-width: 0;
+    overflow: hidden;
+    background: $tv-white;
+    border: 1px solid var(--line);
+    box-shadow: $tv-shadow-sm;
+    transition: flex-basis .5s ease, transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+
+.story-property-card:hover {
+    border-color: $tv-sage-28;
+    box-shadow: $tv-shadow-lg;
+}
+
+.story-property-media {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    background: var(--bg-accent);
+}
+
+.story-video,
+.story-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: saturate(.88) contrast(1.03);
+    transition: transform .55s ease, filter .45s ease;
+}
+
+.story-overlay {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1.35rem 1.2rem 1.2rem;
+    color: $tv-white;
+    background: linear-gradient(to top, rgba(17, 21, 19, .84) 0%, rgba(17, 21, 19, .42) 46%, rgba(17, 21, 19, 0) 100%);
+    transition: opacity .3s ease, transform .3s ease;
+}
+
+.story-operation {
+    font-family: $tv-font-functional;
+    margin-bottom: .45rem;
+    font-size: clamp(12px, 1.6vw, 14px);
+    font-weight: 600;
+    letter-spacing: 0.68px;
+    text-transform: uppercase;
+    opacity: .8;
+}
+
+.story-location {
+    font-family: $tv-font-serif;
+    font-size: clamp(1.25rem, 1.6vw, 1.95rem);
+    line-height: 1.06;
+    letter-spacing: $tv-letter-spacing-tight;
+    margin-bottom: .55rem;
+}
+
+.story-price {
+    font-family: $tv-font-functional;
+    margin-bottom: 0;
+    font-size: 0.92rem;
+    font-weight: 600;
+    letter-spacing: 0.16px;
+}
+
+.story-price span {
+    font-family: $tv-font-serif;
+    font-style: italic;
+    font-weight: 500;
+    opacity: .88;
+}
+
+.story-expand-panel {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    background: $tv-white-90;
+    backdrop-filter: blur(5px);
+    border-left: 0 solid rgba(222, 219, 210, 0);
+    padding: 0;
+    opacity: 0;
+    transform: translateX(12px);
+    transition: width .45s ease, opacity .18s ease, transform .35s ease, padding .35s ease, border-color .35s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    pointer-events: none;
+}
+
+.story-expand-panel > * {
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity .22s ease, transform .22s ease;
+}
+
+.story-specs {
+    display: grid;
+    gap: 0;
+    margin-bottom: 1.15rem;
+    padding: 0;
+    list-style: none;
+}
+
+.story-specs li {
+    color: var(--text);
+    padding: 8px 0;
+    line-height: 1.35;
+    border-bottom: 1px solid $tv-line-95;
+    background: transparent;
+    font-size: .88rem;
+    font-weight: 300;
+}
+
+.story-specs li:last-child {
+    border-bottom: 0;
+}
+
+.story-expand-panel .d-flex {
+    position: relative;
+    min-height: 54px;
+    padding-right: 0;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+}
+
+.property-bubble,
+.whatsapp-bubble {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: clamp(45px,1vw,54px);
+    height: clamp(45px,1vw,54px);
+    min-width: clamp(45px,1vw,54px);
+    min-height: clamp(45px,1vw,54px);
+    border-radius: $tv-radius-pill;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: $tv-white;
+    color: var(--sage);
+    border: 1px solid $tv-sage-18;
+    box-shadow: 0 10px 24px $tv-ink-10;
+    text-decoration: none;
+    transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease, color .25s ease;
+    animation: bubbleFloat 2.2s ease-in-out infinite;
+}
+
+.property-bubble svg {
+    width: 20px;
+    height: 20px;
+}
+
+.property-bubble:hover,
+.property-bubble:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px $tv-ink-16;
+    transform: translateY(-2px);
+    background: var(--sage-light);
+    color: #fff;
+}
+
+.whatsapp-bubble {
+  position: fixed;
+  z-index: 999;
+  width: clamp(45px,5vw,65px);
+  height: clamp(45px,5vw,65px);
+  min-width: clamp(45px,5vw,65px);
+  min-height: clamp(45px,5vw,65px);
+  margin: 25px;
+  background-color: var(--ink);
+  color: $tv-white;
+  border: none;
+}
+
+.whatsapp-bubble:hover,
+.whatsapp-bubble:focus {
+    background: var(--mineral-blue);
+}
+
+.whatsapp-bubble svg {
+    width: 25px;
+    height: 25px;
+}
+
+@keyframes bubbleFloat {
+    0%, 100% {
+    transform: translateY(0);
+    }
+    50% {
+    transform: translateY(-2px);
+    }
+}
+
+.story-expand-panel .property-bubble {
+    position: static;
+}
+
+.story-mobile-link {
+    display: none;
+}
+
+.story-badge-new {
+    position: absolute;
+    z-index: 4;
+    top: 10px;
+    right: 10px;
+    left: auto;
+    width: auto;
+    height: auto;
+    transform-origin: right center;
+}
+
+@media (min-width: $tv-breakpoint-lg-custom-min) and (hover: hover) and (pointer: fine) {
+    .story-properties .story-property-card:hover {
+    flex-basis: calc(var(--story-card-base) + 300px);
+    z-index: 8;
+    }
+
+    .story-properties:has(.story-property-card:nth-child(1):hover) {
+    transform: translateX(0);
+    }
+
+    .story-properties:has(.story-property-card:nth-child(2):hover) {
+    transform: translateX(-150px);
+    }
+
+    .story-properties:has(.story-property-card:nth-child(3):hover) {
+    transform: translateX(-300px);
+    }
+
+    .story-properties .story-property-card:hover .story-video,
+    .story-properties .story-property-card:hover .story-image {
+    transform: scale(1.04);
+    filter: saturate(.98) contrast(1.04);
+    }
+
+    .story-properties .story-property-card:hover .story-overlay {
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    }
+
+    .story-properties .story-property-card:hover .story-expand-panel {
+    width: 44%;
+    padding: 2.4rem 1.55rem;
+    opacity: 1;
+    border-left-width: 1px;
+    border-left-color: $tv-line-90;
+    transform: translateX(0);
+    pointer-events: auto;
+    }
+
+    .story-properties .story-property-card:hover .story-expand-panel > * {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: .36s;
+    }
+}
+
+html.story-cards-active,
+body.story-cards-active {
+    overflow-x: hidden;
+}
+
+@media (max-width: $tv-breakpoint-lg-custom-max) {
+    .story-properties-shell {
+    width: 100vw;
+    max-width: 100vw;
+    overflow-x: auto;
+    overflow-y: visible;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding-inline: calc(var(--bs-gutter-x, 1.5rem) * .5);
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: calc(var(--bs-gutter-x, 1.5rem) * .5);
+    -webkit-overflow-scrolling: touch;
+    }
+
+    .story-properties-shell::-webkit-scrollbar {
+    display: none;
+    }
+
+    .story-properties {
+    flex-direction: row;
+    min-height: auto;
+    width: max-content;
+    transform: none !important;
+    height: auto;
+    }
+
+    .story-property-card {
+    flex: 0 0 min(82vw, 360px);
+    scroll-snap-align: start;
+    }
+
+    .story-property-card,
+    .story-property-media {
+    height: clamp(430px, 72vh, 620px);
+    min-height: 0;
+    }
+
+    .story-expand-panel {
+    display: none;
+    }
+}
+
+@media (min-width: $tv-breakpoint-sm-min) and (max-width: $tv-breakpoint-lg-custom-max) {
+    .story-property-card {
+    flex-basis: min(46vw, 370px);
+    }
+
+    .story-property-card,
+    .story-property-media {
+    height: clamp(420px, 56vh, 540px);
+    }
+}
+
+@media (hover: none), (pointer: coarse) {
+    .story-mobile-link {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    font-size: 0;
+    color: transparent;
+    text-decoration: none;
+    }
+
+    .story-property-card:hover {
+    border-color: var(--line);
+    box-shadow: $tv-shadow-sm;
+    }
+}
+/* End of Story properties component */
+/* Location Banner */
+.location-products-carousel {
+  position: relative;
+  padding-bottom: 40px;
+
+  .carousel-inner {
+    overflow: hidden;
+  }
+
+  .carousel-item {
+    min-height: 100%;
+    container-type: inline-size;
+  }
+
+  .carousel-indicators {
+    right: auto;
+    left: 0;
+    bottom: 25px;
+    justify-content: flex-start;
+    margin: 0;
+    gap: .42rem;
+
+    [data-bs-target] {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      border: 0;
+      background-color: rgba(81, 97, 91, .34);
+      opacity: 1;
+      transition:
+        width .25s ease,
+        background-color .25s ease;
+    }
+
+    .active {
+      width: 24px;
+      background-color: var(--sage);
+    }
+  }
+}
+
+.location-product-arrow-control {
+  position: absolute;
+  z-index: 3;
+  top: auto;
+  bottom: 5px;
+  left: auto;
+  width: 44px;
+  min-width: 44px;
+  max-width: 44px;
+  height: 30px;
+  min-height: 30px;
+  max-height: 30px;
+  padding: 0;
+  opacity: 1;
+  border: 1px solid rgba(81, 97, 91, .28);
+  border-radius: 0;
+  background: rgba(255, 255, 255, .72);
+  color: var(--sage);
+  font-size: 0;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  transition:
+    color .25s ease,
+    background-color .25s ease,
+    border-color .25s ease,
+    transform .25s ease;
+
+  &::before {
+    font-size: 1.08rem;
+    line-height: 1;
+    transform: translateY(-1px);
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--ink);
+    background: #fff;
+    border-color: rgba(81, 97, 91, .48);
+    transform: translateY(-2px);
+  }
+}
+
+.location-product-prev {
+  right: 52px;
+
+  &::before {
+    content: '←';
+  }
+}
+
+.location-product-next {
+  right: 0;
+
+  &::before {
+    content: '→'; 
+  }
+}
+
+.location-product-card {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  overflow: hidden;
+  padding: 15px 0 15px 15px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--text);
+  text-decoration: none;
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease;
+
+  &:focus-visible {
+    color: var(--text);
+    border-color: rgba(81, 97, 91, .38);
+    outline: 0;
+    box-shadow: 0 0 0 .18rem rgba(81, 97, 91, .12);
+  }
+}
+
+.location-product-media {
+  position: relative;
+  max-height: 190px;
+  overflow: hidden;
+  flex: 0 0 35%;
+  width: 35%;
+  height: auto;
+  min-height: 140px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: saturate(.9) contrast(1.03);
+    transition: transform .55s ease;
+  }
+}
+
+.location-product-body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 0 1rem;
+  justify-content: center;
+
+  h4 {
+    margin-bottom: .5rem;
+    font-size: clamp(1.05rem, 1.6vw, 1.24rem);
+    line-height: 1.12;
+  }
+}
+
+.location-product-copy {
+  margin-bottom: .9rem;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+.location-product-price {
+  color: var(--sage);
+  font-size: .92rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.location-product-arrow {
+  color: var(--sage);
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .location-product-card {
+    &:hover {
+      color: var(--text);
+      border-color: rgba(81, 97, 91, .28);
+
+      .location-product-media img {
+        transform: scale(1.035);
+      }
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .location-banner-section {
+    .split-feature-image {
+      min-height: 320px;
+    }
+  }
+
+  .location-banner-meta {
+    grid-template-columns: 1fr;
+
+    span {
+      min-height: auto;
+    }
+  }
+
+  .location-product-media {
+    height: 190px;
+  }
+}

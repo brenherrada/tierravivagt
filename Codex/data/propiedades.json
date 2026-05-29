@@ -1,0 +1,13 @@
+{
+  "site": {
+    "name": "Tierra Viva Propiedades",
+    "location": "Guatemala",
+    "contact": {
+      "whatsapp": "50232465215"
+    },
+    "logo": {
+      "url": "assets/img/logo-wide.png",
+      "alt": "Tierra Viva Propiedades"
+    }
+  }
+}

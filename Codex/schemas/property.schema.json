@@ -1,0 +1,407 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tierravivagt.local/schemas/property.schema.json",
+  "title": "Tierra Viva Property",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "slug",
+    "template",
+    "seo",
+    "identity",
+    "status",
+    "pricing",
+    "hero",
+    "summary",
+    "feature_groups",
+    "final_cta",
+    "tags"
+  ],
+  "properties": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "id": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "template": {
+      "type": "string",
+      "enum": ["ficha"]
+    },
+    "output_path": {
+      "type": "string"
+    },
+    "seo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "description"],
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "canonical_url": { "type": "string" },
+        "og_image": { "$ref": "#/$defs/image" }
+      }
+    },
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "property_type", "operation", "name", "location", "location_id"],
+      "properties": {
+        "title": { "type": "string" },
+        "property_type": { "type": "string" },
+        "operation": {
+          "type": "string",
+          "enum": ["venta", "renta", "inversion"]
+        },
+        "name": { "type": "string" },
+        "location": { "type": "string" },
+        "location_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "zone": { "type": "string" },
+        "country": { "type": "string" },
+        "short_label": { "type": "string" }
+      }
+    },
+    "status": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["availability", "visibility"],
+      "properties": {
+        "availability": {
+          "type": "string",
+          "enum": ["disponible", "reservada", "vendida", "rentada", "pendiente"]
+        },
+        "visibility": {
+          "type": "string",
+          "enum": ["publica", "privada", "off-market"]
+        },
+        "badges": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "pricing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "amount"],
+      "properties": {
+        "label": { "type": "string" },
+        "amount": { "type": "string" },
+        "note": { "type": "string" },
+        "currency": { "type": "string" },
+        "period": { "type": "string" },
+        "includes": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "hero": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kicker", "title", "images"],
+      "properties": {
+        "carousel_id": { "type": "string" },
+        "kicker": { "type": "string" },
+        "title": { "type": "string" },
+        "copy": { "type": "string" },
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/image" }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["note", "items"],
+      "properties": {
+        "note": { "type": "string" },
+        "items": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/labeled_value" }
+        }
+      }
+    },
+    "intro": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "eyebrow": { "type": "string" },
+        "lead": { "type": "string" },
+        "body": { "type": "string" }
+      }
+    },
+    "feature_groups": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title", "items"],
+        "properties": {
+          "title": { "type": "string" },
+          "items": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    },
+    "location": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "eyebrow": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "map": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "title": { "type": "string" },
+            "embed_url": { "type": "string" },
+            "link_url": { "type": "string" },
+            "link_label": { "type": "string" }
+          }
+        }
+      }
+    },
+    "image_feature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["carousel_id", "eyebrow", "title", "body", "images"],
+      "properties": {
+        "carousel_id": { "type": "string" },
+        "eyebrow": { "type": "string" },
+        "title": { "type": "string" },
+        "body": { "type": "string" },
+        "images": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/image" }
+        }
+      }
+    },
+    "final_cta": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["eyebrow", "title", "body", "primary_label", "secondary_label"],
+      "properties": {
+        "eyebrow": { "type": "string" },
+        "title": { "type": "string" },
+        "body": { "type": "string" },
+        "primary_label": { "type": "string" },
+        "secondary_label": { "type": "string" },
+        "whatsapp_message": { "type": "string" },
+        "share_message": { "type": "string" }
+      }
+    },
+    "related_products": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": ["manual", "same-location"]
+        },
+        "match_field": {
+          "type": "string",
+          "enum": ["identity.location", "identity.zone"]
+        },
+        "limit": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "fallback_to_manual": { "type": "boolean" },
+        "eyebrow": { "type": "string" },
+        "title": { "type": "string" },
+        "items": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/related_property" }
+        }
+      }
+    },
+    "related_card": {
+      "$ref": "#/$defs/related_card"
+    },
+    "zone_spotlight": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "eyebrow": { "type": "string" },
+        "title": { "type": "string" },
+        "lead": { "type": "string" },
+        "image": { "$ref": "#/$defs/image" },
+        "stats": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/labeled_value" }
+        },
+        "products_title": { "type": "string" },
+        "products": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/related_property" }
+        },
+        "all_properties_link": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "label": { "type": "string" },
+            "href": { "type": "string" },
+            "aria_label": { "type": "string" }
+          }
+        }
+      }
+    },
+    "upsell_properties": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "eyebrow": { "type": "string" },
+        "title": { "type": "string" },
+        "property_ids": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "items": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/story_property" }
+        }
+      }
+    },
+    "upsell_card": {
+      "$ref": "#/$defs/upsell_card"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      }
+    },
+    "badges": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "image": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["src", "alt"],
+      "properties": {
+        "src": { "type": "string" },
+        "alt": { "type": "string" }
+      }
+    },
+    "labeled_value": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "value"],
+      "properties": {
+        "label": { "type": "string" },
+        "value": { "type": "string" },
+        "support": { "type": "string" }
+      }
+    },
+    "related_property": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "href"],
+      "properties": {
+        "eyebrow": { "type": "string" },
+        "title": { "type": "string" },
+        "href": { "type": "string" },
+        "price": { "type": "string" },
+        "price_note": { "type": "string" },
+        "image": { "$ref": "#/$defs/image" },
+        "body": { "type": "string" },
+        "aria_label": { "type": "string" }
+      }
+    },
+    "related_card": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "eyebrow": { "type": "string" },
+        "title": { "type": "string" },
+        "price": { "type": "string" },
+        "price_note": { "type": "string" },
+        "image": { "$ref": "#/$defs/image" },
+        "aria_label": { "type": "string" }
+      }
+    },
+    "upsell_card": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "operation": { "type": "string" },
+        "title": { "type": "string" },
+        "mobile_aria_label": { "type": "string" },
+        "media": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "src", "alt"],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": ["image", "video"]
+            },
+            "src": { "type": "string" },
+            "poster": { "type": "string" },
+            "alt": { "type": "string" }
+          }
+        },
+        "price": { "type": "string" },
+        "price_note": { "type": "string" },
+        "specs": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "story_property": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operation", "title", "href"],
+      "properties": {
+        "operation": { "type": "string" },
+        "title": { "type": "string" },
+        "href": { "type": "string" },
+        "mobile_aria_label": { "type": "string" },
+        "media": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "src", "alt"],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": ["image", "video"]
+            },
+            "src": { "type": "string" },
+            "poster": { "type": "string" },
+            "alt": { "type": "string" }
+          }
+        },
+        "price": { "type": "string" },
+        "price_note": { "type": "string" },
+        "specs": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "cta_label": { "type": "string" }
+      }
+    }
+  }
+}

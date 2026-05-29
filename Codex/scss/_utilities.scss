@@ -1,0 +1,38 @@
+// Utilities layer
+// Single-purpose helpers.
+
+.bg-soft {
+  background: var(--bg-soft) !important;
+}
+
+.bg-accent {
+  background: var(--bg-accent) !important;
+}
+
+.bg-sage {
+  background: var(--sage) !important;
+}
+
+.bg-sage-light {
+  background: var(--sage-light) !important;
+}
+
+.bg-ink {
+  background: var(--ink) !important;
+}
+
+.bg-gold {
+  background: var(--soft-gold) !important;
+}
+
+.bg-clay-rose {
+  background: var(--clay-rose) !important;
+}
+
+.bg-mineral-blue {
+  background: var(--mineral-blue) !important;
+}
+
+.text-muted-tv {
+  color: var(--muted);
+}

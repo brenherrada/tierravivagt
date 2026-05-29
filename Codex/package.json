@@ -1,0 +1,17 @@
+{
+  "name": "tierra-viva-web",
+  "version": "1.0.0",
+  "description": "Sitio web modular para Tierra Viva, con Sass, Bootstrap y datos dinámicos para propiedades inmobiliarias.",
+  "private": true,
+  "scripts": {
+    "sass": "sass scss/global.scss css/global.css",
+    "sass:watch": "sass --watch scss/global.scss:css/global.css",
+    "generate:property": "node scripts/generate-property.js"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  },
+  "devDependencies": {
+    "sass": "^1.77.0"
+  }
+}

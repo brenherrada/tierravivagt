@@ -1,0 +1,10 @@
+// Main Sass entrypoint.
+// Project variables must load before Bootstrap so overrides are applied.
+@import "variables";
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Tierra Viva project partials.
+@import "base";
+@import "layout";
+@import "utilities";

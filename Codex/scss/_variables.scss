@@ -1,0 +1,162 @@
+// Tierra Viva design tokens
+// These values mirror the current visual system in css/global.css.
+
+// Colors
+$tv-bg: #fbfaf8;
+$tv-bg-soft: #f3f2ef;
+$tv-bg-accent: #e7eceb;
+$tv-card: #ffffff;
+$tv-text: #202321;
+$tv-muted: #6f736d;
+$tv-line: #dedbd2;
+$tv-sage: #51615b;
+$tv-sage-light: #6d7c76;
+$tv-slate: #7c8a92;
+$tv-mist: #a8b2bd;
+$tv-clay-rose: #b9a6a0;
+$tv-mineral-blue: #8fa1aa;
+$tv-soft-gold: #e8d98b;
+$tv-ink: #111513;
+$tv-white: #ffffff;
+
+// Color transparencies used repeatedly in the current CSS
+$tv-bg-72: rgba(246, 244, 239, .72);
+$tv-bg-92: rgba(246, 244, 239, .92);
+$tv-bg-98: rgba(246, 244, 239, .98);
+$tv-white-32: rgba(255, 255, 255, .32);
+$tv-white-62: rgba(255, 255, 255, .62);
+$tv-white-64: rgba(255, 255, 255, .64);
+$tv-white-72: rgba(255, 255, 255, .72);
+$tv-white-75: rgba(255, 255, 255, .75);
+$tv-white-90: rgba(255, 255, 255, .9);
+$tv-white-92: rgba(255, 255, 255, .92);
+$tv-ink-045: rgba(17, 21, 19, .045);
+$tv-ink-06: rgba(17, 21, 19, .06);
+$tv-ink-08: rgba(17, 21, 19, .08);
+$tv-ink-10: rgba(17, 21, 19, .10);
+$tv-ink-12: rgba(17, 21, 19, .12);
+$tv-ink-14: rgba(17, 21, 19, .14);
+$tv-ink-16: rgba(17, 21, 19, .16);
+$tv-ink-20: rgba(17, 21, 19, .20);
+$tv-ink-22: rgba(17, 21, 19, .22);
+$tv-sage-12: rgba(81, 97, 91, .12);
+$tv-sage-18: rgba(81, 97, 91, .18);
+$tv-sage-28: rgba(81, 97, 91, .28);
+$tv-sage-42: rgba(81, 97, 91, .42);
+$tv-sage-55: rgba(81, 97, 91, .55);
+$tv-line-90: rgba(222, 219, 210, .9);
+$tv-line-95: rgba(222, 219, 210, .95);
+
+// Fonts
+$tv-font-sans: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$tv-font-functional: 'Montserrat', 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$tv-font-serif: 'Lora', Georgia, serif;
+$tv-font-display: 'Playfair Display', Georgia, serif;
+
+// Type scale
+$tv-font-size-xs: .75rem;
+$tv-font-size-sm: .875rem;
+$tv-font-size-base: 1rem;
+$tv-font-size-md: 1.125rem;
+$tv-font-size-lg: 1.25rem;
+$tv-font-size-xl: 1.5rem;
+$tv-h1-size: clamp(2.75rem, 5.8vw, 64px);
+$tv-h2-size: clamp(2rem, 4.2vw, 48px);
+$tv-h3-size: clamp(1.55rem, 2.8vw, 34px);
+$tv-h4-size: clamp(1.25rem, 2vw, 26px);
+$tv-h5-size: clamp(1.08rem, 1.55vw, 20px);
+$tv-h6-size: clamp(.9rem, 1.2vw, 16px);
+$tv-heading-sm-size: clamp(1.15rem, 2.8vw, 22px);
+$tv-quote-size: clamp(2.2rem, 4vw, 4.2rem);
+$tv-letter-spacing-tight: -.56px;
+$tv-letter-spacing-nav: 2.08px;
+$tv-letter-spacing-nav-scrolled: 1.76px;
+
+// Spacing
+$tv-space-1: .25rem;
+$tv-space-2: .5rem;
+$tv-space-3: .75rem;
+$tv-space-4: 1rem;
+$tv-space-5: 1.5rem;
+$tv-space-6: 2rem;
+$tv-space-7: 2.5rem;
+$tv-space-8: 3rem;
+$tv-space-9: 4rem;
+$tv-section-space: clamp(4rem, 7vw, 7rem);
+
+// Borders and radii
+$tv-border-width: 1px;
+$tv-border-style: solid;
+$tv-border: $tv-border-width $tv-border-style $tv-line;
+$tv-border-soft: $tv-border-width $tv-border-style $tv-line-90;
+$tv-radius-none: 0;
+$tv-radius-pill: 999px;
+
+// Shadows
+$tv-shadow-xs: 0 10px 24px $tv-ink-08;
+$tv-shadow-sm: 0 12px 34px $tv-ink-06;
+$tv-shadow-md: 0 16px 38px $tv-ink-14;
+$tv-shadow-lg: 0 24px 60px $tv-ink-12;
+$tv-shadow-xl: 0 28px 80px $tv-ink-20;
+$tv-focus-ring: 0 0 0 .18rem $tv-sage-12;
+
+// Motion
+$tv-transition-fast: .18s ease;
+$tv-transition-base: .25s ease;
+$tv-transition-medium: .32s ease;
+$tv-transition-slow: .55s ease;
+
+// Breakpoints used by the current CSS
+$tv-breakpoint-xs-max: 575.98px;
+$tv-breakpoint-sm-min: 540px;
+$tv-breakpoint-md-max: 767.98px;
+$tv-breakpoint-lg-custom-max: 989.98px;
+$tv-breakpoint-lg-custom-min: 990px;
+$tv-breakpoint-lg-max: 991.98px;
+$tv-breakpoint-lg-min: 992px;
+$tv-breakpoint-xl-max: 1199.98px;
+$tv-breakpoint-xl-min: 1200px;
+
+// CSS custom properties kept for compatibility while CSS is migrated gradually.
+$tv-css-vars: (
+  bg: $tv-bg,
+  bg-soft: $tv-bg-soft,
+  bg-accent: $tv-bg-accent,
+  card: $tv-card,
+  text: $tv-text,
+  muted: $tv-muted,
+  line: $tv-line,
+  sage: $tv-sage,
+  sage-light: $tv-sage-light,
+  slate: $tv-slate,
+  mist: $tv-mist,
+  clay-rose: $tv-clay-rose,
+  mineral-blue: $tv-mineral-blue,
+  soft-gold: $tv-soft-gold,
+  ink: $tv-ink,
+  font-functional: $tv-font-functional,
+  muted-light: $tv-white-75
+);
+
+// Bootstrap overrides
+$body-bg: $tv-bg;
+$body-color: $tv-text;
+$font-family-base: $tv-font-sans;
+$font-family-sans-serif: $tv-font-sans;
+$headings-font-family: $tv-font-serif;
+$primary: $tv-sage;
+$secondary: $tv-mineral-blue;
+$light: $tv-bg-soft;
+$dark: $tv-ink;
+$border-color: $tv-line;
+$border-radius: $tv-radius-none;
+$border-radius-sm: $tv-radius-none;
+$border-radius-lg: $tv-radius-none;
+$link-color: $tv-sage;
+$link-hover-color: $tv-mineral-blue;
+$btn-border-radius: $tv-radius-none;
+$btn-border-radius-sm: $tv-radius-none;
+$btn-border-radius-lg: $tv-radius-none;
+$input-border-color: $tv-line;
+$input-focus-border-color: $tv-sage;
+$input-focus-box-shadow: $tv-focus-ring;
