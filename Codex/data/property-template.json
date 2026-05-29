@@ -1,0 +1,104 @@
+{
+  "slug": "propiedad-ejemplo",
+  "id": 100,
+  "template": "ficha",
+  "output_path": "pages/ficha-{{identity.operation}}-{{identity.property_type}}-{{identity.location_id}}.html",
+  "seo": {
+    "title": "Titulo SEO pendiente | Tierra Viva Propiedades",
+    "description": "Descripcion SEO pendiente para la ficha de propiedad."
+  },
+  "identity": {
+    "title": "Titulo comercial pendiente",
+    "property_type": "casa",
+    "operation": "venta",
+    "name": "Nombre de la propiedad pendiente",
+    "location": "Ubicacion pendiente",
+    "location_id": "ubicacion-pendiente",
+    "zone": "",
+    "country": "Guatemala",
+    "short_label": ""
+  },
+  "status": {
+    "availability": "pendiente",
+    "visibility": "publica",
+    "badges": []
+  },
+  "pricing": {
+    "label": "Precio",
+    "amount": "Precio pendiente",
+    "currency": "",
+    "period": "",
+    "includes": []
+  },
+  "hero": {
+    "carousel_id": "propertyHeroCarousel",
+    "kicker": "Ubicacion pendiente",
+    "title": "Titulo comercial pendiente",
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2200&q=82",
+        "alt": "Imagen principal pendiente de la propiedad"
+      }
+    ]
+  },
+  "summary": {
+    "note": "Resumen pendiente de la propiedad.",
+    "items": [
+      {
+        "label": "Tipo",
+        "value": "Dato pendiente",
+        "support": ""
+      }
+    ]
+  },
+  "intro": {
+    "eyebrow": "",
+    "lead": "",
+    "body": ""
+  },
+  "feature_groups": [
+    {
+      "title": "Caracteristicas",
+      "items": []
+    }
+  ],
+  "location": {
+    "eyebrow": "",
+    "title": "",
+    "description": "",
+    "map": {
+      "title": "",
+      "embed_url": "",
+      "link_url": "",
+      "link_label": ""
+    }
+  },
+  "final_cta": {
+    "eyebrow": "Solicitar informacion",
+    "title": "Conozca esta propiedad con mayor detalle.",
+    "body": "Puede solicitar informacion, agendar una visita o compartir la ficha directamente por WhatsApp.",
+    "primary_label": "Solicitar informacion",
+    "secondary_label": "Compartir ficha",
+    "whatsapp_message": "",
+    "share_message": ""
+  },
+  "related_products": {
+    "mode": "same-location",
+    "match_field": "identity.location",
+    "limit": 3,
+    "fallback_to_manual": false,
+    "eyebrow": "Mas opciones",
+    "title": "Propiedades relacionadas",
+    "items": []
+  },
+  "zone_spotlight": {
+    "enabled": false
+  },
+  "upsell_properties": {
+    "eyebrow": "Mas opciones disponibles",
+    "title": "Tambien podria interesarle.",
+    "property_ids": []
+  },
+  "tags": [],
+  "badges": []
+}

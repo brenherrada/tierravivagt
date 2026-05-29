@@ -1,0 +1,151 @@
+// Base layer
+// Global tokens, resets, document defaults, and typographic primitives.
+
+:root {
+  @each $name, $value in $tv-css-vars {
+    --#{$name}: #{$value};
+  }
+}
+
+/*
+  Preview HTML para Tierra Viva.
+  Producción sugerida: mover esta base a Sass y compilar a styles.css.
+
+  Sistema visual:
+  - Bootstrap para estructura.
+  - Manrope para UI.
+  - Lora para lectura editorial.
+  - Playfair Display solo para impacto.
+  - Paleta moderna editorial sin marrón ni terracota.
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html.story-cards-active,
+body.story-cards-active {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: $tv-font-sans;
+  line-height: 1.5;
+  font-size: 15px;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.font-serif {
+  font-family: $tv-font-serif;
+  letter-spacing: $tv-letter-spacing-tight;
+}
+
+h1 {
+  font-size: $tv-h1-size;
+}
+
+h2 {
+  font-size: $tv-h2-size;
+}
+
+h3 {
+  font-size: $tv-h3-size;
+}
+
+h4 {
+  font-size: $tv-h4-size;
+}
+
+h5 {
+  font-size: $tv-h5-size;
+}
+
+h6 {
+  font-size: $tv-h6-size;
+}
+
+.font-serif {
+  font-family: $tv-font-serif;
+  letter-spacing: $tv-letter-spacing-tight;
+}
+
+.font-serif-italic {
+  font-family: $tv-font-serif;
+  font-style: italic;
+  letter-spacing: -0.32px;
+}
+
+.font-display {
+  font-family: $tv-font-display;
+}
+
+.hero-display {
+  font-family: $tv-font-display;
+  font-size: clamp(2.35rem, 5.8vw, 64px);
+  line-height: .9;
+  font-weight: 600;
+}
+
+.editorial-display {
+  font-family: $tv-font-display;
+  font-size: clamp(1.6rem, 4vw, 3rem);
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.lead-editorial {
+  font-family: $tv-font-serif;
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  line-height: 1.55;
+}
+
+.heading-sm {
+  font-size: $tv-heading-sm-size;
+}
+
+.quote-display {
+  font-family: $tv-font-display;
+  font-style: italic;
+  font-size: $tv-quote-size;
+  line-height: 1;
+}
+
+.eyebrow {
+  font-family: $tv-font-functional;
+  color: var(--slate);
+  font-size: clamp(14px, 1vw, 16px);
+  letter-spacing: 0.03rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 5px;
+  line-height: normal;
+}

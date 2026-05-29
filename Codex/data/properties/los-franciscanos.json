@@ -1,0 +1,275 @@
+{
+  "slug": "casa-renta-los-franciscanos",
+  "id": 1,
+  "template": "ficha",
+  "output_path": "pages/ficha-{{identity.operation}}-{{identity.property_type}}-{{identity.location_id}}.html",
+  "seo": {
+    "title": "Casa en renta · Los Franciscanos | Tierra Viva Propiedades",
+    "description": "Casa en renta en Los Franciscanos Club Residencial, Antigua Guatemala. 3 habitaciones, jardín, chimenea, línea blanca incluida y amenidades del residencial."
+  },
+  "identity": {
+    "title": "Casa en renta",
+    "property_type": "casa",
+    "operation": "renta",
+    "name": "Los Franciscanos",
+    "location": "Los Franciscanos Club Residencial",
+    "location_id": "franciscanos",
+    "zone": "Antigua Guatemala",
+    "country": "Guatemala",
+    "short_label": "Residencial Los Franciscanos"
+  },
+  "status": {
+    "availability": "disponible",
+    "visibility": "publica",
+    "badges": ["renta", "residencial"]
+  },
+  "pricing": {
+    "label": "Renta mensual",
+    "amount": "USD 2,100",
+    "note": "/mes · mantenimiento incluido",
+    "currency": "USD",
+    "period": "mes",
+    "includes": ["mantenimiento", "línea blanca"]
+  },
+  "hero": {
+    "carousel_id": "propertyHeroCarousel",
+    "kicker": "Residencial Los Franciscanos",
+    "title": "Casa en renta",
+    "copy": "Ubicada a pocos minutos de Antigua Guatemala, dentro de un residencial con seguridad 24/7, amenidades familiares y espacios sociales. Incluye mantenimiento y línea blanca.",
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2200&q=82",
+        "alt": "Placeholder editorial de fachada residencial"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2200&q=82",
+        "alt": "Placeholder editorial de sala residencial"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2200&q=82",
+        "alt": "Placeholder editorial de cocina residencial"
+      }
+    ]
+  },
+  "summary": {
+    "note": "Una opción residencial cerca de Antigua Guatemala, con línea blanca incluida y acceso a amenidades familiares.",
+    "items": [
+      {
+        "label": "Residencial",
+        "value": "Los Franciscanos",
+        "support": "Club Residencial en el área de Antigua Guatemala."
+      },
+      {
+        "label": "Distribución",
+        "value": "3 dormitorios",
+        "support": "Habitación principal con walk-in closet y baño."
+      },
+      {
+        "label": "Ambientes",
+        "value": "Jardín y chimenea",
+        "support": "Espacios interiores y exteriores para uso diario."
+      },
+      {
+        "label": "Incluye",
+        "value": "Línea blanca",
+        "support": "La renta incluye mantenimiento del residencial."
+      }
+    ]
+  },
+  "intro": {
+    "eyebrow": "La propiedad",
+    "lead": "Una casa cómoda y funcional para vivir cerca de Antigua Guatemala, con la tranquilidad de un entorno residencial privado.",
+    "body": "La propiedad se encuentra dentro de Los Franciscanos Club Residencial y ofrece una distribución práctica: sala, comedor, cocina con cúpula, jardín, chimenea y tres habitaciones con baño. Es una opción clara para quienes buscan seguridad, amenidades y cercanía a Antigua sin perder la sensación de casa."
+  },
+  "feature_groups": [
+    {
+      "title": "Características de la casa",
+      "items": [
+        "Sala y comedor",
+        "Cocina con cúpula",
+        "3 habitaciones",
+        "Máster con walk-in closet y baño",
+        "2 habitaciones secundarias con baño privado",
+        "Baño de visitas",
+        "Jardín",
+        "Chimenea",
+        "Línea blanca incluida",
+        "1 parqueo"
+      ]
+    },
+    {
+      "title": "Amenidades del residencial",
+      "items": [
+        "Casa club",
+        "Piscina",
+        "Gimnasio",
+        "Canchas deportivas",
+        "Áreas verdes",
+        "Kids club",
+        "Parque para perros",
+        "Seguridad 24/7"
+      ]
+    }
+  ],
+  "location": {
+    "eyebrow": "Ubicación",
+    "title": "Los Franciscanos",
+    "description": "Los Franciscanos Club Residencial, Antigua Guatemala. Un entorno residencial privado a pocos minutos de la ciudad.",
+    "map": {
+      "title": "Mapa Los Franciscanos Club Residencial",
+      "embed_url": "https://www.google.com/maps?q=Los%20Franciscanos%20Club%20Residencial%20Antigua%20Guatemala&output=embed",
+      "link_url": "https://maps.app.goo.gl/yAECiNHYX8dgq9Ua7",
+      "link_label": "Abrir en Google Maps"
+    }
+  },
+  "image_feature": {
+    "carousel_id": "condoCarousel",
+    "eyebrow": "Vida residencial",
+    "title": "Espacios pensados para vivir con comodidad.",
+    "body": "La presentación prioriza lo esencial: qué incluye, cómo se distribuye y qué ofrece el residencial. Una propiedad bien comunicada transmite valor desde la claridad, la ubicación y la calidad de sus espacios.",
+    "images": [
+      {
+        "src": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1800&q=82",
+        "alt": "Placeholder de área social del condominio"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1800&q=82",
+        "alt": "Placeholder de áreas verdes del condominio"
+      },
+      {
+        "src": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1800&q=82",
+        "alt": "Placeholder de amenidades del condominio"
+      }
+    ]
+  },
+  "final_cta": {
+    "eyebrow": "Agenda una visita",
+    "title": "Conózcala con mayor detalle.",
+    "body": "Si esta propiedad se ajusta a lo que está buscando, puede agendar una visita o compartir la ficha directamente por WhatsApp.",
+    "primary_label": "Agendar visita",
+    "secondary_label": "Compartir ficha",
+    "whatsapp_message": "Hola Brenda, quisiera agendar una visita para conocer la casa en renta en Los Franciscanos Club Residencial.",
+    "share_message": "Le comparto esta propiedad de Tierra Viva."
+  },
+  "related_products": {
+    "mode": "same-location",
+    "match_field": "identity.location",
+    "limit": 3,
+    "fallback_to_manual": true,
+    "eyebrow": "Más opciones",
+    "title": "Conozca otras propiedades en el mismo residencial",
+    "items": [
+      {
+        "eyebrow": "Venta",
+        "title": "Casa 4 ambientes",
+        "href": "ficha.html",
+        "price": "USD 320,000",
+        "price_note": "más imp.",
+        "image": {
+          "src": "../investment/images/investments/invest-025.jpg",
+          "alt": "Los Franciscanos Club Residencial"
+        },
+        "aria_label": "Ver ficha"
+      },
+      {
+        "eyebrow": "Renta",
+        "title": "Casa 4 ambientes",
+        "href": "ficha.html",
+        "price": "USD 2,100",
+        "price_note": "/mes",
+        "image": {
+          "src": "../investment/images/investments/invest-025.jpg",
+          "alt": "Los Franciscanos Club Residencial"
+        },
+        "aria_label": "Ver ficha"
+      },
+      {
+        "eyebrow": "Renta",
+        "title": "Casa en el casco antiguo",
+        "href": "ficha.html",
+        "price": "USD 2,100",
+        "price_note": "/mes",
+        "image": {
+          "src": "../investment/images/investments/invest-025.jpg",
+          "alt": "Los Franciscanos Club Residencial"
+        },
+        "aria_label": "Ver ficha"
+      }
+    ]
+  },
+  "zone_spotlight": {
+    "enabled": true,
+    "eyebrow": "Destacado",
+    "title": "Cerro de Oro, Atitlán",
+    "lead": "Una zona para quienes buscan vista, privacidad y conexión directa con el paisaje del lago.",
+    "image": {
+      "src": "https://commons.wikimedia.org/wiki/Special:FilePath/Volcanoes%20of%20lake%20Atitlan.jpg",
+      "alt": "Vista del Lago de Atitlán con Cerro de Oro y volcanes"
+    },
+    "stats": [
+      {
+        "label": "Entorno",
+        "value": "Lago, montaña y volcanes"
+      },
+      {
+        "label": "Perfil",
+        "value": "Residencial y descanso"
+      },
+      {
+        "label": "Potencial",
+        "value": "Inversión boutique"
+      }
+    ],
+    "products_title": "Propiedades en esta ubicación",
+    "products": [
+      {
+        "title": "Casa con vista al lago",
+        "href": "page/ficha.html",
+        "body": "Residencia orientada al descanso, con relación directa al paisaje de Atitlán.",
+        "image": {
+          "src": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=900&auto=format&fit=crop",
+          "alt": "Casa disponible en Cerro de Oro, Atitlán"
+        }
+      },
+      {
+        "title": "Terreno para proyecto boutique",
+        "href": "page/ficha.html",
+        "body": "Una opción para desarrollar una propuesta sensible al entorno y al paisaje.",
+        "image": {
+          "src": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=900&auto=format&fit=crop",
+          "alt": "Terreno disponible en Cerro de Oro, Atitlán"
+        }
+      },
+      {
+        "title": "Propiedad para descanso o renta",
+        "href": "page/ficha.html",
+        "body": "Pensada para estadías, uso personal o inversión turística de baja densidad.",
+        "image": {
+          "src": "https://images.unsplash.com/photo-1564501049412-61c2a3083791?q=80&w=900&auto=format&fit=crop",
+          "alt": "Propiedad boutique disponible en Atitlán"
+        }
+      }
+    ],
+    "all_properties_link": {
+      "label": "Ver todas las propiedades",
+      "href": "listing.html?location=cerrodeoro",
+      "aria_label": "Ver todas las propiedades en Cerro de Oro"
+    }
+  },
+  "upsell_properties": {
+    "eyebrow": "Más opciones disponibles",
+    "title": "También podría interesarle.",
+    "property_ids": []
+  },
+  "tags": [
+    "renta",
+    "casa",
+    "residencial",
+    "condominio",
+    "antigua-guatemala",
+    "los-franciscanos"
+  ],
+  "badges": [
+    "New!"
+  ]
+}
